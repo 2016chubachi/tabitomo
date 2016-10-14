@@ -6,6 +6,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use bootstrap
+gem 'bootstrap-sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -30,6 +32,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Use for internationalization language.
 gem 'rails-i18n'
+
+# javascriptのi18n対応
+gem "i18n-js" 
 
 # for create test members.
 gem 'faker',                '1.6.5'

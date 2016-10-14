@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#データを作成したいテーブルの名称を記述
+#データの作成は以下のファイルに作成
+#db/seeds/環境(development, production)/テーブル名称.rb
 #
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+table_names = %w(global_codes language_skills status_masters)
+
+table_names.each do |table_name|
+  path = Rails.root.join("db/seeds", Rails.env, table_name + ".rb")
+  if File.exist?(path)
+    puts "Creating #{table_name}..."
+    require path
+  end
+end

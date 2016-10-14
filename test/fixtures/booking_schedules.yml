@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  booking_id: 1
+  traveler_count: 1
+  traveler_location: MyString
+  traveler_date: 2016-10-12 07:45:40
+
+two:
+  booking_id: 1
+  traveler_count: 1
+  traveler_location: MyString
+  traveler_date: 2016-10-12 07:45:40

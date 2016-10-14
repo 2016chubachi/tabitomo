@@ -37,9 +37,15 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    autoprefixer-rails (6.5.1)
+      execjs
+    bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
     coderay (1.1.1)
@@ -59,6 +65,8 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    i18n-js (2.1.2)
+      i18n
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -81,8 +89,11 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.1)
     multi_json (1.12.1)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     nokogiri (1.6.8.1-x64-mingw32)
       mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
     pg (0.19.0-x64-mingw32)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -155,6 +166,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.3.12)
     sqlite3 (1.3.12-x64-mingw32)
     thor (0.19.1)
     thread_safe (0.3.5)
@@ -176,13 +188,16 @@ GEM
     yard (0.9.5)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bootstrap-sass
   byebug (= 9.0.5)
   coffee-rails (~> 4.1.0)
   faker (= 1.6.5)
+  i18n-js
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
