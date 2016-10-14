@@ -8,7 +8,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: kq8ytZAc5zGoxOaWgWa/oxuehIv6TLp3otHwHRau9LYO8ddSbKIbwlLlDPbFNzlNcH/TnQGRguFH6QqWEUOwjgidQopVbkmq8ZVldYXfbe/98NPLcsb39nq4g6TaqXgi+O3y6XRAZ+PKaw8M5/zMDL8DRpP7QOfpI8YND1ts8eutlTjYMh9tM28U4ki/UqRoIdks+60RmyQICGcDmNIkbRbPnBljFDsfYrpctVJSZXhlFVAf48ac1unObJ2Yx6/x3rxICVhTnzMmLGrgdAy7CX4/ewBfqzqtnTqMeqDVu+OhbjOI4WmyPVQDG2Ud2YqqoBwUMuZ22Lozvm1ghK/KW+UKz40oTS86uaYkF+btWo3KSHxhsmF1Ch/Iwh/R3EC8bpzTYHtypxBnyL+lkWbSlVnQ+05bgc4rSSJkx595FH7JMD9lh6z6rrhfGxwpYuNSkpktlmBZD6Uv7EASeJKfkQq+o/f9Dkhfkx7sf18ISKFyJolbLCDweiBB0ApjYYKY8yN2L1tlkVwBuQxqXxjwSjpZhxyjQaA+DC2MiWsuwck/EdUFED2Xz4gg49SwNNz4OdclPoLJS1QS6KuevfVrp0cPneaPyII4CukoxAF43qt86Z0pdYuZ4j/nSNLnVHR29yFu2zsdlvBrLjXt0JVZEp2dFCdvWJbJ8zL/ba3msbc=
+    secure: PAV/wVTAceO/2WaFaBuvqhajM1wBukPxG9yn0OYGA1D66Lx0R7lKYkNnwX4BHEIqn0W04xiW6zTXMq3VqZ9AwFFmy9nNKC1HW4BFnvGwAv9k3qm7FvCnPYY1LPqd+vOlhYWxSjsjalgA4roliKF7gdGtALRlsO1PiJa338A0vOO1cBPaHdecq4VQcCJ3NX30ALj3U2k2Jl8ZSWMrBXAi7WVLe65fGgZgFrSrAnrhPSTpBzQd9w7bT97kIFvbbiupMl+yrCH/+Xs300vKWKr9fPPo8LbytLB3j+5n1N0VPQm5AsVMGr5mtN+Kqalh/aV8XviFBEkKvvjPURsSDVmjbO2dgJX4HfQp1vOLYxi9LpUBrFH9SQ5Mbj7AVoX6LlcstXRi7xk+tYohHQuMKokiCFHmUCLJMuq1yDzbBMs9KQ5Rlr9Gm/TYfOqM0Oi2uCdhV6EreJxu56R9bH4UZtvKg5DfWaahlPMcu0b8MK068UWpOv2ky3HUCXqi94vjbt+eS+tHGl29FZNJ62einTd870uXedI53ecrNwSHapxyAPHSCZ4Gcyzo2yN/8MItj7Q+goDivdKhYQyjJTMaGtQhRYMwIB2xPZ7jms7CZ7v9pFgioF+Z66CM7A1ULQTTTRC5mshrfiGe3JaWefR3XMSyxmZukuliPAzHLS5M5c58Suk=
   app: tabitomo
   on:
     repo: 2016chubachi/tabitomo
@@ -19,3 +19,10 @@ notifications:
     - a1548sy@aiit.ac.jp
     - a1534yt@aiit.ac.jp
     - a1419ys@aiit.ac.jp
+    
+# travis ci セット手順
+# gem install travis --インストールしていない場合
+# travis login
+# heroku login
+# travis init   --.travis.ymlファイルを作成する
+# travis setup heroku
