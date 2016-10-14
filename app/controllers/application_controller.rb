@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  before_filter :set_locale
+  before_action :set_locale
 
   # 全リンクに locale 情報をセットする
   # @return [Hash] locale をキーとするハッシュ
-  def default_url_options(options={})
-    { :locale => I18n.locale }
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
   end
   
   # リンクの多言語化に対応する
