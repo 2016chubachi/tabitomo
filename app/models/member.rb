@@ -4,9 +4,9 @@ class Member < ActiveRecord::Base
     has_many :booking_comments
     has_many :member_pictures
     #送信メッセージリレーション
-    has_many :send_msgs , :class => 'Message' , :foreign_key => 'sender'
+    has_many :send_msgs , :class => 'Message' , :foreign_key => 'sender', :foreign_type => "integer"
     #受信メッセージリレーション
-    has_many :receive_msgs , :class => 'Message' , :foreign_key => 'receiver'
+    has_many :receive_msgs , :class => 'Message' , :foreign_key => 'receiver', :foreign_type => "integer"
     has_one :traveler
     has_one :guide
 end
