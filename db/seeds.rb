@@ -2,7 +2,7 @@
 #データの作成は以下のファイルに作成
 #db/seeds/環境(development, production)/テーブル名称.rb
 #
-table_names = %w(global_codes language_skills status_masters)
+table_names = %w(language_skills status_masters)
 
 table_names.each do |table_name|
   path = Rails.root.join("db/seeds", Rails.env, table_name + ".rb")

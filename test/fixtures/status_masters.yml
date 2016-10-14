@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text: MyString
+  text_ja: MyString
+  text_en: MyString
+  text_ko: MyString
+  text_zh: MyString
 
 two:
-  text: MyString
+  text_ja: MyString
+  text_en: MyString
+  text_ko: MyString
+  text_zh: MyString
