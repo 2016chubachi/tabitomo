@@ -25,3 +25,8 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  #ローカルでproductionを実行する時利用
+  #username: postgres
+  #password: postgres
+  # RailsサーバとPostgreSQLサーバが同じ場合
+  #host: localhost
