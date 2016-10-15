@@ -138,10 +138,10 @@ ActiveRecord::Schema.define(version: 20161012074654) do
   create_table "messages", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
-    t.integer  "sender"
-    t.integer  "receiver"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "status_masters", force: :cascade do |t|
