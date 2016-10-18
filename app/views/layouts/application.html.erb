@@ -8,13 +8,14 @@
   <%= javascript_include_tag "i18n" %>
   <%= javascript_include_tag "translations" %>
   <%= csrf_meta_tags %>
-  
+
   <script type="text/javascript">
     I18n.defaultLocale = "<%= I18n.default_locale %>";
     I18n.locale = "<%= I18n.locale %>";
   </script>
 </head>
 <body>
+<div class="container">        <!-- 全体を囲むコンテナ -->
   <nav class="navbar navbar-default" role="navigation">
      <!-- Brand and to<a href="https://myekps1te.files.wordpress.com/2013/09/bootstrap3onrails.pdf">bootstrap3onRails</a>ggle get grouped for better mobile display -->
      <div class="navbar-header">
@@ -26,7 +27,7 @@
      </button>
      <a class="navbar-brand" href="#">Brand</a>
      </div>
-     
+
     <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse navbar-ex1-collapse">
      <ul class="nav navbar-nav">
@@ -64,6 +65,6 @@
      </div><!-- /.navbar-collapse -->
   </nav>
   <%= yield %>
-  
-  </body>
+</div>        <!-- 全体を囲むコンテナ -->    
+</body>
 </html>

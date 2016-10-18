@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  
-  get '/:locale' => 'top#index'
+
+  # get '/:locale' => 'top#index'
   root 'top#index'
-  
+
+  resources :user_reviews
+
   #scope "(:locale)", locale: /ja/ do
   #  resources :books
   #end
