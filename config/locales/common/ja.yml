@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  hello: "ja"
+  activerecord:
+    models:
+      user_review: レビュー
+      booking_schedules: 予約詳細
+    attributes:
+      user_review:
+        star_count: 評価
+        title: タイトル
+        detail: 詳細
+      booking_schedules:
+        traveler_count: 人数
+        traveler_location: 場所
+        traveler_date: 日程
