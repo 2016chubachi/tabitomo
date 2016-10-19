@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+#gitの管理から除外、自動で更新されるから
+/public/javascripts/translations.js

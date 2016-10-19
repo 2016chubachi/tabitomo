@@ -3,7 +3,7 @@ class CreateBookingSchedules < ActiveRecord::Migration
     create_table :booking_schedules do |t|
       t.integer :booking_id
       t.integer :traveler_count
-      t.string :traveler_location
+      t.integer :city_master_id
       t.datetime :traveler_date
 
       t.timestamps null: false
