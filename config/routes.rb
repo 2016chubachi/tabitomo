@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   #国際化方法纏めサイト
   #http://ruby-rails.hatenadiary.com/entry/20150226/1424937175
   #ルーティング説明ページ
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #rootを設定して、root_path使ったらurl⇒https://tabitomo-takeshitou.c9users.io/?locale=jaになってしまい
   #root 'top#index'
   
+  resources :user_reviews
 
   
   #scope "(:locale)", locale: /ja/ do
