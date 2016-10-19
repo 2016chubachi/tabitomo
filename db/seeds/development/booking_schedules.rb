@@ -4,27 +4,27 @@
 BookingSchedule.create(
   booking_id: 1,
   traveler_count: 2,
-  traveler_location: "Tokyo", #参照にしたら変更する
+  city_master_id: 1, #参照にしたら変更する
   traveler_date: Date.today
 )
 
 BookingSchedule.create(
   booking_id: 1,
   traveler_count: 2,
-  traveler_location: "Tokyo", #参照にしたら変更する
+  city_master_id: 1, #参照にしたら変更する
   traveler_date: Date.today + 1
 )
 
 BookingSchedule.create(
   booking_id: 2,
   traveler_count: 2,
-  traveler_location: "Kyoto", #参照にしたら変更する
+  city_master_id: 1, #参照にしたら変更する
   traveler_date: Date.today
 )
 
 BookingSchedule.create(
   booking_id: 2,
   traveler_count: 2,
-  traveler_location: "Kyoto", #参照にしたら変更する
+  city_master_id: 1, #参照にしたら変更する
   traveler_date: Date.today + 1
 )

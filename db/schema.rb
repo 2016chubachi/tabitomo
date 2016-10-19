@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 20161012074654) do
   create_table "booking_schedules", force: :cascade do |t|
     t.integer  "booking_id"
     t.integer  "traveler_count"
-    t.string   "traveler_location"
+    t.integer  "city_master_id"
     t.datetime "traveler_date"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.string   "status"
+    t.integer  "status_master_id"
     t.integer  "traveler_id"
     t.integer  "guide_id"
     t.string   "traveler_first_name"
