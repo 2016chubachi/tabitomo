@@ -33,3 +33,9 @@ ja:
         traveler_count: 人数
         traveler_location: 場所
         traveler_date: 日程
+  hello: "ja"
+  search_button: "検索"
+  search_place: "都市を入力してください"
+  login_link: "ログイン"
+  member_sigup_link: "ユーザー登録"
+  guide_sigup_link: "ガイド登録"

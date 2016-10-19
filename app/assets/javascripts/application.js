@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
@@ -18,3 +19,10 @@
 //= require i18n/translations
 //= require_tree .
 
+//言語切り替えがクリックされたとき、ドロップダウンメニューの選択の制御
+//該当言語の方はクリックできないようにする
+function language_click(){
+  $('#language_change + ul li').removeClass('disabled');
+  var lan_text = $('#language_change span:first-child').text();
+  $("#language_change + ul li :contains('"+ lan_text.trim() +"')").parent().addClass('disabled');
+}

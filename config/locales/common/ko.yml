@@ -21,3 +21,8 @@
 
 ko:
   hello: "ko"
+  search_button: "検索_ko"
+  search_place: "都市を入力してください_ko"
+  login_link: "ログイン_ko"
+  member_sigup_link: "ユーザー登録_ko"
+  guide_sigup_link: "ガイド登録_ko"

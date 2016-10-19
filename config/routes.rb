@@ -1,12 +1,25 @@
 Rails.application.routes.draw do
 
-  # get '/:locale' => 'top#index'
-  root 'top#index'
-
+  #国際化方法纏めサイト
+  #http://ruby-rails.hatenadiary.com/entry/20150226/1424937175
+  #ルーティング説明ページ
+  #http://railsguides.jp/routing.html
+  
+  #rootをわざと設定しない
+  #trootを設定して、top_path使ったらurl⇒https://tabitomo-takeshitou.c9users.io/jaが正しい
+  get '/(:locale)' => 'top#index', as: 'top'
+  #rootを設定して、root_path使ったらurl⇒https://tabitomo-takeshitou.c9users.io/?locale=jaになってしまい
+  #root 'top#index'
+  
   resources :user_reviews
 
+  
   #scope "(:locale)", locale: /ja/ do
   #  resources :books
+  #end
+  
+  #scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+  #  resources :posts, param: :slug
   #end
 
   # The priority is based upon order of creation: first created -> highest priority.
