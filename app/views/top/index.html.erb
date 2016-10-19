@@ -1,3 +1,69 @@
+<!-- スライドをレイアウトの[main_header]に入れる部-->
+<% content_for :main_header do %>
+  <%= render "slide_header" %>
+<% end %>
+<div class="row"> <!-- 1row  -->
+      <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail city-img-postion">
+          <img src="/assets/castle-01.jpg">
+          <div>
+            <h2>Tokyo</h2>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail city-img-postion">
+          <img src="/assets/castle-02.jpg">
+            <div>
+              <h2>Kyoto</h2>
+            </div>
+        </div>
+      </div>
+    
+      <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail city-img-postion">
+          <img src="/assets/castle-03.jpg">
+            <div>
+              <h2>Nara</h2>
+            </div>
+        </div>
+      </div>
+    </div> <!-- 1row  -->
+<div class="row">   <!-- 2row  -->
+      <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail city-img-postion">
+          <img src="/assets/castle-04.jpg">
+            <div>
+              <h2>Hiroshima</h2>
+            </div>
+        </div>
+      </div>
+    
+      <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail city-img-postion">
+          <img src="/assets/castle-05.jpg">
+            <div>
+              <h2>Okinawa</h2>
+            </div>
+        </div>
+      </div>
+    
+      <div class="col-xs-12 col-sm-4">
+        <div class="thumbnail city-img-postion">
+          <img src="/assets/castle-06.jpg">
+            <div class="text-center text-primary">
+              <h2>Hokkaido</h2>
+            </div>
+        </div>
+      </div>
+    
+    </div> <!-- 2row  -->
+    
+
 <h1>Top#index</h1>
 <p>Find me in app/views/top/index.html.erb</p>
 <p><%= t('hello') %></p>
+<%= link_to("TOPへ",top_path)%>
+<%= link_to_if params[:locale] != 'ja', '日本語',  url_for(controller: 'top', action: 'index', locale: 'ja') %> |
+<%= link_to_if params[:locale] != 'en',  'English', url_for(controller: 'top', action: 'index', locale: 'en') %>

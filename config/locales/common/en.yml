@@ -21,3 +21,8 @@
 
 en:
   hello: "en"
+  search_button: "Search"
+  search_place: "都市を入力してください_en"
+  login_link: "ログイン_en"
+  member_sigup_link: "ユーザー登録_en"
+  guide_sigup_link: "ガイド登録_en"

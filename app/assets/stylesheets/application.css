@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .slide-image{
+   width:100% !important;
+   height: 300px !important;
+ }
+ 
+ .city-img-postion{
+   position: relative;
+ }
+ 
+.city-img-postion > div:first-of-type{
+  position: absolute;
+  top:30%;
+  left: 35%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+.margin-bottom-20{
+  margin-bottom:20px;
+}
