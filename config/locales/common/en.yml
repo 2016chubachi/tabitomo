@@ -26,3 +26,7 @@ en:
   login_link: "ログイン_en"
   member_sigup_link: "ユーザー登録_en"
   guide_sigup_link: "ガイド登録_en"
+  tab_booking: "Booking"
+  tab_in_message: "In Message"
+  tab_out_message: "Out Message"
+  tab_profile: "Profile"

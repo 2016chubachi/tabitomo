@@ -39,3 +39,7 @@ ja:
   login_link: "ログイン"
   member_sigup_link: "ユーザー登録"
   guide_sigup_link: "ガイド登録"
+  tab_booking: "予約"
+  tab_in_message: "受信メッセージ"
+  tab_out_message: "送信メッセージ"
+  tab_profile: "プロフィール"
