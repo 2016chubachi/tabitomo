@@ -26,3 +26,7 @@ ko:
   login_link: "ログイン_ko"
   member_sigup_link: "ユーザー登録_ko"
   guide_sigup_link: "ガイド登録_ko"
+  tab_booking: "Booking_ko"
+  tab_in_message: "In Message_ko"
+  tab_out_message: "Out Message_ko"
+  tab_profile: "Profile_ko"

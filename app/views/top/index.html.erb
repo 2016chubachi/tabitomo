@@ -1,8 +1,18 @@
 <!-- スライドをレイアウトの[main_header]に入れる部-->
 <% content_for :main_header do %>
-  <%= render "slide_header" %>
+  <%= render "slide_header" %> 
+  <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
+  <%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>
 <% end %>
-<div class="row"> <!-- 1row  -->
+
+<ul class="nav nav-tabs margin-bottom-20" role="tablist">
+  <li role="presentation" class="active"><a href="#tab_city" role="tab" data-toggle="tab">都市</a></li>
+  <li role="presentation"><a href="#tab_guide" role="tab" data-toggle="tab">ガイド</a></li>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="tab_city">
+    <div class="row"> <!-- 1row  -->
       <div class="col-xs-12 col-sm-4">
         <div class="thumbnail city-img-postion">
           <img src="/assets/castle-01.jpg">
@@ -30,35 +40,41 @@
         </div>
       </div>
     </div> <!-- 1row  -->
-<div class="row">   <!-- 2row  -->
-      <div class="col-xs-12 col-sm-4">
-        <div class="thumbnail city-img-postion">
-          <img src="/assets/castle-04.jpg">
-            <div>
-              <h2>Hiroshima</h2>
-            </div>
+    <div class="row">   <!-- 2row  -->
+  <div class="col-xs-12 col-sm-4">
+    <div class="thumbnail city-img-postion">
+      <img src="/assets/castle-04.jpg">
+        <div>
+          <h2>Hiroshima</h2>
         </div>
-      </div>
-    
-      <div class="col-xs-12 col-sm-4">
-        <div class="thumbnail city-img-postion">
-          <img src="/assets/castle-05.jpg">
-            <div>
-              <h2>Okinawa</h2>
-            </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-4">
+    <div class="thumbnail city-img-postion">
+      <img src="/assets/castle-05.jpg">
+        <div>
+          <h2>Okinawa</h2>
         </div>
-      </div>
-    
-      <div class="col-xs-12 col-sm-4">
-        <div class="thumbnail city-img-postion">
-          <img src="/assets/castle-06.jpg">
-            <div class="text-center text-primary">
-              <h2>Hokkaido</h2>
-            </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-4">
+    <div class="thumbnail city-img-postion">
+      <img src="/assets/castle-06.jpg">
+        <div class="text-center text-primary">
+          <h2>Hokkaido</h2>
         </div>
-      </div>
+    </div>
+  </div>
     
     </div> <!-- 2row  -->
+  </div>
+  <div role="tabpanel" class="tab-pane" id="tab_guide">
+    ガイドを表示するかもしれない
+  </div>
+</div>
+
     
 
 <h1>Top#index</h1>

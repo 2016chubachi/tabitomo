@@ -26,3 +26,8 @@ notifications:
 # heroku login
 # travis init   --.travis.ymlファイルを作成する
 # travis setup heroku
+
+# heroku 本番環境postgreSQLリセットリセットコマンド
+# heroku pg:reset DATABASE --app tabitomo --confirm tabitomo
+# heroku run rake db:migrate --app tabitomo
+# heroku run rake db:seed --app tabitomo
