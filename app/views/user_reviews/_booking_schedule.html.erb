@@ -1,0 +1,28 @@
+<div class="text-primary">
+  <h3>
+    <% if @UserReview.booking.present? %>
+      <%= @UserReview.booking.guide.member.last_name + " "+ @UserReview.booking.guide.member.first_name %>
+    <% end %>
+  </h3>
+</div>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th><%= t("activerecord.attributes.booking_schedule.traveler_date") %></th>
+      <th><%= t("activerecord.attributes.booking_schedule.traveler_count") %></th>
+      <th><%= t("activerecord.attributes.booking_schedule.traveler_location") %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if @UserReview.booking.present? %>
+    <% @UserReview.booking.booking_schedules.each do |i| %>
+      <tr>
+        <td><%= i.traveler_date.strftime("%Y/%m/%d") %></td>
+        <td><%= i.traveler_count %></td>
+        <td><%= i.city_master.send("text_#{I18n.locale}") %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
