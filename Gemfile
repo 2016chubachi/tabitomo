@@ -36,7 +36,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'rails-i18n'
 
 # javascriptのi18n対応
-gem "i18n-js" 
+gem "i18n-js"
 
 # for create test members.
 gem 'faker',                '1.6.5'
@@ -49,6 +49,13 @@ gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# User_registration
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
