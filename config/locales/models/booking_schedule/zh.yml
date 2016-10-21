@@ -19,14 +19,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ja: 
-  hello: "ja"
-  search_button: "検索"
-  search_place: "都市を入力してください"
-  login_link: "ログイン"
-  member_sigup_link: "ユーザー登録"
-  guide_sigup_link: "ガイド登録"
-  tab_booking: "予約"
-  tab_in_message: "受信メッセージ"
-  tab_out_message: "送信メッセージ"
-  tab_profile: "プロフィール"
+zh:
+  activerecord:
+    models:
+      booking_schedule:
+    attributes:
+      booking_schedule:
+        traveler_count:
+        traveler_location:
+        traveler_date:
