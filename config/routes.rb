@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :members
   #国際化方法纏めサイト
   #http://ruby-rails.hatenadiary.com/entry/20150226/1424937175
   #ルーティング説明ページ

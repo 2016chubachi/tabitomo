@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012074654) do
+ActiveRecord::Schema.define(version: 20161021105301) do
 
   create_table "booking_comments", force: :cascade do |t|
     t.integer  "member_id"
@@ -126,14 +126,26 @@ ActiveRecord::Schema.define(version: 20161012074654) do
   create_table "members", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
     t.string   "password"
     t.integer  "country_id"
     t.string   "telphone"
     t.integer  "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
+
+  add_index "members", ["email"], name: "index_members_on_email", unique: true
+  add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
 
   create_table "messages", force: :cascade do |t|
     t.string   "title"
