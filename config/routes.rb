@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
    resources :user_reviews
+   resources :guides
    devise_for :members
   end
 
