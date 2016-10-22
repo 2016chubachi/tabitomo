@@ -16,11 +16,21 @@ Rails.application.routes.draw do
    resources :user_reviews
   #  devise_for :members
 
-      Rails.application.routes.draw do
-        devise_for :members, controllers: {
-          sessions: 'members/sessions'
-      }
-    end
+    #   # Rails.application.routes.draw do
+    #   #   devise_for :members, controllers: {
+    #   #     sessions: 'members/sessions'
+    #   # }
+    # end
+    devise_for :members, :controllers => {
+     :registrations => 'members/registrations',
+     :sessions => 'members/sessions'
+   }
+
+   devise_scope :user do
+     get "sign_in", :to => "members/sessions#new"
+     get "sign_out", :to => "members/sessions#destroy" 
+   end
+
   end
 
 
