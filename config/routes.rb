@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
    resources :user_reviews
+   resources :guides
+   
   #  devise_for :members
 
     #   # Rails.application.routes.draw do
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
 
    devise_scope :user do
      get "sign_in", :to => "members/sessions#new"
-     get "sign_out", :to => "members/sessions#destroy" 
+     get "sign_out", :to => "members/sessions#destroy"
    end
 
   end
