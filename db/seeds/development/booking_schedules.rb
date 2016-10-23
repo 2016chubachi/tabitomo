@@ -28,3 +28,17 @@ BookingSchedule.create(
   city_master_id: 1, #参照にしたら変更する
   traveler_date: Date.today + 1
 )
+
+BookingSchedule.create(
+  booking_id: 3,
+  traveler_count: 2,
+  city_master_id: 1, #参照にしたら変更する
+  traveler_date: Date.today
+)
+
+BookingSchedule.create(
+  booking_id: 3,
+  traveler_count: 2,
+  city_master_id: 1, #参照にしたら変更する
+  traveler_date: Date.today + 1
+)
