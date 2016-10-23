@@ -16,7 +16,7 @@
   </thead>
   <tbody>
   <% if @UserReview.booking.present? %>
-    <% @UserReview.booking.booking_schedules.each do |i| %>
+    <% @UserReview.booking.booking_schedules.order(:traveler_date).each do |i| %>
       <tr>
         <td><%= i.traveler_date.strftime("%Y/%m/%d") %></td>
         <td><%= i.traveler_count %></td>
