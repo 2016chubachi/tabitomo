@@ -43,7 +43,7 @@ class UserReviewsController < ApplicationController
 
   private
   def user_review_params
-    params.require(:user_review).permit(:star_count, :title, :detail)
+    params.require(:user_review).permit(:star_master_id, :title, :detail)
   end
 
 end

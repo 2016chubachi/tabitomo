@@ -25,6 +25,6 @@ en:
       user_review:
     attributes:
       user_review:
-        star_count: Evaluation
+        star_master_id: Evaluation
         title: Title
         detail: Details
