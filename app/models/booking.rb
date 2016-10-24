@@ -5,5 +5,5 @@ class Booking < ActiveRecord::Base
 
     has_many :booking_comments
     has_many :booking_schedules
-    has_many :user_reviews
+    has_one :user_review
 end
