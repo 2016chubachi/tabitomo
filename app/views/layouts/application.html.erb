@@ -18,7 +18,7 @@
 </head>
 <body>
   <!--ヘッダメニューバー -->
-  <header class="container">
+  <header id="layout_header" class="container">
     <div class="row">
       <div class="col-sm-12">
       <nav class="navbar navbar-default">
@@ -66,7 +66,7 @@
     </div>
   </header>
   
-  <main>
+  <main id="layout_main">
     <div class="container margin-bottom-20">
       <!--コンテンツのヘッダー -->
       <%= yield :main_header%>
@@ -77,7 +77,7 @@
     </div>
   </main>
   <!--フーター内容 -->
-  <footer>
+  <footer id="layout_footer">
     <div class="page-footer">
       <div class="container">
         <div class="row">
@@ -93,6 +93,19 @@
         </div>
       </div>
     </div>
+    <script>
+      jQuery(function($){
+        $(window).on("load resize",function(){
+          var innerHeight = $(window).height();
+          var bodyHeight = $("body").height();
+          if(innerHeight > bodyHeight){
+            var height = innerHeight - bodyHeight + $("#layout_main").height();
+            $("#layout_main").css("min-height", height + "px");
+            $("#layout_main").height(height);
+          }
+        });
+      });
+    </script>
   </footer>
   </body>
 </html>
