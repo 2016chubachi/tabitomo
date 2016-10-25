@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021105301) do
+ActiveRecord::Schema.define(version: 20161024131330) do
 
   create_table "booking_comments", force: :cascade do |t|
     t.integer  "member_id"
@@ -156,6 +156,13 @@ ActiveRecord::Schema.define(version: 20161021105301) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "star_masters", force: :cascade do |t|
+    t.string   "pictype"
+    t.binary   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "status_masters", force: :cascade do |t|
     t.string   "text_ja"
     t.string   "text_en"
@@ -172,12 +179,12 @@ ActiveRecord::Schema.define(version: 20161021105301) do
   end
 
   create_table "user_reviews", force: :cascade do |t|
-    t.integer  "star_count"
+    t.integer  "star_master_id"
     t.string   "title"
     t.string   "detail"
     t.integer  "booking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

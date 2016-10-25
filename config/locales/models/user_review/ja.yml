@@ -26,7 +26,7 @@ ja:
       # booking_schedules: 
     attributes:
       user_review:
-        star_count: 評価
+        star_master_id: 評価
         title: タイトル
         detail: 詳細
       # booking_schedules:
