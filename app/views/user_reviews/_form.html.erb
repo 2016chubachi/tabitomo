@@ -4,18 +4,7 @@
   </div>
   <div class="col-sm-10">
     <% if params[:action] == "show" %>
-      <% case @UserReview.star_master_id %>
-      <% when 1%>
-        <img src="/assets/ico_grade6_1.gif">
-      <% when 2 %>
-        <img src="/assets/ico_grade6_2.gif">
-      <% when 3 %>
-        <img src="/assets/ico_grade6_3.gif">
-      <% when 4 %>
-        <img src="/assets/ico_grade6_4.gif">
-      <% when 5 %>
-        <img src="/assets/ico_grade6_5.gif">
-      <% end %>
+      <%= star_image_tag(@UserReview.star_master)%>
     <% else %>
       <%= f.radio_button :star_master_id, 1,  class: "radio-inline" %>星1つ
       <%= f.radio_button :star_master_id, 2,  class: "radio-inline" %>星2つ

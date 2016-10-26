@@ -4,6 +4,11 @@ class UserReviewsController < ApplicationController
 
   def show
     @UserReview = UserReview.find(params[:id])
+    if params[:format].in?(["jpg","png","gif"])
+      send_star
+    else
+      render "show"
+    end
   end
 
   def new
@@ -44,6 +49,10 @@ class UserReviewsController < ApplicationController
   private
   def user_review_params
     params.require(:user_review).permit(:star_master_id, :title, :detail)
+  end
+
+  def send_star
+    send_data @UserReview.star_master.image, type: @UserReview.star_master.pictype, disposition: "inline"
   end
 
 end

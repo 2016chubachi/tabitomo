@@ -9,8 +9,8 @@
             <%= booking.guide.member.last_name + " " + booking.guide.member.first_name %>
           </h3>
           <% if booking.user_review.present? %>
-            <%= booking.user_review.star_master_id %>
-            <%= link_to "更新", edit_user_review_path(booking.user_review),
+            <%= link_to star_image_tag(booking.user_review.star_master),  edit_user_review_path(booking.user_review) %>
+            <%#= link_to "更新", edit_user_review_path(booking.user_review),
             class: "btn btn-primary"  %>
           <% else %>
             <%= link_to image_tag("/assets/ico_grade6_0.gif"), new_user_review_path %>
