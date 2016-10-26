@@ -13,6 +13,7 @@ Rails.application.routes.draw do
    resources :guides
    resources :traveler_bookings
    resources :search_guides, :only => [:index]
+   resources :star_masters, :only => [:show]
 
   #  devise_for :members
 
