@@ -1,2 +1,39 @@
-<h1>SearchGuides#index</h1>
-<p>Find me in app/views/search_guides/index.html.erb</p>
+<%= form_for(@search_guide, html: { method: :get,class: "form-horizontal",role: 'form',id: "search_guide_form"}) do |f| %>
+  <%= render "search_form", f: f %>
+<% end %>
+
+<h1>検索結果</h1>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<table class="table table-list ">-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>販売状況</th>-->
+<!--      <th>商品コード</th>-->
+<!--      <th>商品名</th>-->
+<!--      <th>販売価格</th>-->
+<!--      <th>仕入原価</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  % @products.each do |product| %>-->
+<!--    <tbody>-->
+<!--      <tr>-->
+<!--        <td>%= product.sales_condition %> </td>-->
+<!--        <td>%= product.code %></td>-->
+<!--        <td>%= product.name %></td>-->
+<!--        <td>%= product.display_price %></td>-->
+<!--        <td>%= product.display_purchase_cost %></td>-->
+<!--      </tr>-->
+<!--    </tbody>-->
+<!--  % end %>-->
+<!--</table>-->
