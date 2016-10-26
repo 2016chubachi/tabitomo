@@ -1,0 +1,56 @@
+<%= render layout: 'search_box' do %>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-4 control-label" for="">ガイド都市</label>
+        <div class="col-sm-8">
+          <%= f.text_field :city, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="col-sm-4 control-label" for="">ライセンス</label>
+        <div class="col-sm-8">
+          <%= f.text_field :license, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-sm-6">
+      
+      <div class="form-group">
+        <label class="col-sm-4 control-label" for="">性別</label>
+        <div class="col-sm-8">
+          <%= f.text_field :gender, class: 'form-control' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 row text-center">
+      <button id="btnSearchClear" class="btn btn-default btn-left">クリア</button>
+      <button class="btn btn-default btn-primary" type="submit" name="top_search">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <%= t('search_button')%>
+      </button>
+      <script>
+        jQuery(function($){
+          $("#btnSearchClear").on("click",function()
+          {
+            $("#search_guide_form input[type!='hidden']").attr("value",function(index,elem){
+              return "";
+            });
+            return false;
+          });
+        });
+      </script>
+    </div>
+  </div>
+ 
+
+<% end %>

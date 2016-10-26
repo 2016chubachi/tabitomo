@@ -20,5 +20,7 @@ class ApplicationController < ActionController::Base
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
     @language_name = LAN_NAMES[I18n.locale]
+    # topページとmenuバー検索フォームオブジェクト
+    @top_search_guide = Search::Guide.new
   end
 end
