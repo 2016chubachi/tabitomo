@@ -81,7 +81,7 @@ Rails.application.configure do
     host= 'tabitomo.herokuapp.com'
     config.action_mailer.default_url_options = { host: 'tabitomo.herokuapp.com' }
 
-  # mail setting
+  # mail setting for gmail.
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
