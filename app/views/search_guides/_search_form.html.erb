@@ -5,7 +5,8 @@
       <div class="form-group">
         <label class="col-sm-4 control-label" for="">ガイド都市</label>
         <div class="col-sm-8">
-          <%= f.text_field :city, class: 'form-control' %>
+          <!--%= f.text_field :city, class: 'form-control' %>-->
+          <%= f.select :city, @city_masters.map{|t| [t.send("text_#{I18n.locale}"), t.id]},{include_blank: true},{class: "form-control"} %>
         </div>
       </div>
     </div>
@@ -13,7 +14,13 @@
       <div class="form-group">
         <label class="col-sm-4 control-label" for="">ライセンス</label>
         <div class="col-sm-8">
-          <%= f.text_field :license, class: 'form-control' %>
+          <!--%= f.text_field :license, class: 'form-control' %>-->
+          <label class="checkbox-inline">
+            <%= f.check_box :license_has,{},1,0%>有
+          </label>
+          <label class="checkbox-inline">
+            <%= f.check_box :license_not,{},1,0%>無
+          </label>
         </div>
       </div>
     </div>
@@ -26,7 +33,13 @@
       <div class="form-group">
         <label class="col-sm-4 control-label" for="">性別</label>
         <div class="col-sm-8">
-          <%= f.text_field :gender, class: 'form-control' %>
+          <!--%= f.text_field :gender, class: 'form-control' %>-->
+          <label class="checkbox-inline">
+            <%= f.check_box :gender_man,{},1,0%>男
+          </label>
+          <label class="checkbox-inline">
+            <%= f.check_box :gender_woman,{},1,0%>女
+          </label>
         </div>
       </div>
 
