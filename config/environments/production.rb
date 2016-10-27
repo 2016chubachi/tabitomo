@@ -91,4 +91,5 @@ Rails.application.configure do
       :password => "aA@2253880",
       :authentication => :plain,
       :enable_starttls_auto => true
+    }
 end

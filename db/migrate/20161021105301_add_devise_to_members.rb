@@ -32,7 +32,7 @@ class AddDeviseToMembers < ActiveRecord::Migration
 
 
       # Uncomment below if timestamps were not included in your original model.
-       t.timestamps null: false
+      # t.timestamps null: false
     end
 
     add_index :members, :email,                unique: true
