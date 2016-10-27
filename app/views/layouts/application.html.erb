@@ -33,13 +33,16 @@
               </button>
               <a class="navbar-brand" href="#">Tabitomo</a>
             </div>
-        
+
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><%= t('login_link')%></a></li>
                 <li><a href="#"><%= t('member_sigup_link')%></a></li>
                 <li><a href="#"><%= t('guide_sigup_link')%></a></li>
+                <li><% if member_signed_in? %>
+                <%= link_to "サインアウト", destroy_member_session_path, :method => :delete %>
+                <% end %></a></li>
                 <li class="dropdown">
                   <a id="language_change" href="#" onClick="language_click()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <span><%= @language_name%> </span>
@@ -66,7 +69,7 @@
       </div>
     </div>
   </header>
-  
+
   <main id="layout_main">
     <div class="container margin-bottom-20">
       <!--コンテンツのヘッダー -->
@@ -84,11 +87,11 @@
         <div class="row">
           <div class="col-sm-12">
             <div style="background-color:gray;">
-              footer content  <br> 
-              footer content  <br> 
               footer content  <br>
-              footer content  <br> 
-              footer content   
+              footer content  <br>
+              footer content  <br>
+              footer content  <br>
+              footer content
             </div>
           </div>
         </div>

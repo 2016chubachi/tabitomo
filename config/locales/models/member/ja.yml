@@ -25,8 +25,8 @@ ja:
       member:
     attributes:
       member:
-        first_name: 姓
-        last_name: 名
-        email: 電子メール 
+        first_name: 名
+        last_name: 性
+        email: 電子メール
         telphone: 電話番号
         gender: 性別
