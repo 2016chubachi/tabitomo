@@ -18,5 +18,9 @@
 #   telphone: MyString
 #   gender: 1
 mike:
+  last_name: "test01"
+  first_name: "test01"
   email: "sakurasolar@gmail.com"
   encrypted_password: <%= Devise::Encryptor.digest(Member, 'password') %>
+  country_id: 1
+  

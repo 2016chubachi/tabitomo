@@ -57,7 +57,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
 # Use rspec for test.
-gem 'rspec-rails'
+#gem 'rspec-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -70,9 +70,9 @@ group :development, :test do
   gem 'pry-stack_explorer' # スタックをたどれる
 end
 
-group :test do
-  gem 'capybara'
-end
+# group :test do
+#   gem 'capybara'
+# end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
