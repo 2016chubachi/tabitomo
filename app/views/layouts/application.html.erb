@@ -37,8 +37,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><%= t('login_link')%></a></li>
-                <li><a href="#"><%= t('member_sigup_link')%></a></li>
+                <!-- <li><a href="/members/sign_in"><%= t('login_link')%></a></li> -->
+                <li><%= link_to "ログイン", new_member_session_path, :method => :new %></li>
                 <li><a href="#"><%= t('guide_sigup_link')%></a></li>
                 <li><% if member_signed_in? %>
                 <%= link_to "サインアウト", destroy_member_session_path, :method => :delete %>
@@ -51,7 +51,7 @@
                   <ul class="dropdown-menu" style="min-width: 100px" role="memu">
                     <li><%= link_to('日本語', top_path(locale: 'ja')  ) %></li>
                     <li><%= link_to('English', top_path(locale: 'en')) %></li>
-                    <li><%= link_to('韓国語', top_path(locale: 'ko')) %></li>
+                    <li><%= link_to('한국어', top_path(locale: 'ko')) %></li>
                     <li><%= link_to('中文', top_path(locale: 'zh')) %></li>
                   </ul>
                 </li>
