@@ -54,9 +54,9 @@
                 </li>
               </ul>
               <%= form_for(@top_search_guide, url: search_guides_path, html: { method: :get, class: 'navbar-form navbar-right', role: 'search' }) do |f| %>
-                <%= f.text_field :city, class: 'form-control',:placeholder => t('search_place'),:size => "30" %>
-                <!--<%= submit_tag t('search_button'),:name => "top_search",:class => "btn btn-primary"%>-->
-                <button class="btn btn-default btn-primary" type="submit" name="top_search">
+                <%= f.text_field :city, class: 'form-control',:placeholder => t('search_place'),:size => "30",:id => "txtNavSearchCity" %>
+                <!--%= submit_tag t('search_button'),:name => "top_search",:class => "btn btn-primary"%>-->
+                <button class="btn btn-default btn-primary" type="submit" name="nav_search">
                   <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <%= t('search_button')%>
                 </button>
               <% end %>
@@ -101,7 +101,6 @@
           var bodyHeight = $("body").height();
           if(innerHeight > bodyHeight){
             var height = innerHeight - bodyHeight + $("#layout_main").height();
-            $("#layout_main").css("min-height", height + "px");
             $("#layout_main").height(height);
           }
         });
