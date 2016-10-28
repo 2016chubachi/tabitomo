@@ -37,7 +37,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><%= t('login_link')%></a></li>
+                <!-- <li><a href="/members/sign_in"><%= t('login_link')%></a></li> -->
+                <li><%= link_to "t('login_link')", new_member_session_path, :method => :new %><%= t('login_link')%></li>
                 <li><a href="#"><%= t('member_sigup_link')%></a></li>
                 <li><a href="#"><%= t('guide_sigup_link')%></a></li>
                 <li><% if member_signed_in? %>

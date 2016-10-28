@@ -1,19 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  password: MyString
-  country_id: 1
-  telphone: MyString
-  gender: 1
-
-two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  password: MyString
-  country_id: 1
-  telphone: MyString
-  gender: 1
+# one:
+#   first_name: MyString
+#   last_name: MyString
+#   email: MyString
+#   password: MyString
+#   country_id: 1
+#   telphone: MyString
+#   gender: 1
+#
+# two:
+#   first_name: MyString
+#   last_name: MyString
+#   email: MyString
+#   password: MyString
+#   country_id: 1
+#   telphone: MyString
+#   gender: 1
+mike:
+  email: "sakurasolar@gmail.com"
+  encrypted_password: <%= Devise::Encryptor.digest(Member, 'password') %>
