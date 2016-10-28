@@ -1,4 +1,4 @@
-#ステータスマスタ
+#評価マスタ
 1.upto(5) do |idx|
   path = Rails.root.join("db/seeds", Rails.env, "ico_grade6_#{idx}.gif")
   file = Rack::Test::UploadedFile.new(path, "image/gif", true).read

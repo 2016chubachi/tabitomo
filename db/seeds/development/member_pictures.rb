@@ -1,10 +1,11 @@
-#評価マスタ
-1.upto(5) do |idx|
-  path = Rails.root.join("db/seeds", Rails.env, "ico_grade6_#{idx}.gif")
-  file = Rack::Test::UploadedFile.new(path, "image/gif", true).read
-  StarMaster.create(
+#会員写真
+1.upto(6) do |idx|
+  path = Rails.root.join("db/seeds", Rails.env, "member#{idx % 3 + 1}.jpg")
+  file = Rack::Test::UploadedFile.new(path, "image/jpeg", true).read
+  MemberPicture.create(
     image: file,
-    pictype: "image/gif"
+    pictype: "image/jpeg",
+    member_id: idx
   )
 end
 

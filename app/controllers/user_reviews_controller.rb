@@ -51,8 +51,8 @@ class UserReviewsController < ApplicationController
     params.require(:user_review).permit(:star_master_id, :title, :detail)
   end
 
-  def send_star
-    send_data @UserReview.star_master.image, type: @UserReview.star_master.pictype, disposition: "inline"
-  end
+  # def send_star
+  #   send_data @UserReview.star_master.image, type: @UserReview.star_master.pictype, disposition: "inline"
+  # end
 
 end

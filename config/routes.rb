@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   #http://ruby-rails.hatenadiary.com/entry/20150226/1424937175
   #ルーティング説明ページ
   #http://railsguides.jp/routing.html
-  
+
   #rootをわざと設定しない
   #trootを設定して、top_path使ったらurl⇒https://tabitomo-takeshitou.c9users.io/jaが正しい
   get '/(:locale)' => 'top#index', as: 'top', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
    resources :traveler_bookings
    resources :search_guides, :only => [:index]
    resources :star_masters, :only => [:show]
+   resources :member_pictures, :only => [:show]
 
   #  devise_for :members
 
