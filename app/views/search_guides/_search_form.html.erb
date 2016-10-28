@@ -16,10 +16,10 @@
         <div class="col-sm-8">
           <!--%= f.text_field :license, class: 'form-control' %>-->
           <label class="checkbox-inline">
-            <%= f.check_box :license_has,{},1,0%>有
+            <%= f.check_box :license_has%>有
           </label>
           <label class="checkbox-inline">
-            <%= f.check_box :license_not,{},1,0%>無
+            <%= f.check_box :license_not%>無
           </label>
         </div>
       </div>
@@ -35,10 +35,10 @@
         <div class="col-sm-8">
           <!--%= f.text_field :gender, class: 'form-control' %>-->
           <label class="checkbox-inline">
-            <%= f.check_box :gender_man,{},1,0%>男
+            <%= f.check_box :gender_man%>男
           </label>
           <label class="checkbox-inline">
-            <%= f.check_box :gender_woman,{},1,0%>女
+            <%= f.check_box :gender_woman%>女
           </label>
         </div>
       </div>
@@ -55,9 +55,16 @@
         jQuery(function($){
           $("#btnSearchClear").on("click",function()
           {
-            $("#search_guide_form input[type!='hidden']").attr("value",function(index,elem){
+            // テキストボックスの値をクリア
+            $("#search_guide_form input[type='text']").attr("value",function(index,elem){
               return "";
             });
+            // チェックボックスの値をクリア
+            $("#search_guide_form input[type='checkbox']").prop("checked",function(index,elem){
+              return false;
+            });
+            // selectの選択をクリア
+            $("#search_guide_form select").val("");
             return false;
           });
         });
