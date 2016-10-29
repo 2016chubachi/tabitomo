@@ -11,7 +11,7 @@
     <div class="col-sm-4 col-md-3">
       <div class="thumbnail">
         <!--ガイド詳細ページ遷移-->
-        <%= link_to(member_image_tag(guide.member,{width: "242px",height: "200px",alt: "..."}),"#") %>
+        <%= link_to(member_image_tag(guide.member),"#") %>
         <div class="caption">
           <h3><%= guide.member.last_name + "  " + guide.member.first_name%></h3>
           <p><%= "経験年数：" + guide.experience.to_s + "年"%></p>
