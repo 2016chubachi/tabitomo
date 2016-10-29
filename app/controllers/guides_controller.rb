@@ -1,6 +1,47 @@
 class GuidesController < ApplicationController
 
   def show
+    #ガイド登録画面はmy page,自分のuserid and emailaddressは変更できない
+    #binding.pry
+    @guide = Guide.find(params[:id])
 
   end
+
+  def new
+    @guide = Guide.new
+  end
+
+  def update
+    @guide = Guide.find(params[:id])
+
+    if @guide.update(guide_params)
+      redirect_to @guide
+    else
+      render 'edit'
+    end
+  end
+  private
+    def guide_params
+      params.require(:article).permit(:profile, :guide_service, :guide_transportation,
+      :guide_interest)
+    end
+
+  def edit
+    @guide = Guide.find(params[:id])
+  end
+
+  def create
+    @guide = Guide.new(guide_params)
+
+    @guide.save
+    redirect_to @guide
+
+    #render plain: params[:guide].inspect
+  end
+
+  private
+     def guide_params
+       params.require(:guide).permit(:profile, :guide_service, :guide_transportation,
+       :guide_interest)
+     end
 end

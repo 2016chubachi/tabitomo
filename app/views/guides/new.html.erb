@@ -8,7 +8,6 @@
 
     <div class="tab-pane" id="profile">
       <!--form role="form"-->
-      <!--% binding.pry %-->
       <%= form_for @guide do |f| %>
       <div class="row clearfix">
 
@@ -46,13 +45,10 @@
               <!--%= f.text_area :guide_cities, id:'g_city', rows: 3, :class => "form-control" %>
             </div>
         </div-->
-        </div>
 
 
 
-
-
-            <%= submit_tag "Update", :class => "btn btn-default" %>
+            <%= submit_tag "Sumbit", :class => "btn btn-default" %>
             <!--button type="submit" class="">Submit</button>
             <button type="submit" class="btn btn-default">変更</button-->
       <% end %><!--/form-->
