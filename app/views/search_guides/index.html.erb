@@ -13,7 +13,7 @@
         <!--ガイド詳細ページ遷移-->
         <%= link_to(member_image_tag(guide.member),"#") %>
         <div class="caption">
-          <h3><%= guide.member.last_name + "  " + guide.member.first_name%></h3>
+          <h3><%= guide.member.first_name + "  " + guide.member.last_name%></h3>
           <p><%= "経験年数：" + guide.experience.to_s + "年"%></p>
           <p><%= "ライセンス：" + (guide.license_flg.to_s === "1" ? "有" : "無") %></p>
           <p><%= "ガイド都市：" + guide.guide_cities[0].city_master.text_ja %></p>
