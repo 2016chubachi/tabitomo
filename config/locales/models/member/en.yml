@@ -27,7 +27,7 @@ en:
       member:
         first_name: 姓
         last_name: 名
-        email: 電子メール 
+        email: 電子メール
+        password: パスワード
         telphone: 電話番号
         gender: 性別
-
