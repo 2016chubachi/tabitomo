@@ -1,4 +1,4 @@
-#メンバー
+# #メンバー
 # Member.create(
 #   first_name:  "Shuhei",
 #   last_name:  "Yamamoto",
