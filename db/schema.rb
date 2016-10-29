@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024131330) do
+ActiveRecord::Schema.define(version: 20161029065601) do
 
   create_table "booking_comments", force: :cascade do |t|
     t.integer  "member_id"
@@ -149,6 +149,7 @@ ActiveRecord::Schema.define(version: 20161024131330) do
     t.integer  "failed_attempts",        default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.boolean  "guide"
   end
 
   add_index "members", ["confirmation_token"], name: "index_members_on_confirmation_token", unique: true
