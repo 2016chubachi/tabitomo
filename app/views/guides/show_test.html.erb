@@ -1,0 +1,157 @@
+<!-- スライドをレイアウトの[main_header]に入れる部-->
+<% content_for :main_header do %>
+    <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
+    <%= render partial: "shared/tab_header", locals: {tab_id: 'profile'} %>
+<% end %>
+
+<div class="container">        <!-- 全体を囲むコンテナ -->
+
+    <div class="tab-pane" id="profile">
+      <form role="form">
+
+      <div class="row clearfix">
+
+        <div class="col-md-8 column">
+
+            <div class="form-group">
+              <label for="profile_dtls"><h4>プロフィール</h4></label>
+              <!--textarea class="form-control" rows="3" id="profile_dtls"><!--% @guide.guide_profile %></textarea-->
+              <%= text_area_tag 'profile_dtls', "@guide.guide_profile", rows: 3, :class => "form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="g_service"><h4>ガイド先のサンプル</h4></label>
+              <!--textarea class="form-control" rows="3" id="g_service"><!--% @guide.guide_service %></textarea-->
+              <%= text_area_tag 'g_service', "@guide.guide_service", rows: 3, :class => "form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="g_traffic_way"><h4>ガイド先の交通手段</h4></label>
+              <!--textarea class="form-control" rows="3" id="g_traffic_way"><!--% @guide.guide_transportation %></textarea-->
+              <%= text_area_tag 'g_traffic_way', "@guide.guide_transportation", rows: 3, :class => "form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="g_intresting"><h4>ガイド先の趣味、興味</h4></label>
+              <!--textarea class="form-control" rows="3" id="g_intresting"><!--% @guide.guide_interest %></textarea-->
+              <%= text_area_tag 'g_intresting', "@guide.guide_interest", rows: 3, :class => "form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="g_lng"><h4>ガイド言語　・　スキルレベル</h4></label>
+              <!--textarea class="form-control" rows="3" id="g_lng"></textarea-->
+              <%= text_area_tag 'g_lng', "@guide.guide_language", rows: 3, :class => "form-control" %>
+            </div>
+            <div class="form-group">
+              <label for="g_city"><h4>ガイド可能都市</h4></label>
+              <!--textarea class="form-control" rows="3" id="g_city"></textarea-->
+              <%= text_area_tag 'g_city', "@guide.guide_city", rows: 3, :class => "form-control" %>
+            </div>
+
+        </div>
+        <div class="col-md-4 column">
+          <br/>
+          <br>
+          <!--横のpersonal file-->
+          <div class="form-horizontal">
+            <div class="form-group">
+              <img src="woman.jpg" class="img-thumbnail help-block">
+              <label for="inputphoto">写真を選ぶ</label>
+              <%= file_field_tag(:inputphoto) %>
+              <p id="notice"><%= notice %></p>
+              <!--input type="file" id="inputphoto" />
+              <!--p class="help-block">
+                Example block-level help text here.
+              </p-->
+            </div>
+            <div class="form-group">
+              <label for="lastname" class="col-sm-3 control-label">姓</label>
+              <div class="col-sm-9">
+                <!--input type="text" class="form-control" id="lastname" placeholder="高橋"-->
+                <%= text_field_tag 'lastname', '高橋', :class => "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="firstname" class="col-sm-3 control-label">名</label>
+              <div class="col-sm-9">
+                <!--input type="text" class="form-control" id="firstname" placeholder="マイク"-->
+                <%= text_field_tag 'firstname', 'マイク', :class => "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="gender" class="col-sm-3 control-label">性別</label>
+              <div class="col-sm-9">
+                <!--select class="form-control" id="gender">
+                <option>男</option>
+                <option>女</option>
+              </select-->
+              <%= select_tag "gender", options_for_select({"男"=>"male","女"=>"female"}), :class => "form-control" %>
+            </div>
+            </div>
+            <div class="form-group">
+              <label for="telno" class="col-sm-3 control-label">電話</label>
+              <div class="col-sm-9">
+                <!--input type="tel" class="form-control" id="telno"-->
+                <%= telephone_field_tag 'telno', nil, :class => "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age" class="col-sm-3 control-label">生年</label>
+              <div class="col-sm-9">
+                <!--input type="date" class="form-control" id="age"><!--%= @guide.birth_year %-->
+                <%= month_field_tag 'age', nil, :class => "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-3 control-label">メール</label>
+              <div class="col-sm-9">
+                <!--input type="text" class="form-control" id="email" placeholder="takahashimike@gmail.com" readonly-->
+                <%= email_field_tag 'emailadd', 'takahashimike@gmail.com', :class => "form-control", :readonly => "ture" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="location" class="col-sm-3 control-label">居住国</label>
+              <div class="col-sm-9">
+                <!--input type="text" class="form-control" id="location" placeholder="日本"-->
+                <%= text_field_tag 'location', '日本', :class => "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="g_age" class="col-sm-4 control-label">ガイド経験年数</label>
+              <div class="col-sm-8">
+                <!--input type="text" class="form-control" id="g_age"><!--%= @guide.experience %-->
+                <%= text_field_tag 'g_age', nil, :class => "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="g_l" class="col-sm-4 control-label">ライセンス有無</label>
+              <div class="col-sm-8">
+                <%= select_tag "g_l", options_for_select({"有"=>"yih","無"=>"niht"}), include_blank: "選択して下さい", :class => "form-control" %>
+                <!--select class="form-control" id="g_l">
+                <option>有</option>
+                <option>無</option>
+              </select-->
+            </div>
+            </div>            <!--div class="form-group">
+              <label for="g_age"><h4>ガイド経験年数</h4></label>
+              <input type="text" class="form-control" rows="3" id="g_age"></input>
+            </div-->
+            <img src="../img/misa.jpg" class="img-responsive" alt="Cinque Terre">
+            <label for="input_license"><h4>写真を選ぶ</h4>
+            </label><!--input type="file" id="input_license" /-->
+            <%= file_field_tag(:input_license) %>
+            <p id="notice"><%= notice %></p>
+            <br>
+
+          </div>
+
+        </div>
+
+      </div>
+      <%= submit_tag "Sumbit", :class => "btn btn-default" %>
+      <%= submit_tag "Edit", :class => "btn btn-default" %>
+      <!--button type="submit" class="">Submit</button>
+      <button type="submit" class="btn btn-default">変更</button-->
+
+      </form>
+</div>  <!-- タブの中身-->
+
+</div>        <!-- 全体を囲むコンテナ -->
+<br>
+<br>
