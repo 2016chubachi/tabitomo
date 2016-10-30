@@ -1,3 +1,8 @@
+<% content_for :main_header do %>
+  <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
+  <%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>
+<% end %>
+
 <% @Bookings.each do |booking| %>
 <div class="row">
   <div class="col-xs-12 col-sm-3">
@@ -13,7 +18,8 @@
             <%#= link_to "更新", edit_user_review_path(booking.user_review),
             class: "btn btn-primary"  %>
           <% else %>
-            <%= link_to image_tag("/assets/ico_grade6_0.gif"), new_user_review_path %>
+            <!-- パラメーター：booking_id で次の画面に渡す-->
+            <%= link_to image_tag("/assets/ico_grade6_0.gif"), new_user_review_path(booking_id:   booking.id) %>
           <% end %>
         </div>
       </div>
