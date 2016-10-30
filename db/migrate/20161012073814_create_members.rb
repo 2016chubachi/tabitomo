@@ -7,6 +7,7 @@ class CreateMembers < ActiveRecord::Migration
       t.integer :country_id
       t.string :telphone
       t.integer :gender
+      t.string :hantei
 
       t.timestamps null: false
     end
