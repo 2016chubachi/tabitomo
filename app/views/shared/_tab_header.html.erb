@@ -1,22 +1,24 @@
-<div class="row">
-  <div class="col-sm-12">
-    <!-- Nav tabs -->
-    <ul id="header_tabs" class="nav nav-tabs">
-      <li role="booking"><%= link_to(t("tab_booking"), top_path(locale: 'ja')  ) %></li>
-      <li role="in_message"><%= link_to(t("tab_in_message"), top_path(locale: 'en')  ) %></li>
-      <li role="out_message"><%= link_to(t("tab_out_message"), top_path(locale: 'ko')  ) %></li>
-      <li role="profile"><%= link_to(t("tab_profile"), top_path(locale: 'zh')  ) %></li>
-      <script type="text/javascript">
-        jQuery(function($){
-          // タブの選択状態を解除
-          $('#header_tabs li').removeClass("active");
-          // 指定したタブを選択状態にする
-          $('#header_tabs li[role="<%= tab_id %>"]').addClass("active").find('a').click(function(){
-            // 該当タブをクリック不可にする
-            return false;
+<div class="container margin-bottom-20">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- Nav tabs -->
+      <ul id="header_tabs" class="nav nav-tabs">
+        <li role="booking"><%= link_to(t("tab_booking"), top_path(locale: 'ja')  ) %></li>
+        <li role="in_message"><%= link_to(t("tab_in_message"), top_path(locale: 'en')  ) %></li>
+        <li role="out_message"><%= link_to(t("tab_out_message"), top_path(locale: 'ko')  ) %></li>
+        <li role="profile"><%= link_to(t("tab_profile"), top_path(locale: 'zh')  ) %></li>
+        <script type="text/javascript">
+          jQuery(function($){
+            // タブの選択状態を解除
+            $('#header_tabs li').removeClass("active");
+            // 指定したタブを選択状態にする
+            $('#header_tabs li[role="<%= tab_id %>"]').addClass("active").find('a').click(function(){
+              // 該当タブをクリック不可にする
+              return false;
+            });
           });
-        });
-      </script>
-    </ul>
+        </script>
+      </ul>
+    </div>
   </div>
 </div>
