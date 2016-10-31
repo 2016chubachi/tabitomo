@@ -4,13 +4,33 @@ class Members::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   # def new
-  #   super
+  # super
   # end
 
   # POST /resource
   # def create
   #   super
   # end
+
+  # 会員の新規登録
+    def create
+      super
+      if resource.hantei == "true"
+          if resource.save
+            @guide = Guide.new()
+            @guide.member_id = resource.id
+            @guide.save
+          end
+      else
+        if resource.save
+          @traveler = Traveler.new()
+          @traveler.member_id = resource.id
+          @traveler.save
+        end
+      end
+
+    end
+
 
   # GET /resource/edit
   # def edit
