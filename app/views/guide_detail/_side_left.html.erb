@@ -1,0 +1,25 @@
+<div>
+  <hr>
+  <h2>プロフィル</h2>
+  <p><%= @guide.profile%></p>
+  <hr>
+  <h2>サンプル</h2>
+  <p><%= @guide.guide_service%></p>
+  <hr>
+  <h2>交通手段</h2>
+  <p><%= @guide.guide_transportation%></p>
+  <hr>
+  <h2>趣味興味</h2>
+  <p><%= @guide.guide_interest%></p>
+</div>
+<div>
+  <hr>
+  <h2>会員レビュー</h2>
+  <div>
+    <%= render "review_summary"%>
+  </div>
+  <div>
+    <h3>レビュー一覧</h3>
+    <%= render "review_list"%>
+  </div>
+</div>
