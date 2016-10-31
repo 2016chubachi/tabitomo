@@ -29,5 +29,6 @@ ja:
         last_name: 性
         email: 電子メール
         password: パスワード
+        remember_me:
         telphone: 電話番号
         gender: 性別

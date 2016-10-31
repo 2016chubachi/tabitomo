@@ -25,9 +25,10 @@ ko:
       member:
     attributes:
       member:
-        first_name: 姓
-        last_name: 名
-        email: 電子メール 
-        telphone: 電話番号
-        gender: 性別
-
+        first_name: 명
+        last_name: 성
+        email: 이메일
+        password: 패스워드
+        telphone: 전화번호
+        remember_me: 패스워드 저장
+        gender: 성별

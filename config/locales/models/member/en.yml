@@ -25,9 +25,10 @@ en:
       member:
     attributes:
       member:
-        first_name: 姓
-        last_name: 名
-        email: 電子メール
-        password: パスワード
-        telphone: 電話番号
-        gender: 性別
+        first_name: First_name
+        last_name: Last_name
+        email: E-mail
+        password: Password
+        remember_me:
+        telphone: Telphone
+        gender: Gender

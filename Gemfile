@@ -55,6 +55,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'devise-i18n'
 
 # Use rspec for test.
 #gem 'rspec-rails'
