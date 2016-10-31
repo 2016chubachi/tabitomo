@@ -24,7 +24,7 @@ ko:
     models:
       booking_schedule:
     attributes:
-      booking_schedule:
+      booking_schedule: 
         traveler_count:
         traveler_location:
         traveler_date:
