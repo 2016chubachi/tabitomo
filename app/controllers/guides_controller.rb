@@ -20,11 +20,6 @@ class GuidesController < ApplicationController
       render 'edit'
     end
   end
-  private
-    def guide_params
-      params.require(:article).permit(:profile, :guide_service, :guide_transportation,
-      :guide_interest)
-    end
 
   def edit
     @guide = Guide.find(params[:id])
