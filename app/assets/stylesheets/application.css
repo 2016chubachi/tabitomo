@@ -45,3 +45,11 @@
   margin-right: auto;
   margin-top: 15px;
 }
+.span-height{
+  display: inline-block;
+  height: 18px;
+  vertical-align: middle;
+}
+.header-pointer{
+  cursor: pointer;
+}

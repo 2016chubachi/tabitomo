@@ -1,7 +1,32 @@
-<div class="panel panel-info">
-  <div class="panel-heading">Panel heading without title</div>
-  <div class="panel-body">
-    Panel content
-  </div>
-  <div class="panel-footer">Panel footer</div>
-</div>
+<% if @reviews.present? && @reviews.length > 0 %>
+    <% @reviews.each do |rev|  %>
+      <div class="panel panel-info">
+        <div class="panel-heading header-pointer"><%=star_image_tag(rev.star_master)%><span class="span-height"><%= rev.title%></span></div>
+        <div class="panel-body" style="min-height: 97px;">
+          <div class="row">
+            <div class="col-xs-5 col-sm-2">
+              <div class="thumbnail">
+                <%= link_to(member_image_tag(rev.booking.traveler.member,{style: "max-width: 100px;"}),"#") %>
+                <div class="caption">
+                  <h4><%= rev.booking.traveler.member.first_name + "  " + rev.booking.traveler.member.last_name%></h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-7 col-sm-10">
+              <%= rev.detail%>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer"><%= "投稿日:#{rev.updated_at}"%></div>
+      </div>        
+    <% end%>
+    <script type="text/javascript">
+      jQuery(function($){
+        $("div.panel.panel-info div.panel-heading.header-pointer").on("click",function(){
+          $(this).nextAll("div[class*='panel-']").fadeToggle(500);
+        });
+      });
+    </script>
+<% else%>
+  <p>レビュー有りません</p>
+<% end%>
