@@ -6,6 +6,8 @@ class Member < ActiveRecord::Base
          :confirmable, :lockable, :timeoutable
     belongs_to :country
 
+  attr_accessor :hantei
+
     has_many :booking_comments
     has_one :member_picture
     #送信メッセージリレーション

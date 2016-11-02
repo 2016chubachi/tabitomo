@@ -130,7 +130,6 @@ ActiveRecord::Schema.define(version: 20161030122048) do
     t.integer  "country_id"
     t.string   "telphone"
     t.integer  "gender"
-    t.string   "hantei"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
