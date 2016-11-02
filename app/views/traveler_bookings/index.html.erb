@@ -31,7 +31,7 @@
         <tr>
           <th><%= t("activerecord.attributes.booking_schedule.traveler_date") %></th>
           <th><%= t("activerecord.attributes.booking_schedule.traveler_count") %></th>
-          <th><%= t("activerecord.attributes.booking_schedule.traveler_location") %></th>
+          <th><%= t("activerecord.attributes.booking_schedule.city_master_id") %></th>
         </tr>
       </thead>
       <tbody>
@@ -44,7 +44,8 @@
         <% end %>
       </tbody>
     </table>
-    <%= link_to booking.status_master.send("text_#{I18n.locale}"), "#", class: "btn btn-primary pull-right" %>
+    <%#= link_to booking.status_master.send("text_#{I18n.locale}"), "#", class: "btn btn-primary pull-right" %>
+    <%= link_to booking.status_master.send("text_#{I18n.locale}"), edit_traveler_booking_path(booking), class: "btn btn-primary pull-right" %>
   </div>
 </div>
 <% end %>

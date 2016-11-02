@@ -26,5 +26,5 @@ ko:
     attributes:
       booking_schedule: 
         traveler_count:
-        traveler_location:
+        city_master_id:
         traveler_date:

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024131330) do
+ActiveRecord::Schema.define(version: 20161030122048) do
 
   create_table "booking_comments", force: :cascade do |t|
     t.integer  "member_id"
@@ -180,6 +180,14 @@ ActiveRecord::Schema.define(version: 20161024131330) do
     t.string   "text_zh"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "traveler_booking_comments", force: :cascade do |t|
+    t.integer  "traveler_id"
+    t.string   "comment"
+    t.integer  "booking_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "travelers", force: :cascade do |t|

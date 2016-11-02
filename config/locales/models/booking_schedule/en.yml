@@ -26,5 +26,5 @@ en:
     attributes:
       booking_schedule:
         traveler_count: People
-        traveler_location: Location
-        traveler_date: Schedule 
+        city_master_id: Location
+        traveler_date: Schedule
