@@ -1,9 +1,12 @@
 class TravelerBookingsController < ApplicationController
+  before_action :authenticate_member!
+  before_action :check_traveler_booking_edit, only: [:edit, :update]
+  # before_action :check_traveler_booking_edit
+
   def index
-    # ログイン機能ができるまでの暫定
     # 更新が新しい順で表示する
-    @Bookings = Booking.where(traveler_id: 4).order(updated_at: :desc)
-    # @Bookings = Booking.find(1)
+    #binding.pry
+    @Bookings = Booking.where(traveler_id: current_member).order(updated_at: :desc)
   end
 
   def show
@@ -13,6 +16,7 @@ class TravelerBookingsController < ApplicationController
   end
 
   def edit
+    # binding.pry
     @Booking = Booking.find(params[:id])
     #traveler commentが存在しない場合、作成する。BuildしておかないとFormが作成されない
     @Booking.build_traveler_booking_comment unless @Booking.traveler_booking_comment
@@ -38,4 +42,9 @@ class TravelerBookingsController < ApplicationController
     params.require(:booking).permit(attrs)
   end
 
+  # 旅人の予約を変更可能か確認（自分の予約しか変更できない）
+  def check_traveler_booking_edit
+    redirect_to(top_url) unless Booking.find(params[:id]).traveler_id == current_member.id
+  end
+  
 end
