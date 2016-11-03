@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BookingCommentTest < ActiveSupport::TestCase
+class GuideBookingCommentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

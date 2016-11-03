@@ -8,7 +8,6 @@ class Member < ActiveRecord::Base
 
   attr_accessor :hantei
 
-    has_many :booking_comments
     has_one :member_picture
     #送信メッセージリレーション
     has_many :senders ,:class_name => "Message" , foreign_key: "sender_id"
