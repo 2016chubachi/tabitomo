@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030122048) do
-
-  create_table "booking_comments", force: :cascade do |t|
-    t.integer  "member_id"
-    t.string   "comment"
-    t.integer  "booking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20161103025855) do
 
   create_table "booking_schedules", force: :cascade do |t|
     t.integer  "booking_id"
@@ -57,6 +49,14 @@ ActiveRecord::Schema.define(version: 20161030122048) do
     t.string   "text_en"
     t.string   "text_ko"
     t.string   "text_zh"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "guide_booking_comments", force: :cascade do |t|
+    t.integer  "guide_id"
+    t.string   "comment"
+    t.integer  "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

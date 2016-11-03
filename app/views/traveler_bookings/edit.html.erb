@@ -69,6 +69,7 @@
             <%= tbc.hidden_field :id %>
             <%#= newの時にbooking.traveller_idがとれないので苦肉の対応　%>
             <%= tbc.hidden_field :traveler_id, :value => "#{@Booking.traveler_id}" %>
+            <%#= tbc.hidden_field :traveler_id %>
             <%= tbc.hidden_field :booking_id %>
           </div>
         <% end %>
