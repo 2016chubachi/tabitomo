@@ -24,7 +24,9 @@
         <tbody>
           <%= f.fields_for :booking_schedules do |bs| %>
             <tr>
-              <td><%= bs.text_field :traveler_date, class: "form-control" %></td>
+              <td>
+                  <%= bs.date_select :traveler_date,{},{class: "form-control", style: "display: inline; width: 30%"} %>
+              </td>
               <td><%= bs.text_field :traveler_count, class: "form-control" %></td>
               <td>
                 <%= bs.select :city_master_id, @Booking.guide.guide_cities.map{|i| [i.city_master.send("text_#{I18n.locale}"), i.city_master.id ]} ,{}, {class: "form-control" } %>
