@@ -5,8 +5,9 @@ class TravelerBookingsController < ApplicationController
 
   def index
     # 更新が新しい順で表示する
-    #binding.pry
-    @Bookings = Booking.where(traveler_id: current_member).order(updated_at: :desc)
+    # binding.pry
+    @Bookings = Booking.where(traveler_id: current_member.traveler).order(updated_at: :desc)
+    # binding.pry
   end
 
   def show
@@ -44,7 +45,8 @@ class TravelerBookingsController < ApplicationController
 
   # 旅人の予約を変更可能か確認（自分の予約しか変更できない）
   def check_traveler_booking_edit
-    redirect_to(top_url) unless Booking.find(params[:id]).traveler_id == current_member.id
+    # binding.pry
+    redirect_to(top_url) unless Booking.find(params[:id]).traveler == current_member.traveler
   end
-  
+
 end

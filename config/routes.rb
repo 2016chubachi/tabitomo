@@ -18,6 +18,7 @@ Rails.application.routes.draw do
    resources :user_reviews
    resources :guides
    resources :traveler_bookings
+   resources :guide_bookings
    resources :search_guides, :only => [:index]
    resources :star_masters, :only => [:show]
    resources :member_pictures, :only => [:show]

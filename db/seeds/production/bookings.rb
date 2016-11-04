@@ -3,7 +3,7 @@
 #bookingsのtraveler_countryはcountriesを参照した方が良い？
 #参照する場合はテーブル項目定義を変更して、modelにリレーションを作成する必要あり
 Booking.create(
-  traveler_id: 4,
+  traveler_id: 1,
   status_master_id: 1,
   guide_id: 1,
   traveler_first_name: "Saori",
@@ -13,7 +13,7 @@ Booking.create(
   traveler_country: "中国"
 )
 Booking.create(
-  traveler_id: 4,
+  traveler_id: 1,
   status_master_id: 1,
   guide_id: 2,
   traveler_first_name: "Saori",
@@ -23,7 +23,7 @@ Booking.create(
   traveler_country: "中国"
 )
 Booking.create(
-  traveler_id: 5,
+  traveler_id: 2,
   status_master_id: 1,
   guide_id: 2,
   traveler_first_name: "Kenya",

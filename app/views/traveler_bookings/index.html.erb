@@ -1,3 +1,4 @@
+<!-- travelerでログインした時の予約一覧画面 -->
 <% content_for :main_header do %>
   <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
   <%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>
@@ -6,44 +7,10 @@
 <% @Bookings.each do |booking| %>
 <div class="row">
   <div class="col-xs-12 col-sm-3">
-    <div class="thumbnail">
-      <%= member_image_tag(booking.guide.member) %>
-      <div class="caption">
-        <div class="text-primary">
-          <h3>
-            <%= booking.guide.member.last_name + " " + booking.guide.member.first_name %>
-          </h3>
-          <% if booking.user_review.present? %>
-            <%= link_to star_image_tag(booking.user_review.star_master),  edit_user_review_path(booking.user_review) %>
-            <%#= link_to "更新", edit_user_review_path(booking.user_review),
-            class: "btn btn-primary"  %>
-          <% else %>
-            <!-- パラメーター：booking_id で次の画面に渡す-->
-            <%= link_to image_tag("/assets/ico_grade6_0.gif"), new_user_review_path(booking_id:   booking.id) %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render "thumbnails", booking: booking %>
   </div>
   <div class="col-xs-12 col-sm-9">
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th><%= t("activerecord.attributes.booking_schedule.traveler_date") %></th>
-          <th><%= t("activerecord.attributes.booking_schedule.traveler_count") %></th>
-          <th><%= t("activerecord.attributes.booking_schedule.city_master_id") %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% booking.booking_schedules.each do |schedule| %>
-          <tr>
-            <td><%= schedule.traveler_date.strftime("%Y/%m/%d") %></td>
-            <td><%= schedule.traveler_count  %></td>
-            <td><%= schedule.city_master.send("text_#{I18n.locale}") %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render "table", booking: booking %>
     <%#= link_to booking.status_master.send("text_#{I18n.locale}"), "#", class: "btn btn-primary pull-right" %>
     <%= link_to booking.status_master.send("text_#{I18n.locale}"), edit_traveler_booking_path(booking), class: "btn btn-primary pull-right" %>
   </div>
