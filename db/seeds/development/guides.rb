@@ -7,7 +7,7 @@ Guide.create(
   guide_service: "Please fill in guide_service",
   guide_transportation: "Please fill in guide_transportation",
   guide_interest: "Please fill in guide_interest",
-  license_flg: 0
+  license_flg: 1
 )
 Guide.create(
   member_id: 2 ,
