@@ -82,13 +82,10 @@
   text-align: center;
 }
 .schdule-Calendar thead tr:nth-child(2){
-  background-color:#dff0d8;
+  background-color:#add8e6;
 }
 .schdule-Calendar tr{
   height: 30px;
-}
-.schdule-Calendar tbody td:not([data-outside="1"]):hover{
-  background-color:#dff0d8;
 }
 .schdule-Calendar thead tr:nth-child(2) th:nth-child(1),
 .schdule-Calendar tbody td:nth-of-type(1){
@@ -100,4 +97,10 @@
 }
 .schdule-Calendar td[data-outside="1"]{
   background-color: #f5f5f5;
+}
+.schdule-Calendar tbody td:not([data-outside="1"]):hover{
+  background-color:#dff0d8;
+}
+.schdule-Calendar td[data-current="1"]{
+  background-color: #ffdab9;
 }
