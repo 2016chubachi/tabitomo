@@ -1,1 +1,71 @@
-レビューサマリー
+<div class="row">
+  <div class="col-xs-2 col-sm-2 text-right">
+    <p>星5つ</p>
+  </div>  
+  <div class="col-xs-6 col-sm-6 padding-left-0">
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @fiveCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@fiveCount/@revCount)*100}%" %>">
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-sm-4 text-left padding-left-0">
+    <p><%= @fiveCount%></p>
+  </div> 
+</div>
+<div class="row">
+  <div class="col-xs-2 col-sm-2 text-right">
+    <p>星4つ</p>
+  </div>  
+  <div class="col-xs-6 col-sm-6 padding-left-0">
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @fourCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@fourCount/@revCount)*100}%" %>">
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-sm-4 text-left padding-left-0">
+    <p><%= @fourCount%></p>
+  </div> 
+</div> 
+<div class="row">
+  <div class="col-xs-2 col-sm-2 text-right">
+    <p>星3つ</p>
+  </div>  
+  <div class="col-xs-6 col-sm-6 padding-left-0">
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @threeCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@threeCount/@revCount)*100}%" %>">
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-sm-4 text-left padding-left-0">
+    <p><%= @threeCount%></p>
+  </div> 
+</div> 
+<div class="row">
+  <div class="col-xs-2 col-sm-2 text-right">
+    <p>星2つ</p>
+  </div>  
+  <div class="col-xs-6 col-sm-6 padding-left-0">
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @twoCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@twoCount/@revCount)*100}%" %>">
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-sm-4 text-left padding-left-0">
+    <p><%= @twoCount%></p>
+  </div>
+</div> 
+<div class="row">
+  <div class="col-xs-2 col-sm-2 text-right">
+    <p>星1つ</p>
+  </div>  
+  <div class="col-xs-6 col-sm-6 padding-left-0">
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @oneCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@oneCount/@revCount)*100}%" %>">
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-sm-4 text-left padding-left-0">
+    <p><%= @oneCount%></p>
+  </div>
+</div> 
+ 

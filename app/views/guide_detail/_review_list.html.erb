@@ -1,7 +1,11 @@
 <% if @reviews.present? && @reviews.length > 0 %>
     <% @reviews.each do |rev|  %>
       <div class="panel panel-info">
-        <div class="panel-heading header-pointer"><%=star_image_tag(rev.star_master)%><span class="span-height"><%= rev.title%></span></div>
+        <div class="panel-heading header-pointer">
+          <%=star_image_tag(rev.star_master)%>
+          <span class="span-height"><%= rev.title%></span>
+          <div class="glyphicon glyphicon-minus float-right"></div>
+        </div>
         <div class="panel-body" style="min-height: 97px;">
           <div class="row">
             <div class="col-xs-5 col-sm-2">
@@ -23,7 +27,10 @@
     <script type="text/javascript">
       jQuery(function($){
         $("div.panel.panel-info div.panel-heading.header-pointer").on("click",function(){
-          $(this).nextAll("div[class*='panel-']").fadeToggle(500);
+          $(this).nextAll("div[class*='panel-']").fadeToggle(function(){
+            $(document).trigger("resize");
+          });
+          $(this).children(".glyphicon").toggleClass("glyphicon-minus glyphicon-plus");
         });
       });
     </script>

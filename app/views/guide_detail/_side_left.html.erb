@@ -1,21 +1,32 @@
 <div>
-  <hr>
   <h2>プロフィル</h2>
-  <p><%= @guide.profile%></p>
-  <hr>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p><%= @guide.profile%></p>
+    </div>
+  </div>
   <h2>サンプル</h2>
-  <p><%= @guide.guide_service%></p>
-  <hr>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p><%= @guide.guide_service%></p>
+    </div>
+  </div>
   <h2>交通手段</h2>
-  <p><%= @guide.guide_transportation%></p>
-  <hr>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p><%= @guide.guide_transportation%></p>
+    </div>
+  </div>
   <h2>趣味興味</h2>
-  <p><%= @guide.guide_interest%></p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p><%= @guide.guide_interest%></p>
+    </div>
+  </div>
 </div>
 <div>
-  <hr>
   <h2>会員レビュー</h2>
-  <div>
+  <div class="row">
     <%= render "review_summary"%>
   </div>
   <div>
