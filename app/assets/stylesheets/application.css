@@ -104,3 +104,6 @@
 .schdule-Calendar td[data-current="1"]{
   background-color: #ffdab9;
 }
+.schdule-Calendar td[data-ngdate="1"]{
+  background-color: #a9a9a9;
+}

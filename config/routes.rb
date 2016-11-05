@@ -7,14 +7,18 @@ Rails.application.routes.draw do
 
   #rootをわざと設定しない
   #trootを設定して、top_path使ったらurl⇒https://tabitomo-takeshitou.c9users.io/jaが正しい
-  get '/(:locale)' => 'top#index', as: 'top', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/
+  # get '/(:locale)' => 'top#index', as: 'top', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/
   #rootを設定して、root_path使ったらurl⇒https://tabitomo-takeshitou.c9users.io/?locale=jaになってしまい
   #root 'top#index'
+
+
 
   #locale: /#{I18n.available_locales.map(&:to_s).join('|')
   #上記の書き方は、指定したパラメータに対するフィルター、定義したものだけマッチする、
   #それ以外は該当ルーティングマッチから外す
   scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
+   get '/' => 'top#index', as: 'top'
+   get 'guide_detail/schedule' => 'guide_detail#schedule'
    resources :user_reviews
    resources :guides
    resources :traveler_bookings
