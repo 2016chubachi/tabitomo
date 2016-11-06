@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require i18n
 //= require i18n/translations
+//= require cocoon
 //= require_tree .
 
 //言語切り替えがクリックされたとき、ドロップダウンメニューの選択の制御
@@ -30,7 +31,7 @@ function language_click(){
 // ガイド詳細画面のカレンダーを描画する
 function calendarDrawing(date,headTime){
   'use strict';
-  
+
   //表示している年月の初日を計算
   var firstDate = new Date(date.getFullYear(), date.getMonth(), 1);
   //表示している年月の最終日を計算
@@ -45,7 +46,7 @@ function calendarDrawing(date,headTime){
   var trHTML = "";
 
   //今カレンダーに表示している年月の文字列を作る
-  var dateString = date.getFullYear() + "-" 
+  var dateString = date.getFullYear() + "-"
       + ((date.getMonth()+1) >= 10 ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)))
       + '-01';
   //今カレンダーに表示している年月を保持する
@@ -70,13 +71,13 @@ function calendarDrawing(date,headTime){
     //日付を配列に設定する
     arrDate[i+firstDayOfWeek] = i+1;
   }
-  
+
   //配列の内容をloopで処理する
   $.each(arrDate,function(index,value){
     var temp = value;
     //表示している年月の初日を計算
     firstDate = new Date(date.getFullYear(), date.getMonth(), 1);
-    
+
     if(value === null){
       if(index != 0 && index % 7 == 0){
         return false;
@@ -98,7 +99,7 @@ function calendarDrawing(date,headTime){
         trHTML+='<td>'+ value +'</td>';
       }
     }
-    
+
     if((index+1) % 7 == 0){
       // 周変わり
       calendarHTML+='<tr>' + trHTML + '</tr>';

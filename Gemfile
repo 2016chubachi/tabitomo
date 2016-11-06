@@ -60,6 +60,10 @@ gem 'devise-i18n'
 # Use rspec for test.
 #gem 'rspec-rails'
 
+# フォームに動的に行の追加と削除するために追加
+gem 'cocoon'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', '9.0.5'
