@@ -39,7 +39,7 @@ class TravelerBookingsController < ApplicationController
   def booking_params
     attrs = [:traveler_first_name, :traveler_last_name, :traveler_email, :traveler_telphone, :traveler_country, :traveler_id]
     attrs << {traveler_booking_comment_attributes: [:id, :traveler_id, :comment, :booking_id]}
-    attrs << {booking_schedules_attributes: [:id, :traveler_date, :traveler_count, :city_master_id]}
+    attrs << {booking_schedules_attributes: [:id, :traveler_date, :traveler_count, :city_master_id, :_destroy]}
     params.require(:booking).permit(attrs)
   end
 
