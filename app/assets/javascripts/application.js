@@ -64,7 +64,6 @@ function calendarDrawing(date,headTime){
     isCurrentMonth = true;
   }
 
-
   //配列を「null」で初期化する
   arrDate.fill(null);
   for(var i = 0;i < lastDate.getDate();i++){
@@ -108,4 +107,18 @@ function calendarDrawing(date,headTime){
   });
   //カレンダーの内容を画面に描画する
   $(".schdule-Calendar tbody").html(calendarHTML);
+
+  //ajaxでスケジュール取得
+  getScheduleJson('1',dateString);
+}
+
+//該当ガイドの該当月のスケジュール情報を取得する
+function getScheduleJson(guide,date){
+  $.getJSON("schedule", {guide: guide,date: date},function (data, textStatus, jqXHR) {
+      $.each(data,function(index,value){
+        var date = (new Date(value)).getDate();
+        $(".schdule-Calendar td:contains('" + date + "'):first").attr({"data-ngdate": "1","data-outside": "1"});
+      });
+    }
+  );
 }
