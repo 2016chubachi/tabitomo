@@ -25,6 +25,7 @@
   </table>
   <script type="text/javascript">
     jQuery(function($){
+      sessionStorage.guide_id = <%=@guide.id%>;
       calendarDrawing(new Date(),$(".schdule-Calendar thead time"));
       $(".schdule-Calendar button").on("click",function(event){
         var headTime = $(".schdule-Calendar thead time");

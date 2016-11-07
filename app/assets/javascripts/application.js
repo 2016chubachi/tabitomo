@@ -110,16 +110,33 @@ function calendarDrawing(date,headTime){
   $(".schdule-Calendar tbody").html(calendarHTML);
 
   //ajaxでスケジュール取得
-  getScheduleJson('1',dateString);
+  getScheduleJson(sessionStorage.guide_id,dateString);
 }
 
 //該当ガイドの該当月のスケジュール情報を取得する
 function getScheduleJson(guide,date){
+  //ajaxで予約情報取得
   $.getJSON("schedule", {guide: guide,date: date},function (data, textStatus, jqXHR) {
-      $.each(data,function(index,value){
-        var date = (new Date(value)).getDate();
-        $(".schdule-Calendar td:contains('" + date + "'):first").attr({"data-ngdate": "1","data-outside": "1"});
-      });
-    }
-  );
+    //取得出来た後、予約ごとカレンダーに反映する
+    $.each(data,function(index,value){
+      //予約済み日の日を計算する
+      var date = (new Date(value)).getDate();
+      //カレンダーからその日を検索する
+      var ngTD = $(".schdule-Calendar td:contains('" + date + "'):first");
+      //予約済みの日に対して属性を追加する
+      ngTD.attr({"data-ngdate": "1","data-outside": "1"});
+      //予約済みの日に対して赤いクロスを描画する
+      var svgDiv = '<div style="position:relative;">\
+                      <div style="position:absolute;width:100%;height:20px;">\
+                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">\
+                          <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:red;stroke:width:2"></line>\
+                          <line x1="100%" y1="0" x2="0" y2="100%" style="stroke:red;stroke:width:2"></line>\
+                        </svg>\
+                      </div>\
+                      <div>' + ngTD.text() + '</div>\
+                    </div>';
+      //設定した内容を反映する
+      ngTD.html(svgDiv);
+    });
+  });
 }
