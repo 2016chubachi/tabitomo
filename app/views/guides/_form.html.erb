@@ -68,7 +68,7 @@
           <option>男</option>
           <option>女</option>
         </select-->
-        <!--%= f.select_tag "gender", options_for_select({"男"=>"male","女"=>"female"}), :class => "form-control" %-->
+        <%= f.select @member.gender, options_for_select([["男","1"],["女","2"]]), :class => "form-control" %>
       </div>
       </div>
       <div class="form-group">
@@ -83,7 +83,7 @@
         <div class="col-sm-9">
           <!--input type="datetime" class="form-control" id="age"><!--%= @guide.birth_year %-->
           <!--%= f.number_field :birth_year, id: "age", :class => "form-control" %-->
-          <%=f.date_select(:birth_year, {:start_year => Date.current.year - 20, :end_year => Date.current.year - 60, :discard_day => "ture", :discard_month => "ture"}, {:class => "form-control"})%>
+          <%=f.date_select(:birth_year, {:start_year => Date.current.year - 20, :end_year => Date.current.year - 60, :discard_day => "ture", :discard_month => "ture", :prompt => "お選んでください"}, {:class => "form-control"})%>
         </div>
       </div>
       <div class="form-group">
