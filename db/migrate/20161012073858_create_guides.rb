@@ -3,7 +3,7 @@ class CreateGuides < ActiveRecord::Migration
     create_table :guides do |t|
       t.integer :member_id
       t.integer :experience
-      t.integer :birth_year
+      t.date :birth_year
       t.string :profile
       t.string :guide_service
       t.string :guide_transportation
