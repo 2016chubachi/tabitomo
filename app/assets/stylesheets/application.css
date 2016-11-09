@@ -107,3 +107,16 @@
 .schdule-Calendar td[data-ngdate="1"]{
   background-color: #ccc;
 }
+
+
+/*profile css*/
+.dl-horizon dt{
+  float: left;
+  padding-right: 5px;
+}
+.dl-horizon{
+  margin-bottom: 5px;
+}
+.dl-vertical dd{
+  padding-left: 50px;
+}

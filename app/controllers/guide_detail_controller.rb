@@ -1,6 +1,7 @@
 class GuideDetailController < ApplicationController
   def show
     @guide = Guide.find(params[:id])
+    # ガイドの案内履歴に対するレビュー一覧を取得
     @reviews = UserReview.includes(:booking).where(bookings: {guide_id: params[:id]})
     @revCount = @reviews.count
     @fiveCount = @reviews.where(star_master_id: 5).count
