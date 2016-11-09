@@ -1,0 +1,39 @@
+<!-- message 送信画面-->
+<% content_for :main_header do %>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+    <div class="thumbnail">
+      <%= link_to(member_image_tag(@guide.member),"#") %>
+      <div class="caption">
+        <div class="text-primary">
+          <h3>
+          <%= @guide.member.first_name + "  " + @guide.member.last_name%>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-9">
+        <table class="table table-striped table-bordered">
+           <%= form_for(@message) do |f| %>
+                <div class="field">
+                  <%= f.label :Subject %><br />
+                  <%= f.text_field :title, size: 50 %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :Message %><br />
+                  <%= f.text_area :content, rows: 10, cols: 50 %>
+                </div>
+
+                <div class="field">
+                  <%= f.hidden_field :receiver_id  %>
+                </div>
+        </table>
+            <%= f.submit "メッセージ送信",data: { confirm: 'メッセージを送信してもいいですか？', disabled_with: '処理中...'}, class: "btn btn-primary pull-right" %>
+   </div>
+            <% end %>
+
+<%= debug(params) if Rails.env.development? %>

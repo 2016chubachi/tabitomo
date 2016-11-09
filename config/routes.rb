@@ -27,6 +27,7 @@ Rails.application.routes.draw do
    resources :star_masters, :only => [:show]
    resources :member_pictures, :only => [:show]
    resources :guide_detail, :only => [:show]
+   resources :messages
 
   #  devise_for :members
 
