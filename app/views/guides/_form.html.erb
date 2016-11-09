@@ -47,57 +47,55 @@
           Example block-level help text here.
         </p-->
       </div>
+      <div class="field">
+        <%= f.fields_for :members do |members_f| %>
       <div class="form-group">
         <label for="lastname" class="col-sm-3 control-label">姓</label>
         <div class="col-sm-9">
-          <!--input type="text" class="form-control" id="lastname" placeholder="高橋"-->
-          <!--%= f.text_field_tag 'lastname', '高橋', :class => "form-control" %-->
+          <%= members_f.text_field :lastname, :class => "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <label for="firstname" class="col-sm-3 control-label">名</label>
         <div class="col-sm-9">
-          <!--input type="text" class="form-control" id="firstname" placeholder="マイク"-->
-          <!--%= f.text_field_tag 'firstname', 'マイク', :class => "form-control" %-->
+          <%= members_f.text_field :firstname, :class => "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <label for="gender" class="col-sm-3 control-label">性別</label>
         <div class="col-sm-9">
-          <!--select class="form-control" id="gender">
-          <option>男</option>
-          <option>女</option>
-        </select-->
-        <%= f.select @member.gender, options_for_select([["男","1"],["女","2"]]), :class => "form-control" %>
+        <%= members_f.select :gender, options_for_select([["男","1"],["女","2"]]), {:prompt => "お選んでください"}, {:class => "form-control"} %>
       </div>
       </div>
       <div class="form-group">
         <label for="telno" class="col-sm-3 control-label">電話</label>
         <div class="col-sm-9">
-          <!--input type="tel" class="form-control" id="telno"-->
-          <!--%= f.telephone_field_tag 'telno', nil, :class => "form-control" %-->
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="age" class="col-sm-3 control-label">生年</label>
-        <div class="col-sm-9">
-          <!--input type="datetime" class="form-control" id="age"><!--%= @guide.birth_year %-->
-          <!--%= f.number_field :birth_year, id: "age", :class => "form-control" %-->
-          <%=f.date_select(:birth_year, {:start_year => Date.current.year - 20, :end_year => Date.current.year - 60, :discard_day => "ture", :discard_month => "ture", :prompt => "お選んでください"}, {:class => "form-control"})%>
+          <%= members_f.telephone_field :telphone, :class => "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <label for="email" class="col-sm-3 control-label">メール</label>
         <div class="col-sm-9">
           <!--input type="text" class="form-control" id="email" placeholder="takahashimike@gmail.com" readonly-->
-          <!--%= f.email_field_tag 'emailadd', 'takahashimike@gmail.com', :class => "form-control", :readonly => "ture" %-->
+          <%= members_f.email_field :email, :class => "form-control", :readonly => "ture" %>
         </div>
       </div>
       <div class="form-group">
         <label for="location" class="col-sm-3 control-label">居住国</label>
         <div class="col-sm-9">
           <!--input type="text" class="form-control" id="location" placeholder="日本"-->
-          <!--%= f.text_field_tag 'location', '日本', :class => "form-control" %-->
+          <%= members_f.text_field :country_id, :class => "form-control" %>
+        </div>
+      </div>
+
+      <% end %>
+      </div>
+            <div class="form-group">
+        <label for="age" class="col-sm-3 control-label">生年</label>
+        <div class="col-sm-9">
+          <!--input type="datetime" class="form-control" id="age"><!--%= @guide.birth_year %-->
+          <!--%= f.number_field :birth_year, id: "age", :class => "form-control" %-->
+          <%=f.date_select(:birth_year, {:start_year => Date.current.year - 20, :end_year => Date.current.year - 65, :discard_day => "ture", :discard_month => "ture", :prompt => "お選んでください"}, {:class => "form-control"})%>
         </div>
       </div>
       <div class="form-group">
