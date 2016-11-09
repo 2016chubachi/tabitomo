@@ -1,0 +1,24 @@
+<%= link_to(member_image_tag(@guide.member),"#") %>
+<h3><%= @guide.member.first_name + "  " + @guide.member.last_name%></h3>
+
+  <%= form_for(@message) do |f| %>
+        <div class="field">
+          <%= f.label :title %><br />
+          <%= f.text_field :title, size: 20 %>
+        </div>
+
+        <div class="field">
+          <%= f.label :content %><br />
+          <%= f.text_area :content, rows: 10, cols: 45 %>
+        </div>
+
+        <div class="field">
+          <%= f.hidden_field :receiver_id  %>
+        </div>
+
+
+        <%= f.submit "メッセージ送信",data: { confirm: 'メッセージを送信してもいいですか？', disabled_with: '処理中...'}, class: "button" %>
+
+  <% end %>
+
+  <%= debug(params) if Rails.env.development? %>
