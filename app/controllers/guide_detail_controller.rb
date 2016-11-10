@@ -14,8 +14,9 @@ class GuideDetailController < ApplicationController
   def schedule
     if params[:guide] && params[:date]
       startDate = DateTime.parse(params[:date])
+      # .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date).distinct
       @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month)
-        .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date)
+        .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date).uniq()
       render json: @schedules, status: :ok
     else
       render json: "不正なアクセス！", status: :bad_request
