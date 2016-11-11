@@ -11,11 +11,12 @@ class MessagesController < ApplicationController
     end
     @message = @message.readable_for(current_member)
       .order(created_at: :desc)
+
   end
 
   # メッセージ詳細
   def show
-  @message = Message.readable_for(current_member).find(params[:id])
+   @message = Message.find(params[:id])
   end
 
   # 新規メッセージフォーム
