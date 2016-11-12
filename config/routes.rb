@@ -28,6 +28,8 @@ Rails.application.routes.draw do
    resources :member_pictures, :only => [:show]
    resources :guide_detail, :only => [:show]
    resources :messages
+   resources :message_sends
+   resources :message_receives
 
   #  devise_for :members
 

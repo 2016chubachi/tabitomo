@@ -1,6 +1,9 @@
 class Guide < ActiveRecord::Base
     belongs_to :member
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     accepts_nested_attributes_for :member, update_only: true
 
     has_many :bookings

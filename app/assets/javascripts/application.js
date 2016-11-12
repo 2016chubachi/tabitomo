@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.turbolinks
+//= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
@@ -110,33 +111,118 @@ function calendarDrawing(date,headTime){
   $(".schdule-Calendar tbody").html(calendarHTML);
 
   //ajaxでスケジュール取得
-  getScheduleJson(sessionStorage.guide_id,dateString);
+  getScheduleJson({
+    data: {guide: sessionStorage.guide_id,date: date},
+    callback: function (data, textStatus, jqXHR) {
+      //取得出来た後、予約ごとカレンダーに反映する
+      $.each(data,function(index,value){
+        //予約済み日の日を計算する
+        var date = (new Date(value)).getDate();
+        //カレンダーからその日を検索する
+        var ngTD = $(".schdule-Calendar td:contains('" + date + "'):not([data-outside])");
+        //予約済みの日に対して属性を追加する
+        ngTD.attr({"data-ngdate": "1","data-outside": "1"});
+        //予約済みの日に対して赤いクロスを描画する
+        var svgDiv = '<div style="position:relative;">\
+                        <div style="position:absolute;width:100%;height:20px;">\
+                          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">\
+                            <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:red;stroke:width:2"></line>\
+                            <line x1="100%" y1="0" x2="0" y2="100%" style="stroke:red;stroke:width:2"></line>\
+                          </svg>\
+                        </div>\
+                        <div>' + ngTD.text() + '</div>\
+                      </div>';
+        //設定した内容を反映する
+        ngTD.html(svgDiv);
+      });
+    }
+  });
 }
 
 //該当ガイドの該当月のスケジュール情報を取得する
-function getScheduleJson(guide,date){
+//function getScheduleJson(boolasync,guide,date,callback){
+function getScheduleJson(options){
   //ajaxで予約情報取得
-  $.getJSON("schedule", {guide: guide,date: date},function (data, textStatus, jqXHR) {
-    //取得出来た後、予約ごとカレンダーに反映する
-    $.each(data,function(index,value){
-      //予約済み日の日を計算する
-      var date = (new Date(value)).getDate();
-      //カレンダーからその日を検索する
-      var ngTD = $(".schdule-Calendar td:contains('" + date + "'):first");
-      //予約済みの日に対して属性を追加する
-      ngTD.attr({"data-ngdate": "1","data-outside": "1"});
-      //予約済みの日に対して赤いクロスを描画する
-      var svgDiv = '<div style="position:relative;">\
-                      <div style="position:absolute;width:100%;height:20px;">\
-                        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">\
-                          <line x1="0" y1="0" x2="100%" y2="100%" style="stroke:red;stroke:width:2"></line>\
-                          <line x1="100%" y1="0" x2="0" y2="100%" style="stroke:red;stroke:width:2"></line>\
-                        </svg>\
-                      </div>\
-                      <div>' + ngTD.text() + '</div>\
-                    </div>';
-      //設定した内容を反映する
-      ngTD.html(svgDiv);
-    });
+  //$.getJSON("schedule", {guide: guide,date: date},callback);
+  var target = {
+    url: "schedule",
+    async: true,
+    dataType: "json",
+    callback: null
+  };
+  var params = $.extend(target,options);
+  $.ajax({
+    type: "get",
+    url: params.url,
+    async: params.async,
+    data: params.data,
+    dataType: "json",
+    success: params.callback
+  });
+}
+
+var bookingedDays = {};
+function setSchdules(json, textStatus, jqXHR) {
+  //取得出来た後、予約ごとカレンダーに反映する
+  bookingedDays = $.map(json,function(value,index){
+    var tempDate = new Date(value);
+    
+    return tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' + tempDate.getDate();
+  });
+}
+//予約明細日程にカレンダーを表示する
+function datePickerHandler(guide_id){
+  //jquery uiのdatepickerを設定する
+  $(".traveler-date-datepicker").datepicker({
+    //選択した日付戻り値のフォーマット
+    dateFormat: "yy-mm-dd"
+    //dayNamesMin: [ "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" ],
+    //周の名前、国際化の際修正する
+    ,dayNamesMin: [ "日", "月", "火", "水", "木", "金", "土" ]
+    //月の名前、国際化の際修正する
+    //,monthNames:[ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
+    ,monthNames:[ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" ]
+    //カレンダー表示される前
+    ,beforeShow:function(input,picker){
+      var currentDate = $(input).datepicker("getDate") || new Date();
+      getScheduleJson({
+          //相対パス
+          //url: "../../guide_detail/schedule",
+          //ルート相対パス
+          url: "/guide_detail/schedule",
+          async: false,
+          data: {guide: guide_id,date: currentDate},
+          callback: setSchdules
+        });
+    }
+    //カレンダーで年月変更の際の処理
+    ,onChangeMonthYear:function(year,month,picker){
+      getScheduleJson({
+        //相対パス
+        //url: "../../guide_detail/schedule",
+        //ルート相対パス
+        url: "/guide_detail/schedule",
+        async: false,
+        //javascriptの月は[0-11]なので、実際の月から[-1]にする
+        //下記どちでもいい
+        //data: {guide: guide_id,date: new Date(year,month-1,1)},
+        data: {guide: guide_id,date: new Date(year + '-' + month + '-' + 1)},
+        callback: setSchdules
+        });
+    }
+    //カレンダーの日ごとを描画するための処理
+    ,beforeShowDay:function(date){
+      var result;
+      var drawDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+      if($.inArray(drawDate,bookingedDays) > -1){
+        result = [false,""];
+      }
+      else{
+        result = [true,""];
+      }
+      
+      //戻り値[true/false(その日が操作できるかどうか),"class name","tooltip"]
+      return result;
+    }
   });
 }
