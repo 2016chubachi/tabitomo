@@ -119,7 +119,7 @@ function calendarDrawing(date,headTime){
         //予約済み日の日を計算する
         var date = (new Date(value)).getDate();
         //カレンダーからその日を検索する
-        var ngTD = $(".schdule-Calendar td:contains('" + date + "'):first");
+        var ngTD = $(".schdule-Calendar td:contains('" + date + "'):not([data-outside])");
         //予約済みの日に対して属性を追加する
         ngTD.attr({"data-ngdate": "1","data-outside": "1"});
         //予約済みの日に対して赤いクロスを描画する
