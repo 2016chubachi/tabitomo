@@ -22,6 +22,7 @@ class GuidesController < ApplicationController
   end
 
   def edit
+    #binding.pry
     @guide = Guide.find(params[:id])
   end
 
@@ -36,7 +37,10 @@ class GuidesController < ApplicationController
 
   private
      def guide_params
-       params.require(:guide).permit(:profile, :guide_service, :guide_transportation,
-       :guide_interest, :experience, :license_flg,:birth_year)
+       params.require(:guide).permit(
+       :profile, :guide_service, :guide_transportation,
+       :guide_interest, :experience, :license_flg,:birth_year,
+       
+       )
      end
 end
