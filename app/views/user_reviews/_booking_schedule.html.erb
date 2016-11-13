@@ -1,7 +1,7 @@
 <div class="text-primary">
   <h3>
     <% if @UserReview.booking.present? %>
-      <%= @UserReview.booking.guide.member.last_name + " "+ @UserReview.booking.guide.member.first_name %>
+      <%= @UserReview.booking.guide.member.first_name + " "+ @UserReview.booking.guide.member.last_name %>
     <% end %>
   </h3>
 </div>

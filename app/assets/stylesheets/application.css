@@ -14,16 +14,16 @@
  *= require_self
  *= require jquery-ui
  */
- 
+
  .slide-image{
    width:100% !important;
    height: 300px !important;
  }
- 
+
  .city-img-postion{
    position: relative;
  }
- 
+
 .city-img-postion > div:first-of-type{
   position: absolute;
   top:30%;
@@ -34,6 +34,9 @@
   color: #fff;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+.margin-bottom-10{
+  margin-bottom:10px;
 }
 .margin-bottom-20{
   margin-bottom:20px;

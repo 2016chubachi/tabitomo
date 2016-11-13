@@ -1,9 +1,9 @@
 <div class="thumbnail">
-  <%= member_image_tag(booking.guide.member) %>
+  <%= link_to member_image_tag(booking.guide.member), guide_detail_path(booking.guide_id) %>
   <div class="caption">
     <div class="text-primary">
       <h3>
-        <%= booking.guide.member.last_name + " " + booking.guide.member.first_name %>
+        <%= booking.guide.member.first_name + " " + booking.guide.member.last_name %>
       </h3>
       <% if booking.user_review.present? %>
         <%= link_to star_image_tag(booking.user_review.star_master),  edit_user_review_path(booking.user_review) %>

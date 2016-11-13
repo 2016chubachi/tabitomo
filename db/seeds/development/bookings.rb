@@ -6,29 +6,17 @@ Booking.create(
   traveler_id: 1,
   status_master_id: 1,
   guide_id: 1,
-  traveler_first_name: "Saori",
-  traveler_last_name: "To",
-  traveler_email: "a15xx@aiit.ac.jp",
-  traveler_telphone:"080-1234-5678",
-  traveler_country: "中国"
+  traveler_telphone:"070-1234-5678"
 )
 Booking.create(
   traveler_id: 1,
   status_master_id: 1,
   guide_id: 2,
-  traveler_first_name: "Saori",
-  traveler_last_name: "To",
-  traveler_email: "a15xx@aiit.ac.jp",
-  traveler_telphone:"080-1234-5678",
-  traveler_country: "中国"
+  traveler_telphone:"080-1234-5678"
 )
 Booking.create(
   traveler_id: 2,
   status_master_id: 1,
   guide_id: 2,
-  traveler_first_name: "Kenya",
-  traveler_last_name: "Okada",
-  traveler_email: "a15xx@aiit.ac.jp",
-  traveler_telphone:"080-1234-5678",
-  traveler_country: "日本"
+  traveler_telphone:"090-1234-5678"
 )
