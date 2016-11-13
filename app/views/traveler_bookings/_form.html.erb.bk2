@@ -1,24 +1,27 @@
 <%= form_for(@booking, url: traveler_booking_path(@booking), html: { class: "form-horizontal"}) do |f| %>
+  <b>予約明細</b>
+
+  <div class="text-right">
+  <%= link_to_add_association "明細を追加", f, :booking_schedules,
+    class: "btn btn-default",
+    data: {
+      association_insertion_node: "#detail-association-insertion-point",
+      association_insertion_method: "append" }
+   %>
+  </div>
+
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
         <th><%= t("activerecord.attributes.booking_schedule.traveler_date") %></th>
         <th><%= t("activerecord.attributes.booking_schedule.traveler_count") %></th>
         <th><%= t("activerecord.attributes.booking_schedule.city_master_id") %></th>
+        <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="detail-association-insertion-point">
       <%= f.fields_for :booking_schedules do |bs| %>
-        <tr>
-          <td>
-              <%= bs.date_select :traveler_date,{},{class: "form-control", style: "display: inline; width: 30%"} %>
-          </td>
-          <td><%= bs.text_field :traveler_count, class: "form-control" %></td>
-          <td>
-            <%= bs.select :city_master_id, @booking.guide.guide_cities.map{|i| [i.city_master.send("text_#{I18n.locale}"), i.city_master.id ]} ,{}, {class: "form-control" } %>
-          </td>
-          <%= bs.hidden_field :id %>
-        </tr>
+        <%= render "booking_schedule_fields", f: bs %>
       <% end %>
     </tbody>
   </table>

@@ -4,7 +4,7 @@
   <%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>
 <% end %>
 
-<% @Bookings.each do |booking| %>
+<% @bookings.each do |booking| %>
 <div class="row">
   <div class="col-xs-12 col-sm-3">
     <%= render "thumbnails", booking: booking %>
