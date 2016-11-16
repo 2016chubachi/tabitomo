@@ -4,15 +4,24 @@
   <%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>
 <% end %>
 
-<% @Bookings.each do |booking| %>
+<% @bookings.each do |booking| %>
 <div class="row">
   <div class="col-xs-12 col-sm-3">
     <%= render "thumbnails", booking: booking %>
   </div>
   <div class="col-xs-12 col-sm-9">
+    <button class="btn btn-info margin-bottom-10">
+      <%= booking.status_master.send("text_#{I18n.locale}")%>
+    </button>
+
     <%= render "table", booking: booking %>
-    <%#= link_to booking.status_master.send("text_#{I18n.locale}"), "#", class: "btn btn-primary pull-right" %>
-    <%= link_to booking.status_master.send("text_#{I18n.locale}"), edit_traveler_booking_path(booking), class: "btn btn-primary pull-right" %>
+
+    <div class="col-sm-offset-3 col-sm-9 text-right">
+      <%= link_to "更新", edit_traveler_booking_path(booking), class: "btn btn-primary" %>
+      <% if booking.status_master.id == 1 %>
+        <%= link_to "削除", traveler_booking_path(booking), method: :delete , class: "btn btn-primary", data: {confirm: "本当に削除しますか？"}%>
+      <% end %>
+    </div>
   </div>
 </div>
 <% end %>

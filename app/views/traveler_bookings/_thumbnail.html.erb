@@ -1,9 +1,9 @@
 <div class="thumbnail"> <!-- thumbnail -->
-  <%= member_image_tag(@Booking.guide.member) %>
+  <%= link_to member_image_tag(@booking.guide.member), guide_detail_path(@booking.guide) %>
   <div class="caption">
     <div class="text-primary">
       <h3>
-        <%= @Booking.guide.member.last_name + " " + @Booking.guide.member.first_name %>
+        <%= @booking.guide.member.first_name + " " + @booking.guide.member.last_name %>
       </h3>
     </div>
   </div>

@@ -26,13 +26,9 @@ ActiveRecord::Schema.define(version: 20161103025855) do
     t.integer  "status_master_id"
     t.integer  "traveler_id"
     t.integer  "guide_id"
-    t.string   "traveler_first_name"
-    t.string   "traveler_last_name"
-    t.string   "traveler_email"
     t.string   "traveler_telphone"
-    t.string   "traveler_country"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "city_masters", force: :cascade do |t|

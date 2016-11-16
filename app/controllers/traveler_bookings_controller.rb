@@ -6,7 +6,7 @@ class TravelerBookingsController < ApplicationController
   def index
     # 更新が新しい順で表示する
     # binding.pry
-    @Bookings = Booking.where(traveler_id: current_member.traveler).order(updated_at: :desc)
+    @bookings = Booking.where(traveler_id: current_member.traveler).order(updated_at: :desc)
     # binding.pry
   end
 
@@ -14,30 +14,66 @@ class TravelerBookingsController < ApplicationController
   end
 
   def new
+    # binding.pry
+    @guide = Guide.find(params[:guide_id])
+    @member = current_member
+    @traveler = current_member.traveler
+
+    @booking = Booking.new
+    @booking.assign_attributes(guide_id: @guide.id, traveler_id: @traveler.id,traveler_telphone: @member.telphone)
+
+    @booking.booking_schedules.build
+    @booking.build_traveler_booking_comment
+    # binding.pry
   end
 
   def edit
     # binding.pry
-    @Booking = Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
     #traveler commentが存在しない場合、作成する。BuildしておかないとFormが作成されない
-    @Booking.build_traveler_booking_comment unless @Booking.traveler_booking_comment
+    @booking.build_traveler_booking_comment unless @booking.traveler_booking_comment
     # binding.pry
   end
 
-  def update
-    @Booking = Booking.find(params[:id])
-    @Booking.assign_attributes(booking_params)
-    if @Booking.save
-      # showを作ってないので予約一覧画面（旅人）にredirectする
+  def create
+    @booking = Booking.new(booking_params)
+    # binding.pry
+    @booking.assign_attributes(status_master_id: 1)
+    # binding.pry
+    if @booking.save
+      # binding.pry
       redirect_to traveler_bookings_path
     else
-      render "edit"
+      # binding.pry
+      render "new"
     end
+    # redirect_to traveler_bookings_path
+    # render text: "travelerbooking create"
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.assign_attributes(booking_params)
+    if @booking.save
+      # showを作ってないので予約一覧画面（旅人）にredirectする
+      redirect_to traveler_bookings_path
+      #
+    else
+      render "edit"
+      # binding.pry
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    # 予約一覧画面（旅人）にredirectする
+    redirect_to traveler_bookings_path
   end
 
   private
   def booking_params
-    attrs = [:traveler_first_name, :traveler_last_name, :traveler_email, :traveler_telphone, :traveler_country, :traveler_id]
+    attrs = [:traveler_id, :guide_id, :traveler_telphone]
     attrs << {traveler_booking_comment_attributes: [:id, :traveler_id, :comment, :booking_id]}
     attrs << {booking_schedules_attributes: [:id, :traveler_date, :traveler_count, :city_master_id, :_destroy]}
     params.require(:booking).permit(attrs)
