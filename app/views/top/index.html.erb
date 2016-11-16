@@ -2,13 +2,13 @@
 <% content_for :main_header do %>
   <%= render "slide_header" %> 
   <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
-  <%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>
+  <!--%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>-->
 <% end %>
 
-<ul class="nav nav-tabs margin-bottom-20" role="tablist">
-  <li role="presentation" class="active"><a href="#tab_city" role="tab" data-toggle="tab">都市</a></li>
-  <li role="presentation"><a href="#tab_guide" role="tab" data-toggle="tab">ガイド</a></li>
-</ul>
+<!--<ul class="nav nav-tabs margin-bottom-20" role="tablist">-->
+<!--  <li role="presentation" class="active"><a href="#tab_city" role="tab" data-toggle="tab">都市</a></li>-->
+<!--  <li role="presentation"><a href="#tab_guide" role="tab" data-toggle="tab">ガイド</a></li>-->
+<!--</ul>-->
 
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="tab_city">
@@ -70,9 +70,9 @@
     
     </div> <!-- 2row  -->
   </div>
-  <div role="tabpanel" class="tab-pane" id="tab_guide">
-    ガイドを表示するかもしれない
-  </div>
+  <!--<div role="tabpanel" class="tab-pane" id="tab_guide">-->
+  <!--  ガイドを表示するかもしれない-->
+  <!--</div>-->
 </div>
 
     
