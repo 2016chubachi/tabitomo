@@ -30,5 +30,8 @@ zh:
         email: 電子メール
         password: password
         remember_me:
-        telphone: 電話番号
-        gender: 性別
+        telphone:
+        gender:
+        guide:
+        country_id:
+        password_confirmation: 
