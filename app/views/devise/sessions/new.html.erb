@@ -2,32 +2,38 @@
 <% content_for :main_header do %>
 <% end %>
 
+<h2><%= t("login_link") %></h2>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <table class="table table-striped table-bordered">
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               　　　　<%= devise_error_messages! %>
-
+                  <div class="form-group">
                     <div class="field">
                       <%= f.label :email %><br />
-                      <%= f.email_field :email, autofocus: true %>
+                      <%= f.email_field :email, autofocus: true, class: "form-control"  %>
                     </div>
+                  </div>
 
+                  <div class="form-group">
                     <div class="field">
                       <%= f.label :password %><br />
-                      <%= f.password_field :password, autocomplete: "off" %>
+                      <%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
                     </div>
+                  </div>
 
+                  <div class="form-group">
                     <% if devise_mapping.rememberable? -%>
                       <div class="field">
                         <%= f.check_box :remember_me %>
                         <%= f.label :remember_me %>
                       </div>
                     <% end -%>
+                  </div>
 
-                    <%= f.submit "ユーザーログイン", class: "btn btn-primary pull-left" %>
-          </table>
-                <%= render "devise/shared/links" %>
+                    <%= f.submit t("login_link"), class: "btn btn-primary" %>
               <% end %>
+          </table>
+        <%= render "devise/shared/links" %>
       　</div>
-    　</div>
+</div>
