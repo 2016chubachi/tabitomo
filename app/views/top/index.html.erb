@@ -74,12 +74,3 @@
   <!--  ガイドを表示するかもしれない-->
   <!--</div>-->
 </div>
-
-    
-
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
-<p><%= t('hello') %></p>
-<%= link_to("TOPへ",top_path)%>
-<%= link_to_if params[:locale] != 'ja', '日本語',  url_for(controller: 'top', action: 'index', locale: 'ja') %> |
-<%= link_to_if params[:locale] != 'en',  'English', url_for(controller: 'top', action: 'index', locale: 'en') %>
