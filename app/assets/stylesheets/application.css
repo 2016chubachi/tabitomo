@@ -65,6 +65,10 @@
   padding-left: 0px;
 }
 
+.hidden-div{
+  display: none;
+}
+
 
 
 /*カレンダー用css*/

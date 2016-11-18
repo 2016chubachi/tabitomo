@@ -1,0 +1,24 @@
+<% if flash && flash.present? %>
+  <div id="div-info-message" class="panel panel-info hidden-div">
+    <div class="panel-heading">
+      <%= pluralize(flash.count, "info") %> があります。
+      <button type="button" class="close"><span>&times;</span></button>
+      </div>
+    <div class="panel-body">
+      <ul>
+        <% flash.each do |key, message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('#div-info-message').slideDown('slow')  //infoメッセージエリアを表示する
+                              .find('button.close').on('click',function(){
+                                  //×ボタンがクリックされたとき、infoメッセージを非表示
+                                  $('#div-info-message').slideUp('slow');
+                                });
+    });
+  </script>
+<% end %>

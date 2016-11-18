@@ -1,3 +1,8 @@
+<% content_for :error_messages do %>
+  <!-- エラーメッセージの表示エリアをレンダリング-->
+  <%= render partial: "shared/error", locals: {obj: @booking} %>
+<% end %>
+
 <div class="row"> <!-- row -->
   <div class="col-xs-12 col-sm-3"> <!-- col-xs-12 col-sm-3 -->
     <%= render "thumbnail" %>
