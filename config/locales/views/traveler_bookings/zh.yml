@@ -20,11 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh:
-  activerecord:
-    models:
-      booking_schedule:
-    attributes:
-      booking_schedule:
-        traveler_count: "人数_zh"
-        city_master_id: "場所_zh"
-        traveler_date: "日程_zh"
+  traveler_bookings:
+    form:
+      booking_schedule: "予約スケジュール_zh"
+      add_schedule: "スケジュール追加_zh"

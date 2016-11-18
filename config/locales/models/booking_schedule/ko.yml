@@ -24,7 +24,7 @@ ko:
     models:
       booking_schedule:
     attributes:
-      booking_schedule: 
-        traveler_count:
-        city_master_id:
-        traveler_date:
+      booking_schedule:
+        traveler_count: "人数_ko"
+        city_master_id: "場所_ko"
+        traveler_date: "日程_ko"

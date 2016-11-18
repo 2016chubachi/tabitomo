@@ -1,0 +1,5 @@
+<!-- travelerでログインした時の予約一覧画面 -->
+<% content_for :main_header do %>
+  <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
+  <%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>
+<% end %>

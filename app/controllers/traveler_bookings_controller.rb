@@ -11,6 +11,7 @@ class TravelerBookingsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -31,7 +32,8 @@ class TravelerBookingsController < ApplicationController
     # binding.pry
     @booking = Booking.find(params[:id])
     #traveler commentが存在しない場合、作成する。BuildしておかないとFormが作成されない
-    @booking.build_traveler_booking_comment unless @booking.traveler_booking_comment
+    #newで必ず作成されるので、いまは不要
+    # @booking.build_traveler_booking_comment unless @booking.traveler_booking_comment
     # binding.pry
   end
 

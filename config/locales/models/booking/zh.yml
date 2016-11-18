@@ -22,9 +22,10 @@
 zh:
   activerecord:
     models:
-      booking_schedule:
+      booking:
     attributes:
-      booking_schedule:
-        traveler_count: "人数_zh"
-        city_master_id: "場所_zh"
-        traveler_date: "日程_zh"
+      booking:
+        star_master_id: "ステータス_zh"
+        traveler_id: "旅行者_zh"
+        guide_id: "ガイド_zh"
+        traveler_telphone: "電話番号_zh"
