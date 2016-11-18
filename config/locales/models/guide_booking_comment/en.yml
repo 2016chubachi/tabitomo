@@ -19,12 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-zh:
+en:
   activerecord:
     models:
-      booking_schedule:
+      guide_booking_comment:
     attributes:
-      booking_schedule:
-        traveler_count: "人数_zh"
-        city_master_id: "場所_zh"
-        traveler_date: "日程_zh"
+      guide_booking_comment:
+        comment: "Guide comment"
