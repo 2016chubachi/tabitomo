@@ -76,9 +76,11 @@
     <%= yield :main_header%>
 
     <div class="container">
+      <!--インフォメッセージ -->
+      <%= render "shared/info" %>
+      <!--エラーメッセージ -->
+      <%= yield :error_messages%>
       <!--メインコンテンツ -->
-      <!-- <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> -->
       <%= yield%>
     </div>
   </main>

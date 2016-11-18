@@ -38,6 +38,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  # エラーが発生した場合の処理コントローラとアクションを指定する
+  # config.exceptions_app = ->(env) { ErrorsController.action(:show).call(env) }
+  # config.exceptions_app = self.routes
 
 # mail setting.
 #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
