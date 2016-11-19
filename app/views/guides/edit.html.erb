@@ -1,8 +1,17 @@
-<div class="tab-pane" id="profile">
+
+<!-- スライドをレイアウトの[main_header]に入れる部-->
+<% content_for :main_header do %>
+    <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
+    <%= render partial: "shared/tab_header", locals: {tab_id: 'profile'} %>
+<% end %>
+
+<div class="container">        <!-- 全体を囲むコンテナ -->
+
+    <div class="tab-pane" id="profile">
       <!--form role="form"-->
       <!--%= form_for :guide, url:guide_path(@guide), method: :patch do |f| %-->
       <%= render 'form' %>
 
-</div>
+</div>        <!-- 全体を囲むコンテナ -->
 <br>
 <br>
