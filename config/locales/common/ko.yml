@@ -24,6 +24,7 @@ ko:
   search_button: "검색버튼"
   search_place: "도시를 입력하세요."
   login_link: "로그인"
+  sign_out: "로그 아웃"
   member_sigup_link: "유저 등록"
   tab_booking: "예약"
   tab_in_message: "받은 메세지"

@@ -39,10 +39,10 @@
               <ul class="nav navbar-nav navbar-right">
                 <% if member_signed_in? %>
                 <li><%= link_to current_member.first_name, current_member.guide ? guide_bookings_path : traveler_bookings_path%></a></li>
-                <li><%= link_to "サインアウト", destroy_member_session_path, :method => :delete %></a></li>
+                <li><%= link_to t('sign_out'), destroy_member_session_path, :method => :delete %></a></li>
                 <%else%>
-                <li><%= link_to t('login_link'), new_member_session_path, :method => :new %></li>
-                <li><%= link_to t('member_sigup_link'), new_member_registration_path%></li>
+                <li><%= link_to t('login_link'), new_member_session_path %></li>
+                <li><%= link_to t('member_sigup_link'), new_member_registration_path %></li>
                 <% end %>
                 <li class="dropdown">
                   <a id="language_change" href="#" onClick="language_click()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

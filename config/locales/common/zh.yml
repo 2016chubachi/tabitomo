@@ -24,6 +24,7 @@ zh:
   search_button: "検索_zh"
   search_place: "都市を入力してください_zh"
   login_link: "ログイン_zh"
+  sign_out: "Sign out"
   member_sigup_link: "用户注册"
   tab_booking: "Booking_zh"
   tab_in_message: "In Message_zh"
