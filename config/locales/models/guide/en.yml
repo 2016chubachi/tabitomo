@@ -25,10 +25,12 @@ en:
       guide:
     attributes:
       guide:
-        experience: 経験年数
-        birth_year: 出生年
-        profile: 個人説明 
-        guide_service: ガイドサービス
-        guide_transportation: 移動手段
-        guide_interest: guide_interest
-        license_flg: ライセンス
+        experience: Experience
+        birth_year: Year of birth
+        profile: Profile
+        guide_service: Guiding Service
+        guide_transportation: Transportation
+        guide_interest: Interests
+        license_flg: Licence
+        guide_languages: Language & Level
+        guide_cities: Guiding cities

@@ -25,10 +25,12 @@ zh:
       guide:
     attributes:
       guide:
-        experience: 経験年数
+        experience: 经验
         birth_year: 出生年
-        profile: 個人説明 
-        guide_service: ガイドサービス
-        guide_transportation: 移動手段
-        guide_interest: guide_interest
-        license_flg: ライセンス
+        profile: 个人说明
+        guide_service: 导游服务
+        guide_transportation: 交通工具
+        guide_interest: 兴趣爱好
+        license_flg: 导游资格证明
+        guide_languages: 通用语言
+        guide_cities: 导游城市

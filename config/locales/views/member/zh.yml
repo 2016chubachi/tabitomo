@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 #
 zh:
-  view_member_hello: "Hello world"
+  activerecord:
+    models:
+      member:
+    attributes:
+      member:
+        first_name: 名
+        last_name: 姓
+        email: 電子邮件
+        password: 密码
+        telphone: 电话号码
+        gender: 性別
