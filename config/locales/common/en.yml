@@ -24,6 +24,7 @@ en:
   search_button: "Search"
   search_place: "Insert city for tour."
   login_link: "Member Login"
+  sign_out: "Sign out"
   member_sigup_link: "Member Registration"
   tab_booking: "Booking"
   tab_in_message: "In Message"
