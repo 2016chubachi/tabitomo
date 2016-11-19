@@ -34,4 +34,4 @@ en:
         gender: Gender
         guide: Become Guide
         country_id: Select your country.
-        password_confirmation:
+        password_confirmation: Password confirmation
