@@ -18,6 +18,6 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-# 
-# zh:
-#   view_member_hello: "Hello world"
+#
+zh:
+  view_member_hello: "Hello world"
