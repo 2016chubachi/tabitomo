@@ -19,15 +19,15 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-# ja:
-#   activerecord:
-#     models:
-#       member:
-#     attributes:
-#       member:
-#         first_name: 名
-#         last_name: 性
-#         email: 電子メール
-#         password: パスワード
-#         telphone: 電話番号
-#         gender: 性別
+ja:
+  activerecord:
+    models:
+      member:
+    attributes:
+      member:
+        first_name: 名
+        last_name: 性
+        email: 電子メール
+        password: パスワード
+        telphone: 電話番号
+        gender: 性別
