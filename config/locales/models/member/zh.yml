@@ -27,11 +27,11 @@ zh:
       member:
         first_name: 姓
         last_name: 名
-        email: 電子メール
-        password: password
-        remember_me:
-        telphone:
-        gender:
-        guide:
-        country_id:
-        password_confirmation: 
+        email: 电子邮件
+        password: 密码
+        remember_me: 保持登陆状态
+        telphone: 电话号码
+        gender: 性别
+        guide: 导游
+        country_id: 居住国
+        password_confirmation: 再一次输入密码

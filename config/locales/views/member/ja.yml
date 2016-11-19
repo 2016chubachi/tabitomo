@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  view_member_hello: "こんにちは"
+  activerecord:
+    models:
+      member:
+    attributes:
+      member:
+        first_name: 名
+        last_name: 姓
+        email: 電子メール
+        password: パスワード
+        telphone: 電話番号
+        gender: 性別

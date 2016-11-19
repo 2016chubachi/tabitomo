@@ -25,7 +25,7 @@ zh:
       booking:
     attributes:
       booking:
-        star_master_id: "ステータス_zh"
-        traveler_id: "旅行者_zh"
-        guide_id: "ガイド_zh"
-        traveler_telphone: "電話番号_zh"
+        star_master_id: 状态
+        traveler_id: 旅行者
+        guide_id: 导游
+        traveler_telphone: 电话号码
