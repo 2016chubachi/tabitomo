@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103025855) do
+ActiveRecord::Schema.define(version: 20161114064752) do
 
   create_table "booking_schedules", force: :cascade do |t|
     t.integer  "booking_id"
@@ -104,11 +104,13 @@ ActiveRecord::Schema.define(version: 20161103025855) do
   end
 
   create_table "licence_pictures", force: :cascade do |t|
-    t.string   "pictype"
-    t.binary   "image"
     t.integer  "guide_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "member_pictures", force: :cascade do |t|

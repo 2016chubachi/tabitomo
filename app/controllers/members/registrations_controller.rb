@@ -20,7 +20,7 @@ class Members::RegistrationsController < Devise::RegistrationsController
             @guide = Guide.new()
             @guide.member_id = resource.id
             @guide.save
-          end
+            end
       else
         if resource.save
           @traveler = Traveler.new()
