@@ -19,5 +19,5 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-# en:
-#   view_member_hello: "Hello world"
+en:
+  view_member_hello: "Hello world"

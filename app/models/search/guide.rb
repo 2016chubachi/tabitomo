@@ -43,4 +43,10 @@ class Search::Guide < Search::Base
     
     guides
   end
+
+  def selectByIndex
+    guides = ::Guide.all
+    
+    guides = guides.includes(:guide_cities).where(guide_cities: {city_master_id: city}) 
+  end
 end
