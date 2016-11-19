@@ -49,6 +49,9 @@ Rails.application.routes.draw do
    end
 
   end
+  
+  # ルーティングエラーハンドリング
+  get '*path', to: 'application#render_404'
 
   #scope "(:locale)", locale: /ja/ do
   #  resources :books

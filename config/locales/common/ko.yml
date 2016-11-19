@@ -20,12 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ko:
-  hello: "ko"
+  hello: "안녕하세요."
   search_button: "검색버튼"
   search_place: "도시를 입력하세요."
   login_link: "로그인"
+  sign_out: "로그 아웃"
   member_sigup_link: "유저 등록"
   tab_booking: "예약"
   tab_in_message: "받은 메세지"
   tab_out_message: "보낸 메세지"
   tab_profile: "프로파일"
+  characters_minimum: "문자 이상"
+  password_reset: "패스워드 리셋"
+  welcome: "환영합니다."
+  confirm_account: "등록하신 유저정보를 활성화 하시려면 아래 링크를 눌러주세요."
+  confirm_my_account: "유저 활성화"
+  someone: "패스워드를 변경하실려면 아래의 링크를 클릭 해주세요. "
+  channge_password: "패스워드 변경"
+  ignore: "패스워드 변경을 요청하지 않으셨으면 이메일을 무시하십시요."
+  until: "링크를 클릭하셔서 새로운 패스워드로 변경하시지 않을경우 패스워드는 변경되지 않습니다."

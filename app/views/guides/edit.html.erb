@@ -1,69 +1,8 @@
-<!-- スライドをレイアウトの[main_header]に入れる部-->
-<% content_for :main_header do %>
-    <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
-    <%= render partial: "shared/tab_header", locals: {tab_id: 'profile'} %>
-<% end %>
-
-<div class="container">        <!-- 全体を囲むコンテナ -->
-
-    <div class="tab-pane" id="profile">
+<div class="tab-pane" id="profile">
       <!--form role="form"-->
-      <%= form_for :guide, url:guide_path(@guide), method: :patch do |f| %>
-      <% if @guide.errors.any? %>
-      <div id="error_explanation">
-        <%= pluralize(@guide.errors.count, "error")%>error:
-        <ul>
-          <% @guide.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
-      <div class="row clearfix">
+      <!--%= form_for :guide, url:guide_path(@guide), method: :patch do |f| %-->
+      <%= render 'form' %>
 
-        <div class="col-md-8 column">
-
-            <div class="form-group">
-              <label for="profile_dtls"><h4>プロフィール</h4></label>
-              <!--textarea class="form-control" rows="3" id="profile_dtls"><!--% @guide.guide_profile %></textarea-->
-              <%= f.text_area :profile, id: 'profile_dtls', rows: 3, :class => "form-control" %>
-            </div>
-            <div class="form-group">
-              <label for="g_service"><h4>ガイド先のサンプル</h4></label>
-              <!--textarea class="form-control" rows="3" id="g_service"><!--% @guide.guide_service %></textarea-->
-              <%= f.text_area :guide_service, id: 'g_service', rows: 3, :class => "form-control" %>
-            </div>
-            <div class="form-group">
-              <label for="g_traffic_way"><h4>ガイド先の交通手段</h4></label>
-              <!--textarea class="form-control" rows="3" id="g_traffic_way"><!--% @guide.guide_transportation %></textarea-->
-              <%= f.text_area :guide_transportation, id: 'g_traffic_way', rows: 3, :class => "form-control" %>
-            </div>
-            <div class="form-group">
-              <label for="g_intresting"><h4>ガイド先の趣味、興味</h4></label>
-              <!--textarea class="form-control" rows="3" id="g_intresting"><!--% @guide.guide_interest %></textarea-->
-              <%= f.text_area :guide_interest, id:'g_intresting', rows: 3, :class => "form-control" %>
-            </div>
-            <!--
-            div class="form-group">
-              <label for="g_lng"><h4>ガイド言語　・　スキルレベル</h4></label>
-              <!--textarea class="form-control" rows="3" id="g_lng"></textarea-->
-            <!--%= f.text_area :guide_languages, id:'g_lng', rows: 3, :class => "form-control" %>
-            </div>
-            <div class="form-group">
-              <label for="g_city"><h4>ガイド可能都市</h4></label>
-              <!--textarea class="form-control" rows="3" id="g_city"></textarea-->
-              <!--%= f.text_area :guide_cities, id:'g_city', rows: 3, :class => "form-control" %>
-            </div>
-        </div-->
-
-
-
-            <%= submit_tag "Edit", :class => "btn btn-default" %>
-            <!--button type="submit" class="">Submit</button>
-            <button type="submit" class="btn btn-default">変更</button-->
-      <% end %><!--/form-->
-</div>  <!-- タブの中身-->
 </div>
-</div>        <!-- 全体を囲むコンテナ -->
 <br>
 <br>

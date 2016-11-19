@@ -65,6 +65,10 @@
   padding-left: 0px;
 }
 
+.hidden-div{
+  display: none;
+}
+
 
 
 /*カレンダー用css*/
@@ -123,4 +127,10 @@
 }
 .dl-vertical dd{
   padding-left: 50px;
+}
+
+/*form controlを左寄せ*/
+/*使い方　class="control-label text-left"*/
+.form-horizontal .control-label.text-left{
+  text-align:left;
 }

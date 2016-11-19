@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  rescue_from Exception, with: :render_500
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  rescue_from ActionController::RoutingError, with: :render_404
+
   before_action :set_locale
   # メンバーの登録時に使用する。strong parameter に下記のパラメターを追加する。
   before_filter :configure_permitted_parameters, if: :devise_controller?
@@ -24,6 +28,26 @@ class ApplicationController < ActionController::Base
     @language_name = LAN_NAMES[I18n.locale]
     # topページとnavバー検索フォームオブジェクト
     @top_search_guide = Search::Guide.new
+  end
+
+  def render_404(exception = nil)
+    @exception = exception
+    if request.xhr?
+      render json: { error: '404 error' }, status: 404
+    else
+      format = params[:format] == :json ? :json : :html
+      render template: 'errors/error_404', formats: format, status: 404, layout: 'application', content_type: 'text/html'
+    end
+  end
+
+  def render_500(exception = nil)
+    @exception = exception
+    if request.xhr?
+      render json: { error: '500 error' }, status: 500
+    else
+      format = params[:format] == :json ? :json : :html
+      render template: 'errors/error_500', formats: format, status: 500, layout: 'application', content_type: 'text/html'
+    end
   end
 
   protected

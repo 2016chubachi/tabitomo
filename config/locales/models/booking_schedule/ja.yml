@@ -25,6 +25,6 @@ ja:
       booking_schedule:
     attributes:
       booking_schedule:
-        traveler_count: 人数
-        city_master_id: 場所
-        traveler_date: 日程
+        traveler_count: "人数"
+        city_master_id: "場所"
+        traveler_date: "日程"

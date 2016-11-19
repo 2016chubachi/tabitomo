@@ -76,6 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # エラーが発生した場合の処理コントローラとアクションを指定する
+  # config.exceptions_app = ->(env) { ErrorsController.action(:show).call(env) }
 
   # mail setting.
     host= 'tabitomo.herokuapp.com'

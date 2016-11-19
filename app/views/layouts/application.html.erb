@@ -31,19 +31,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="<%= top_path%>">Tabitomo</a>
+              <%= link_to('Tabitomo', top_path, class: "navbar-brand" )%>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <!-- <li><a href="/members/sign_in">%= t('login_link')%></a></li> -->
                 <% if member_signed_in? %>
                 <li><%= link_to current_member.first_name, current_member.guide ? guide_bookings_path : traveler_bookings_path%></a></li>
-                <li><%= link_to "サインアウト", destroy_member_session_path, :method => :delete %></a></li>
+                <li><%= link_to t('sign_out'), destroy_member_session_path, :method => :delete %></a></li>
                 <%else%>
-                <li><%= link_to t('login_link'), new_member_session_path, :method => :new %></li>
-                <li><%= link_to t('member_sigup_link'), new_member_registration_path%></li>
+                <li><%= link_to t('login_link'), new_member_session_path %></li>
+                <li><%= link_to t('member_sigup_link'), new_member_registration_path %></li>
                 <% end %>
                 <li class="dropdown">
                   <a id="language_change" href="#" onClick="language_click()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -77,9 +76,11 @@
     <%= yield :main_header%>
 
     <div class="container">
+      <!--インフォメッセージ -->
+      <%= render "shared/info" %>
+      <!--エラーメッセージ -->
+      <%= yield :error_messages%>
       <!--メインコンテンツ -->
-      <!-- <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> -->
       <%= yield%>
     </div>
   </main>
