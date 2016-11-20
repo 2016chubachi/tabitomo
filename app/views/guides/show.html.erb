@@ -1,3 +1,9 @@
+<!-- スライドをレイアウトの[main_header]に入れる部-->
+<% content_for :main_header do %>
+    <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
+    <%= render partial: "shared/tab_header", locals: {tab_id: 'profile'} %>
+<% end %>
+
 <!--  contrainer 全体を囲むコンテナ -->
 <%= form_for @guide do |f| %>
 <div class="row clearfix">
