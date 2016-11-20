@@ -50,10 +50,10 @@
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu" style="min-width: 100px" role="memu">
-                    <li><%= link_to('日本語', (request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '' ? '/' : request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                    <li><%= link_to('English', '/en' + (request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                    <li><%= link_to('한국어', '/ko' + (request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                    <li><%= link_to('中文', '/zh' + (request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.path.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
+                    <li><%= link_to('日本語', (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '' ? '/' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
+                    <li><%= link_to('English', '/en' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
+                    <li><%= link_to('한국어', '/ko' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
+                    <li><%= link_to('中文', '/zh' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
                   </ul>
                 </li>
               </ul>
