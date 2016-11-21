@@ -3,6 +3,8 @@
   <%= render partial: "shared/error", locals: {obj: @booking} %>
 <% end %>
 
+<%= render "tab" %>
+
 <div class="row"> <!-- row -->
   <div class="col-xs-12 col-sm-3"> <!-- col-xs-12 col-sm-3 -->
     <%= render "thumbnail" %>
@@ -10,7 +12,15 @@
   <div class="col-xs-12 col-sm-9"> <!-- col-xs-12 col-sm-9 -->
     <%#= binding.pry %>
     <%= form_for(@booking, url: traveler_booking_path(@booking), html: { class: "form-horizontal"}) do |f| %>
+      <%= render "booking_schedule" , f: f %>
       <%= render "form", f: f %>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9 text-right">
+          <%= f.submit "更新", class: "btn btn-primary" %>
+        </div>
+      </div>
+      
     <% end %>
   </div><!-- col-xs-12 col-sm-9 -->
 </div> <!-- row -->
