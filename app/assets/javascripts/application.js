@@ -179,7 +179,7 @@ function setSchdules(json, textStatus, jqXHR) {
   })
 }
 //予約明細日程にカレンダーを表示する
-function datePickerHandler(guide_id,traveler_id){
+function datePickerHandler(guide_id,booking_id){
   //jquery uiのdatepickerを設定する
   $(".traveler-date-datepicker").datepicker({
     //選択した日付戻り値のフォーマット
@@ -199,7 +199,7 @@ function datePickerHandler(guide_id,traveler_id){
           //ルート相対パス
           url: "/guide_detail/schedule",
           async: false,
-          data: {guide: guide_id,traveler:traveler_id,date: currentDate},
+          data: {guide: guide_id,booking:booking_id,date: currentDate},
           callback: setSchdules
         });
     }
@@ -214,7 +214,7 @@ function datePickerHandler(guide_id,traveler_id){
         //javascriptの月は[0-11]なので、実際の月から[-1]にする
         //下記どちでもいい
         //data: {guide: guide_id,date: new Date(year,month-1,1)},
-        data: {guide: guide_id,traveler:traveler_id,date: new Date(year + '-' + month + '-' + 1)},
+        data: {guide: guide_id,booking:booking_id,date: new Date(year + '-' + month + '-' + 1)},
         callback: setSchdules
         });
     }
