@@ -21,6 +21,6 @@
 
 en:
   traveler_bookings:
-    form:
+    booking_schedule:
       booking_schedule: "Booking Schedule"
       add_schedule: "Add Schedule"

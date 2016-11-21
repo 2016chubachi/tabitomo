@@ -21,6 +21,6 @@
 
 zh:
   traveler_bookings:
-    form:
+    booking_schedule:
       booking_schedule: "预约日程表"
       add_schedule: "添加预约"
