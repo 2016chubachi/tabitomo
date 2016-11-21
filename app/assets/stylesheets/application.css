@@ -134,3 +134,9 @@
 .form-horizontal .control-label.text-left{
   text-align:left;
 }
+
+/*予約日程の日づ受選択ボックスの背景色とカーソル設定*/
+.traveler-date-datepicker[readonly]{
+  background-color: #fff;
+  cursor: pointer;
+}

@@ -161,7 +161,8 @@ function getScheduleJson(options){
   });
 }
 
-var bookingedDays = {};
+// 予約済み日付リスト
+var bookingedDays = [];
 function setSchdules(json, textStatus, jqXHR) {
   //取得出来た後、予約ごとカレンダーに反映する
   bookingedDays = $.map(json,function(value,index){
@@ -169,9 +170,16 @@ function setSchdules(json, textStatus, jqXHR) {
     
     return tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' + tempDate.getDate();
   });
+  //画面上に設定済みの日付も入れる
+  $('input[type="text"].traveler-date-datepicker').each(function(){
+    if(this.value){
+      var tempDate = new Date(this.value);
+      bookingedDays.push(tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' + tempDate.getDate());
+    }
+  })
 }
 //予約明細日程にカレンダーを表示する
-function datePickerHandler(guide_id){
+function datePickerHandler(guide_id,traveler_id){
   //jquery uiのdatepickerを設定する
   $(".traveler-date-datepicker").datepicker({
     //選択した日付戻り値のフォーマット
@@ -191,7 +199,7 @@ function datePickerHandler(guide_id){
           //ルート相対パス
           url: "/guide_detail/schedule",
           async: false,
-          data: {guide: guide_id,date: currentDate},
+          data: {guide: guide_id,traveler:traveler_id,date: currentDate},
           callback: setSchdules
         });
     }
@@ -206,7 +214,7 @@ function datePickerHandler(guide_id){
         //javascriptの月は[0-11]なので、実際の月から[-1]にする
         //下記どちでもいい
         //data: {guide: guide_id,date: new Date(year,month-1,1)},
-        data: {guide: guide_id,date: new Date(year + '-' + month + '-' + 1)},
+        data: {guide: guide_id,traveler:traveler_id,date: new Date(year + '-' + month + '-' + 1)},
         callback: setSchdules
         });
     }

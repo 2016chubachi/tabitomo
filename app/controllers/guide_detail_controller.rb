@@ -15,8 +15,14 @@ class GuideDetailController < ApplicationController
     if params[:guide] && params[:date]
       startDate = DateTime.parse(params[:date])
       # .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date).distinct
-      @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month)
-        .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date).uniq()
+      if params[:traveler]
+        # 該当旅人のデータを対象外にする
+        @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month)
+        .where("traveler_date <= ?",startDate.end_of_month).where("traveler_id <> #{params[:traveler]}").pluck(:traveler_date).uniq()
+      else
+        @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month)
+          .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date).uniq()
+      end
       render json: @schedules, status: :ok
     else
       render json: "不正なアクセス！", status: :bad_request

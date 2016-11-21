@@ -1,7 +1,7 @@
 <tr class="nested-fields">
   <td>
       <!--%= f.date_select :traveler_date,{},{class: "form-control", style: "display: inline; width: 30%"} %>-->
-      <%= f.text_field :traveler_date,value: f.object[:traveler_date] ? f.object[:traveler_date].strftime("%Y-%m-%d") : f.object[:traveler_date],class: "form-control traveler-date-datepicker"%>
+      <%= f.text_field :traveler_date,value: f.object[:traveler_date] ? f.object[:traveler_date].strftime("%Y-%m-%d") : f.object[:traveler_date],readonly: true,class: "form-control traveler-date-datepicker"%>
   </td>
   <td><%= f.text_field :traveler_count, class: "form-control" %></td>
   <td>
@@ -13,5 +13,5 @@
   <%= f.hidden_field :id %>
 </tr>
 <script type="text/javascript">
-  datePickerHandler(<%= @booking.guide.id%>);
+  datePickerHandler(<%= @booking.guide.id%>,<%= @booking.traveler.id%>);
 </script>
