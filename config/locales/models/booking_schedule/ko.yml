@@ -22,9 +22,9 @@
 ko:
   activerecord:
     models:
-      booking_schedule:
+      booking_schedules:
     attributes:
-      booking_schedule:
+      booking_schedules:
         traveler_count: "人数_ko"
         city_master_id: "場所_ko"
         traveler_date: "日程_ko"

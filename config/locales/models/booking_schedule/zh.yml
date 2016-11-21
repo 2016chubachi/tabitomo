@@ -22,9 +22,9 @@
 zh:
   activerecord:
     models:
-      booking_schedule:
+      booking_schedules:
     attributes:
-      booking_schedule:
-        traveler_count: "人数"
-        city_master_id: "地点"
-        traveler_date: "日期"
+      booking_schedules:
+        traveler_count: "人数_zh"
+        city_master_id: "場所_zh"
+        traveler_date: "日程_zh"

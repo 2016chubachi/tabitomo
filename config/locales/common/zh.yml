@@ -20,11 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh:
-
   hello: "您好"
   search_button: "搜索"
   search_place: "请输入城市名"
   login_link: "登陆"
+  sign_out: "Sign out"
   member_sigup_link: "用户注册"
   tab_booking: "预约"
   tab_in_message: "收件一览"
