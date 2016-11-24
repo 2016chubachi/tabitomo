@@ -22,9 +22,9 @@
 en:
   activerecord:
     models:
-      booking_schedule:
+      booking_schedules:
     attributes:
-      booking_schedule:
+      booking_schedules:
         traveler_count: People
         city_master_id: Location
         traveler_date: Schedule
