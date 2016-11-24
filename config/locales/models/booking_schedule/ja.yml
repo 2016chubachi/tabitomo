@@ -23,8 +23,20 @@ ja:
   activerecord:
     models:
       booking_schedule:
+      booking_schedules:
     attributes:
       booking_schedule:
         traveler_count: "人数"
         city_master_id: "場所"
         traveler_date: "日程"
+      booking_schedules:
+        traveler_count: "人数"
+        city_master_id: "場所"
+        traveler_date: "日程"
+    errors:
+      messages:
+        invalid_traveler_count: "は半角英数字で入力してください。"
+    info:
+        messages:
+          approved: "承認しました。"
+          cancelled: "却下しました。"        

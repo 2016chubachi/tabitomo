@@ -23,8 +23,20 @@ ko:
   activerecord:
     models:
       booking_schedule:
+      booking_schedules:
     attributes:
       booking_schedule:
         traveler_count: "人数_ko"
         city_master_id: "場所_ko"
         traveler_date: "日程_ko"
+      booking_schedules:
+        traveler_count: "人数_ko"
+        city_master_id: "場所_ko"
+        traveler_date: "日程_ko"
+    errors:
+      messages:
+        invalid_traveler_count: "は半角英数字で入力してください。_ko"
+    info:
+        messages:
+          approved: "承認しました。_ko"
+          cancelled: "却下しました。_ko"        
