@@ -27,8 +27,8 @@
   
   <script type="text/javascript">
     jQuery(document).ready(function($){
-      $('#detail-association-insertion-point').on('click','tr > td:first-child > input[type=text]:not(.traveler-date-datepicker)',function(){
-        datePickerHandler($(this).addClass('traveler-date-datepicker'),<%= @booking.guide.id%>,<%= @booking.id%>);
+      $('#detail-association-insertion-point').on('click','tr > td:first-child > input[type=text]:not(.hasDatepicker)',function(){
+        datePickerHandler($(this),<%= @booking.guide.id%>,<%= @booking.id%>);
         $(this).focus();
       });
     });
