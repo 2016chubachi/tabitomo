@@ -171,7 +171,7 @@ function setSchdules(json, textStatus, jqXHR) {
     return tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' + tempDate.getDate();
   });
   //画面上に設定済みの日付も入れる
-  $('input[type="text"].traveler-date-datepicker').each(function(){
+  $('#detail-association-insertion-point > tr:visible > td:first-child > input[type=text]').each(function(){
     if(this.value){
       var tempDate = new Date(this.value);
       bookingedDays.push(tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' + tempDate.getDate());
