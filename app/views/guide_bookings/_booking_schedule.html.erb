@@ -1,0 +1,16 @@
+<!-- <b><%= t(".booking_schedule") %></b> -->
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th><%= t("activerecord.attributes.booking_schedule.traveler_date") %></th>
+      <th><%= t("activerecord.attributes.booking_schedule.traveler_count") %></th>
+      <th><%= t("activerecord.attributes.booking_schedule.city_master_id") %></th>
+    </tr>
+  </thead>
+  <tbody id="detail-association-insertion-point">
+    <%= f.fields_for :booking_schedules do |bs| %>
+      <%#= render "booking_schedule_fields", f: bs %>
+    <% end %>
+  </tbody>
+</table>

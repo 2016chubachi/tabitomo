@@ -22,9 +22,21 @@
 zh:
   activerecord:
     models:
+      booking_schedule:
       booking_schedules:
     attributes:
+      booking_schedule:
+        traveler_count: "人数_zh"
+        city_master_id: "場所_zh"
+        traveler_date: "日程_zh"
       booking_schedules:
         traveler_count: "人数_zh"
         city_master_id: "場所_zh"
         traveler_date: "日程_zh"
+    errors:
+      messages:
+        invalid_traveler_count: "は半角英数字で入力してください。_zh"
+    info:
+        messages:
+          approved: "承認しました。_zh"
+          cancelled: "却下しました。_zh"
