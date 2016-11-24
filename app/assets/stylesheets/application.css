@@ -142,3 +142,9 @@ text-rightが勝つので、importantで強くする*/
 .text-left-custom{
  text-align:left !important;
 }
+
+/*予約日程の日づ受選択ボックスの背景色とカーソル設定*/
+#detail-association-insertion-point input[type=text][readonly]{
+  background-color: #fff;
+  cursor: pointer;
+}
