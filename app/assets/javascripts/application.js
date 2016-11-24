@@ -179,9 +179,9 @@ function setSchdules(json, textStatus, jqXHR) {
   })
 }
 //予約明細日程にカレンダーを表示する
-function datePickerHandler(guide_id,booking_id){
+function datePickerHandler(target,guide_id,booking_id){
   //jquery uiのdatepickerを設定する
-  $(".traveler-date-datepicker").datepicker({
+  target.datepicker({
     //選択した日付戻り値のフォーマット
     dateFormat: "yy-mm-dd"
     //dayNamesMin: [ "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" ],

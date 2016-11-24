@@ -136,7 +136,7 @@
 }
 
 /*予約日程の日づ受選択ボックスの背景色とカーソル設定*/
-.traveler-date-datepicker[readonly]{
+#detail-association-insertion-point input[type=text][readonly]{
   background-color: #fff;
   cursor: pointer;
 }
