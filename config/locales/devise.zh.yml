@@ -61,7 +61,6 @@ zh:
         one: "因为错误发生，所以 %{resource} 无法被保存。"
         other: "%{count} 个错误发生， %{resource}  无法被保存。"
       taken: "已经被使用。"
-      blank: "没有输入项"
       too_short: "必须输入 %{count}个以上字符。"
       too_long: "必须输入 %{count}个以下字符。"
       invalid: "无效"
