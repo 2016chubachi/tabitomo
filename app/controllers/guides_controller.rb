@@ -36,15 +36,6 @@ class GuidesController < ApplicationController
   end
 
   private
-<<<<<<< HEAD
-     def guide_params
-       params.require(:guide).permit(
-       :profile, :guide_service, :guide_transportation,
-       :guide_interest, :experience, :license_flg,:birth_year,
-       
-       )
-     end
-=======
     def guide_params
       params.require(:guide).permit(
               :profile, :guide_service, :guide_transportation,
@@ -53,5 +44,4 @@ class GuidesController < ApplicationController
               member_attributes: [:gender, :first_name, :last_name,:telphone,:country_id]
        )
       end
->>>>>>> master
 end
