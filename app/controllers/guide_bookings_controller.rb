@@ -26,13 +26,12 @@ class GuideBookingsController < ApplicationController
 
     # binding.pry
     if @booking.save
-      # binding.binding.pry
-      msg = t("activerecord.info.messages.approved") if params[:approve]
-      msg = t("activerecord.info.messages.cancelled") if params[:cancel]
+      msg = t(".approved") if params[:approve]
+      msg = t(".cancelled") if params[:cancel]
       redirect_to guide_booking_path, notice: msg
-      # redirect_to guide_booking_path, notice: t("hello") + " " + t("search_button")
+      # flash[:notice] = t(".approved") if params[:approve]
+      # redirect_to guide_booking_path
     else
-      # binding.pry
       render "edit"
     end
   end
