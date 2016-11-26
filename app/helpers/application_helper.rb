@@ -13,4 +13,10 @@ module ApplicationHelper
       image_tag("/assets/no-image.png",{style: "max-width: 252px"}.merge(options))
     end
   end
+
+  # bookingが過去か確認する
+  def past_booking?(booking)
+    Date.today > booking.booking_schedules.maximum(:traveler_date)
+  end
+
 end

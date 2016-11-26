@@ -27,7 +27,7 @@ class GuideBookingsController < ApplicationController
     # binding.pry
     if @booking.save
       msg = t(".approved") if params[:approve]
-      msg = t(".cancelled") if params[:cancel]
+      msg = t(".cancelled") if params[:rejected]
       redirect_to guide_booking_path, notice: msg
       # flash[:notice] = t(".approved") if params[:approve]
       # redirect_to guide_booking_path

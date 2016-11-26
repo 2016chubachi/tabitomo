@@ -19,8 +19,9 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-zh:
-  guide_bookings:
+ko:
+  traveler_bookings:
     update:
-      approved: "予約を承認しました。_zh"
-      rejected: "予約を却下しました。_zh"
+      updated: "予約を更新しました。_ko"
+    destroy:
+      cancelled: "予約を取消しました。_ko"

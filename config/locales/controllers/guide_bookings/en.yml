@@ -23,4 +23,4 @@ en:
   guide_bookings:
     update:
       approved: "Booking is approved."
-      cancelled: "Booking is cancelled."
+      rejected: "Booking is rejected."

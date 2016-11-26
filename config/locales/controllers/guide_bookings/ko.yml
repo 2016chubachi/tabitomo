@@ -23,4 +23,4 @@ ko:
   guide_bookings:
     update:
       approved: "予約を承認しました。_ko"
-      cancelled: "予約を却下しました。_ko"
+      rejected: "予約を却下しました。_ko"
