@@ -1,13 +1,4 @@
-<div class="row">
-  <div class="col-sm-12">
-    <div class="thumbnail">
-      <%= link_to(member_image_tag(@guide.member),"#") %>
-      <div class="caption">
-        <h3><%= @guide.member.first_name + "  " + @guide.member.last_name%></h3>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "shared/member_box", locals: {member: @guide.member} %>
 <div class="row margin-bottom-20">
   <div class="col-xs-4 col-sm-5">
     <!-- <button class="btn btn-primary">メッセージ</button> -->
