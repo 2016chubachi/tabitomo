@@ -23,4 +23,4 @@ ja:
   guide_bookings:
     update:
       approved: "予約を承認しました。"
-      cancelled: "予約を却下しました。"
+      rejected: "予約を却下しました。"
