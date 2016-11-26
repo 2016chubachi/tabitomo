@@ -22,6 +22,7 @@ class GuidesController < ApplicationController
   end
 
   def edit
+    #binding.pry
     @guide = Guide.find(params[:id])
   end
 
