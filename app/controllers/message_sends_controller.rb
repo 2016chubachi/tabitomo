@@ -1,2 +1,0 @@
-class MessageSendsController < ApplicationController
-end

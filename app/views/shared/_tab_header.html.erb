@@ -4,11 +4,11 @@
       <!-- Nav tabs -->
       <ul id="header_tabs" class="nav nav-tabs">
         <li role="booking"><%= link_to(t("tab_booking"), current_member.guide ? guide_bookings_path : traveler_bookings_path  ) %></li>
-        <!--<li role="in_message"><%= link_to(t("tab_in_message"), message_receives_path  ) %></li>
-        <li role="out_message"><%= link_to(t("tab_out_message"), message_sends_path ) %></li>
+        <!--<li role="in_message"><%= link_to(t("tab_in_message"), msg_accepts_path  ) %></li>
+        <li role="out_message"><%= link_to(t("tab_out_message"), msg_sends_path ) %></li>
         <li role="profile"><%= link_to(t("tab_profile"), current_member.guide ? edit_guide_path(current_member.guide) : "#"  ) %></li>-->
-        <li role="in_message"><%= link_to(t("tab_in_message"), "#"  ) %></li>
-        <li role="out_message"><%= link_to(t("tab_out_message"), "#" ) %></li>
+        <li role="in_message"><%= link_to(t("tab_in_message"), msg_accepts_path  ) %></li>
+        <li role="out_message"><%= link_to(t("tab_out_message"), msg_sends_path ) %></li>
         <li role="profile"><%= link_to(t("tab_profile"), current_member.guide ? "#" : "#"  ) %></li>
         <script type="text/javascript">
           jQuery(function($){
