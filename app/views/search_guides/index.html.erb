@@ -1,8 +1,17 @@
-<%= form_for(@search_guide, html: { method: :get,class: "form-horizontal",role: 'form',id: "search_guide_form"}) do |f| %>
-  <%= render "search_form", f: f %>
-<% end %>
+<% content_for :main_header do %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= form_for(@search_guide, html: { method: :get,class: "form-horizontal",role: 'form',id: "search_guide_form"}) do |f| %>
+        <%= render "search_form", f: f %>
+      <% end %>
+  
+      <h1 class="page-header">検索結果</h1>
+    </div>
+  </div>
+</div>
+<%end%>
 
-<h1>検索結果</h1>
 <div class="row">
   <!--<% if @guides.length == 0 %>-->
   <!--  <span style="color:red;">お探しのガイドはいません！</span>-->

@@ -1,6 +1,6 @@
 <% if @reviews.present? && @reviews.length > 0 %>
     <% @reviews.each do |rev|  %>
-      <div class="panel panel-info">
+      <div id="review_display_div" class="panel panel-info">
         <div class="panel-heading header-pointer">
           <%=star_image_tag(rev.star_master)%>
           <span class="span-height"><%= rev.title%></span>
@@ -21,13 +21,13 @@
             </div>
           </div>
         </div>
-        <div class="panel-footer"><%= "投稿日:#{rev.updated_at}"%></div>
+        <div class="panel-footer"><%= "投稿日:#{rev.updated_at.strftime("%Y/%m/%d %H:%M:%S")}"%></div>
       </div>        
     <% end%>
     <script type="text/javascript">
       jQuery(function($){
-        $("div.panel.panel-info div.panel-heading.header-pointer").on("click",function(){
-          $(this).nextAll("div[class*='panel-']").fadeToggle(function(){
+        $("#review_display_div div.panel-heading.header-pointer").on("click",function(){
+          $(this).nextAll("div[class*='panel-']").slideToggle(function(){
             $(document).trigger("resize");
           });
           $(this).children(".glyphicon").toggleClass("glyphicon-minus glyphicon-plus");

@@ -1,3 +1,12 @@
+<% content_for :main_header do %>
+  <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
+  <%if params[:pageType].present? && params[:pageType] == 'accept' %>
+    <%= render partial: "shared/tab_header", locals: {tab_id: 'in_message'} %>
+  <%else%>
+    <%= render partial: "shared/tab_header", locals: {tab_id: 'out_message'} %>
+  <%end%>
+<% end %>
+
 <% content_for :error_messages do %>
   <!-- エラーメッセージの表示エリアをレンダリング-->
   <%= render partial: "shared/error", locals: {obj: @new_msg} %>
