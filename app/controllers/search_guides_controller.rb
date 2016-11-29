@@ -15,6 +15,9 @@ class SearchGuidesController < ApplicationController
       @search_guide.city = params[:city]
       @guides = @search_guide.selectByIndex
     end
+    unless @guides.present?
+      flash.now[:notice] = "お探しのガイドはいません！"
+    end
   end
 
 

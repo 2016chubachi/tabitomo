@@ -1,0 +1,64 @@
+<!-- message 送信画面-->
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+    <!--受信ページの場合、メンバボックスに表示するのは送信者-->
+    <!--送信ページの場合、メンバボックスに表示するのは受信者-->
+    <%= render partial: "shared/member_box", locals: {member: @new_msg.receiver} %>
+  </div>
+  <div class="col-xs-12 col-sm-9">　<!--　画面の右側　-->
+    <div class="row" style="margin-top:-20px;">
+      <div class="col-sm-12">
+        <div id="new_msg_form" class="panel panel-info"> <!--  返信フォーム -->
+          <div class="panel-heading header-pointer">
+            メッセージ
+            <div class="glyphicon glyphicon-minus float-right"></div>
+          </div>
+          <div class="panel-body"> <!--　panel-body -->
+            <%= form_for @new_msg ,html: {class: "form-horizontal"} do |f|%>
+              <div class="form-group">
+                <%= f.label :title,'',class: "col-sm-2 control-lable" %>
+                <div class="col-sm-10">
+                  <%= f.text_field(:title ,{class: "form-control", placeholder: "Title"})%>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <%= f.label :content,'',class: "col-sm-2 control-lable" %>
+                <div class="col-sm-10">
+                  <%= f.text_area(:content ,{class: "form-control",rows: "7", placeholder: "Question"})%>
+                </div>
+              </div>
+              <%= f.hidden_field :receiver_id%>
+              <%= f.hidden_field :sender_id%>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-2">
+                  <%= f.submit "送信",data: { confirm: 'メッセージを送信してもいいですか？', disable_with: '処理中...'}, class: "btn btn-info btn-block" %>
+                </div>
+              </div>
+            <%end%>
+          </div> <!--　panel-body -->
+        </div> <!--  返信フォーム -->
+        
+        <%@messages.each do |message|%>
+          <%if message.sender == current_member%>
+            <!--送信メッセージ-->
+            <%= render partial: "send_box", locals: {msg: message} %>
+          <%else%>
+            <!--受信メッセージ-->
+            <%= render partial: "accept_box", locals: {msg: message} %>
+          <%end%>
+        <%end%>
+      </div>
+    </div>
+  </div>　<!--　画面の右側　-->
+</div>
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+    $("#new_msg_form div.panel-heading.header-pointer").on("click",function(){
+      $(this).nextAll("div[class*='panel-']").slideToggle(function(){
+        $(document).trigger("resize");
+      });
+      $(this).children(".glyphicon").toggleClass("glyphicon-minus glyphicon-plus");
+    });
+  });
+</script>

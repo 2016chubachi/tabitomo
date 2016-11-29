@@ -18,58 +18,7 @@
 </head>
 <body>
   <!--ヘッダメニューバー -->
-  <header id="layout_header" class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <!-- 小さいサイズのディスプレイの際表示するトップの際表示するトップバー -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">MEMU</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <%= link_to('Tabitomo', top_path, class: "navbar-brand" )%>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <% if member_signed_in? %>
-                <li><%= link_to current_member.first_name, current_member.guide ? guide_bookings_path : traveler_bookings_path%></a></li>
-                <li><%= link_to t('sign_out'), destroy_member_session_path, :method => :delete %></a></li>
-                <%else%>
-                <li><%= link_to t('login_link'), new_member_session_path %></li>
-                <li><%= link_to t('member_sigup_link'), new_member_registration_path %></li>
-                <% end %>
-                <li class="dropdown">
-                  <a id="language_change" href="#" onClick="language_click()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span><%= @language_name%> </span>
-                    <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" style="min-width: 100px" role="memu">
-                    <li><%= link_to('日本語', (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '' ? '/' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                    <li><%= link_to('English', '/en' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                    <li><%= link_to('한국어', '/ko' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                    <li><%= link_to('中文', '/zh' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                  </ul>
-                </li>
-              </ul>
-              <%= form_for(@top_search_guide, url: search_guides_path, html: { method: :get, class: 'navbar-form navbar-right', role: 'search' }) do |f| %>
-                <%= f.text_field :city, class: 'form-control',:placeholder => t('search_place'),:size => "30",:id => "txtNavSearchCity" %>
-                <!--%= submit_tag t('search_button'),:name => "top_search",:class => "btn btn-primary"%>-->
-                <button class="btn btn-default btn-primary" type="submit" name="nav_search">
-                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <%= t('search_button')%>
-                </button>
-              <% end %>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-      </div>
-    </div>
-  </header>
+  <%= render "shared/header_menu" %>
 
   <main id="layout_main">
     <!--コンテンツのヘッダー -->
@@ -102,7 +51,7 @@
       </div>
     </div>
     <script>
-      jQuery(function($){
+      jQuery(document).ready(function($){
         $(window).on("load resize",function(){
           var innerHeight = $(window).height();
           var bodyHeight = $("body").height();
@@ -110,6 +59,10 @@
             var height = innerHeight - bodyHeight + $("#layout_main").height();
             $("#layout_main").height(height);
           }
+        });
+          
+        $(document).on('click','a[href="#"]',function(){
+          return false;
         });
       });
     </script>

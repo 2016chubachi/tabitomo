@@ -27,9 +27,9 @@ Rails.application.routes.draw do
    resources :star_masters, :only => [:show]
    resources :member_pictures, :only => [:show]
    resources :guide_detail, :only => [:show]
-   resources :messages
-   resources :message_sends
-   resources :message_receives
+   resources :messages, :only => [:new,:create,:destroy]
+   resources :msg_sends, :only => [:index]
+   resources :msg_accepts, :only => [:index]
 
   #  devise_for :members
 

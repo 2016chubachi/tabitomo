@@ -1,4 +1,4 @@
-<% if obj && obj.errors.present? && obj.errors.any? %>
+<% if obj && obj.errors.present?%>
   <div id="div-error-message" class="panel panel-danger hidden-div">
     <div class="panel-heading">
       <%= pluralize(obj.errors.count, "error") %> があります。
@@ -12,6 +12,30 @@
       </ul>
     </div>
   </div>
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+      $('#div-error-message').slideDown('slow')  //エラーメッセージエリアを表示する
+                              .find('button.close').on('click',function(){
+                                  //×ボタンがクリックされたとき、エラーメッセージを非表示
+                                  $('#div-error-message').slideUp('slow');
+                                });
+    });
+  </script>
+<%elsif session[:errors].present?%>
+  <div id="div-error-message" class="panel panel-danger hidden-div">
+    <div class="panel-heading">
+      <%= pluralize(session[:errors].count, "error") %> があります。
+      <button type="button" class="close"><span>&times;</span></button>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <% session[:errors].each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <%session[:errors] = nil%>
   <script type="text/javascript">
     jQuery(document).ready(function($){
       $('#div-error-message').slideDown('slow')  //エラーメッセージエリアを表示する
