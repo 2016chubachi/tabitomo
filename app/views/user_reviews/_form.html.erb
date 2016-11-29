@@ -6,11 +6,11 @@
     <% if params[:action] == "show" %>
       <%= star_image_tag(@UserReview.star_master)%>
     <% else %>
-      <%= f.radio_button :star_master_id, 1,  class: "radio-inline" %>星1つ
-      <%= f.radio_button :star_master_id, 2,  class: "radio-inline" %>星2つ
-      <%= f.radio_button :star_master_id, 3, checked: (f.object.new_record? or  @UserReview.star_master_id == 3),class: "radio-inline" %>星3つ
-      <%= f.radio_button :star_master_id, 4,  class: "radio-inline" %>星4つ
-      <%= f.radio_button :star_master_id, 5,  class: "radio-inline" %>星5つ
+      <%= f.radio_button :star_master_id, 1,  class: "radio-inline" %><%= f.label t(".star1") %>
+      <%= f.radio_button :star_master_id, 2,  class: "radio-inline" %><%= f.label t(".star2") %>
+      <%= f.radio_button :star_master_id, 3, checked: (f.object.new_record? or  @UserReview.star_master_id == 3),class: "radio-inline" %><%= f.label t(".star3") %>
+      <%= f.radio_button :star_master_id, 4,  class: "radio-inline" %><%= f.label t(".star4") %>
+      <%= f.radio_button :star_master_id, 5,  class: "radio-inline" %><%= f.label t(".star5") %>
     <% end %>
   </div>
 </div>

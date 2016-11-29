@@ -19,17 +19,11 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ja:
-  activerecord:
-    models:
-      user_review:
-      # booking_schedules:
-    attributes:
-      user_review:
-        star_master_id: "評価"
-        title: "タイトル"
-        detail: "詳細"
-      # booking_schedules:
-      #   traveler_count: 人数
-      #   traveler_location: 場所
-      #   traveler_date: 日程
+zh:
+  user_reviews:
+    create:
+      created: "ユーザーレビューを作成しました。_zh"
+    update:
+      updated: "ユーザーレビューを更新しました。_zh"
+    destroy:
+      deleted: "ユーザーレビューを削除しました。_zh"

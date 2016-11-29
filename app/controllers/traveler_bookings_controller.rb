@@ -57,7 +57,6 @@ class TravelerBookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.assign_attributes(booking_params)
     if @booking.save
-      # showを作ってないので予約一覧画面（旅人）にredirectする
       redirect_to traveler_booking_path, notice: t(".updated")
       #
     else
