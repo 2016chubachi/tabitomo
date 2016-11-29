@@ -4,11 +4,6 @@ class UserReviewsController < ApplicationController
 
   def show
     @UserReview = UserReview.find(params[:id])
-    # if params[:format].in?(["jpg","png","gif"])
-    #   send_star
-    # else
-    #   render "show"
-    # end
   end
 
   def new
@@ -21,7 +16,7 @@ class UserReviewsController < ApplicationController
     @UserReview = UserReview.new(user_review_params)
     # binding.pry
     if @UserReview.save
-      redirect_to @UserReview
+      redirect_to @UserReview, notice: t(".created")
     else
       render "new"
     end
@@ -29,6 +24,7 @@ class UserReviewsController < ApplicationController
 
   def edit
     @UserReview = UserReview.find(params[:id])
+    @stars = StarMaster.all
   end
 
   def update
@@ -36,7 +32,7 @@ class UserReviewsController < ApplicationController
     # @UserReview.assign_attributes(params[:user_review])
     @UserReview.assign_attributes(user_review_params)
     if @UserReview.save
-      redirect_to @UserReview
+      redirect_to @UserReview, notice: t(".updated")
     else
       render "edit"
     end
@@ -46,7 +42,7 @@ class UserReviewsController < ApplicationController
     @UserReview = UserReview.find(params[:id])
     @UserReview.destroy
     # 予約一覧画面（旅人）にredirectする
-    redirect_to traveler_bookings_path
+    redirect_to traveler_bookings_path, notice: t(".deleted")
   end
 
   private

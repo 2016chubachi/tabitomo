@@ -20,16 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  activerecord:
-    models:
-      user_review:
-      # booking_schedules:
-    attributes:
-      user_review:
-        star_master_id: "評価"
-        title: "タイトル"
-        detail: "詳細"
-      # booking_schedules:
-      #   traveler_count: 人数
-      #   traveler_location: 場所
-      #   traveler_date: 日程
+  user_reviews:
+    form:
+      star1: "星1つ"
+      star2: "星2つ"
+      star3: "星3つ"
+      star4: "星4つ"
+      star5: "星5つ"
