@@ -7,6 +7,7 @@
     <div class="panel-body">
       <ul>
         <% flash.each do |key, message| %>
+          <%continue if key == 'timedout'%>
           <li><%= message %></li>
         <% end %>
       </ul>
