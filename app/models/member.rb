@@ -8,7 +8,8 @@ class Member < ActiveRecord::Base
 
   attr_accessor :hantei
 
-    has_one :member_picture
+    has_one :member_picture, dependent: :destroy
+    accepts_nested_attributes_for :member_picture, allow_destroy: true
     #送信メッセージリレーション
     has_many :senders ,:class_name => "Message" , foreign_key: "sender_id"
     #受信メッセージリレーション

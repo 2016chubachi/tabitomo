@@ -30,6 +30,7 @@ Rails.application.routes.draw do
    resources :messages, :only => [:new,:create,:destroy]
    resources :msg_sends, :only => [:index]
    resources :msg_accepts, :only => [:index]
+   resources :licence_pictures, :only => [:show]
 
   #  devise_for :members
 
@@ -49,7 +50,7 @@ Rails.application.routes.draw do
    end
 
   end
-  
+
   # ルーティングエラーハンドリング
   get '*path', to: 'application#render_404'
 
