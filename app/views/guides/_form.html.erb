@@ -71,7 +71,9 @@
       <div class="form-group">
         <%= members_f.label :gender, class: "col-sm-3 control-label text-left-custom" %>
         <div class="col-sm-9">
-        <%= members_f.select :gender, options_for_select([[t(".male"),"1"],[t(".female"),"2"]]), {:prompt => true }, {:class => "form-control"} %>
+        <!-- <%= members_f.select :gender, options_for_select([[t(".male"),"1"],[t(".female"),"2"]]), {:prompt => true }, {:class => "form-control"} %> -->
+        <% options = [[t("male"), 1], [t("female"), 2]] %>
+        <%= members_f.select :gender, options, {:prompt => true }, {:class => "form-control"} %>
       </div>
       </div>
       <div class="form-group">
@@ -97,7 +99,7 @@
             <div class="form-group">
         <%= f.label :birth_year, class: "col-sm-3 control-label text-left-custom" %>
         <div class="col-sm-9">
-        <%=f.date_select(:birth_year, {:start_year => Date.current.year - 20, :end_year => Date.current.year - 65, :discard_day => "true", :discard_month => "true", :prompt => "お選んでください"}, {:class => "form-control"})%>
+        <%=f.date_select(:birth_year, {:start_year => Date.current.year - 20, :end_year => Date.current.year - 65, :discard_day => "true", :discard_month => "true", :prompt => true }, {:class => "form-control"})%>
         </div>
       </div>
       <div class="form-group">
@@ -109,7 +111,9 @@
       <div class="form-group">
          <%= f.label :license_flg, class: "col-sm-3 control-label text-left-custom" %>
         <div class="col-sm-9">
-          <%= f.select :license_flg, options_for_select([[t(".yes"), "0"], [t(".no"), "１"]]), {:prompt => true}, {:class => "form-control"} %>
+          <!-- <%= f.select :license_flg, options_for_select([[t(".yes"), "0"], [t(".no"), "１"]]), {:prompt => true}, {:class => "form-control"} %> -->
+          <% options = [[t("yes"), 1 ], [t("no"), 0 ]] %>
+          <%= f.select :license_flg, options, {:prompt => true }, {:class => "form-control"} %>
       </div>
       </div>
       <div class="form-group">
