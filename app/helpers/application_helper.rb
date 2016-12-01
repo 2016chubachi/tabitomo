@@ -16,7 +16,9 @@ module ApplicationHelper
 
   # bookingが過去か確認する
   def past_booking?(booking)
-    Date.today > booking.booking_schedules.maximum(:traveler_date)
+    unless booking.new_record?
+      Date.today > booking.booking_schedules.maximum(:traveler_date)
+    end
   end
 
 end
