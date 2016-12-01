@@ -7,7 +7,17 @@ module ApplicationHelper
   # 会員写真表示
   def member_image_tag(member, options ={})
     if member.member_picture.present?
-      path = member_picture_path(member,format: member.member_picture.extension)
+      path = member_picture_path(member.member_picture,format: member.member_picture.extension)
+      image_tag(path, {style: "max-width: 252px"}.merge(options))
+    else
+      image_tag("/assets/no-image.png",{style: "max-width: 252px"}.merge(options))
+    end
+  end
+
+  # license 写真表示
+  def licence_image_tag(guide, options ={})
+    if guide.licence_picture.present?
+      path = licence_picture_path(guide.licence_picture,format: guide.licence_picture.extension)
       image_tag(path, {style: "max-width: 252px"}.merge(options))
     else
       image_tag("/assets/no-image.png",{style: "max-width: 252px"}.merge(options))

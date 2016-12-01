@@ -5,5 +5,7 @@ class Guide < ActiveRecord::Base
     has_many :bookings
     has_many :guide_cities
     has_many :guide_languages
-    has_many :licence_pictures
+
+    has_one :licence_picture, dependent: :destroy
+    accepts_nested_attributes_for :licence_picture, allow_destroy: true
 end
