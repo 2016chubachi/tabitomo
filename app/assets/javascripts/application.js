@@ -10,15 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require i18n
-//= require i18n.js
-//= require i18n/translations
 //= require cocoon
 //= require_tree .
 
