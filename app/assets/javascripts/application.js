@@ -16,10 +16,10 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-// require jquery-ui
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require cocoon
+//= require jquery-ui
 //= require_tree .
 
 //言語切り替えがクリックされたとき、ドロップダウンメニューの選択の制御
