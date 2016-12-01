@@ -13,11 +13,11 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
-//= require jquery
-//= require jquery.turbolinks
-//= require jquery-ui
-//= require jquery_ujs
-//= require bootstrap-sprockets
+// require jquery
+// require jquery.turbolinks
+// require jquery_ujs
+// require bootstrap-sprockets
+// require jquery-ui
 //= require turbolinks
 //= require cocoon
 //= require_tree .
