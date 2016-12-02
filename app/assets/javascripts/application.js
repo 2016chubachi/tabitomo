@@ -27,14 +27,6 @@
 
 //= require_tree .
 
-//言語切り替えがクリックされたとき、ドロップダウンメニューの選択の制御
-//該当言語の方はクリックできないようにする
-function language_click(){
-  $('#language_change + ul li').removeClass('disabled');
-  var lan_text = $('#language_change span:first-child').text();
-  $("#language_change + ul li :contains('"+ lan_text.trim() +"')").parent().addClass('disabled');
-}
-
 // ガイド詳細画面のカレンダーを描画する
 function calendarDrawing(date,headTime){
   'use strict';
@@ -186,20 +178,12 @@ function setSchdules(json, textStatus, jqXHR) {
 }
 //予約明細日程にカレンダーを表示する
 function datePickerHandler(target,guide_id,booking_id){
-  switch (I18n.locale) {
-    case 'en':
-      $.datepicker.setDefaults($.datepicker.regional['en-GB']);
-      break;
-    case 'ko':
-      $.datepicker.setDefaults($.datepicker.regional['ko']);
-      break;
-    case 'zh':
-      $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
-      break;
-    default:
-      $.datepicker.setDefaults($.datepicker.regional['ja']);
-      break;
-  }
+  $.datepicker.setDefaults({
+    changeYear: true,
+    changeMonth: true,
+    showOtherMonths: true,
+    showButtonPanel: true
+  });
   //jquery uiのdatepickerを設定する
   target.datepicker({
     //選択した日付戻り値のフォーマット

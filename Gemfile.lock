@@ -249,7 +249,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
-  jquery-ui-rails
+  jquery-ui-rails (= 5.0.5)
   kaminari
   omniauth
   omniauth-facebook

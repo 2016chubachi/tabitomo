@@ -11,9 +11,6 @@ class ApplicationController < ActionController::Base
   # メンバーの登録時に使用する。strong parameter に下記のパラメターを追加する。
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
-  LAN_NAMES =
-      { ja: "日本語", en: "English", ko: "한국어",zh: "中文" }
-
   # 全リンクに locale 情報をセットする
   # @return [Hash] locale をキーとするハッシュ
   def default_url_options(options = {})
@@ -25,7 +22,6 @@ class ApplicationController < ActionController::Base
   # リンクの多言語化に対応する
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
-    @language_name = LAN_NAMES[I18n.locale]
     # topページとnavバー検索フォームオブジェクト
     @top_search_guide = Search::Guide.new
   end

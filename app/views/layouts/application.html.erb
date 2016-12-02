@@ -65,6 +65,40 @@
         $(document).on('click','a[href="#"]',function(){
           return false;
         });
+        
+        // 言語切り替えリンク初期化
+        $('#language_list li').removeClass('disabled')
+                              .find('[data-language="'+ I18n.locale +'"]').parent().addClass('disabled');
+        $('#language_name').text($('#language_list li.disabled a').text());
+        // datepickerの言語設定
+        setDatePickerLanguage();
+        // 言語切り替えクリック処理
+        $(document).on('click','#language_list a[data-language]',function(){
+          //言語切り替えがクリックされたとき、ドロップダウンメニューの選択の制御
+          //該当言語の方はクリックできないようにする
+          $('#language_name').text(this.text);
+          I18n.locale = $('#language_list li').removeClass('disabled').find(this).addClass('disabled').attr('data-language');
+          // datepickerの言語設定
+          setDatePickerLanguage();
+        });
+        
+        // datepickerの言語設定処理
+        function setDatePickerLanguage(){
+          switch (I18n.locale) {
+            case 'en':
+              $.datepicker.setDefaults($.datepicker.regional['en-GB']);
+              break;
+            case 'ko':
+              $.datepicker.setDefaults($.datepicker.regional['ko']);
+              break;
+            case 'zh':
+              $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+              break;
+            default:
+              $.datepicker.setDefaults($.datepicker.regional['ja']);
+              break;
+          }
+        }
       });
     </script>
   </footer>

@@ -33,15 +33,15 @@
               <li><%= link_to t('member_sigup_link'), new_member_registration_path %></li>
               <% end %>
               <li class="dropdown">
-                <a id="language_change" href="#" onClick="language_click()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                  <span><%= @language_name%> </span>
+                <a id="language_change" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <span id="language_name"></span>
                   <span class="caret"></span>
                 </a>
-                <ul class="dropdown-menu" style="min-width: 100px" role="memu">
-                  <li><%= link_to('日本語', (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '' ? '/' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                  <li><%= link_to('English', '/en' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                  <li><%= link_to('한국어', '/ko' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
-                  <li><%= link_to('中文', '/zh' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) )%></li>
+                <ul id="language_list" class="dropdown-menu" style="min-width: 100px" role="memu">
+                  <li><%= link_to('English', '/en' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) ,{"data-language" => 'en'})%></li>
+                  <li><%= link_to('日本語', (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '' ? '/' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) ,{"data-language" => 'ja'})%></li>
+                  <li><%= link_to('한국어', '/ko' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) ,{"data-language" => 'ko'})%></li>
+                  <li><%= link_to('中文', '/zh' + (request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'') == '/' ? '' : request.fullpath.gsub(/\/ja|\/en|\/ko|\/zh/,'')) ,{"data-language" => 'zh'})%></li>
                 </ul>
               </li>
             </ul>
