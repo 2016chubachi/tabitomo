@@ -19,7 +19,12 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require cocoon
-//= require jquery-ui
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-en-GB  
+//= require jquery-ui/datepicker-ko
+//= require jquery-ui/datepicker-zh-CN
+//= require jquery-ui/datepicker-ja
+
 //= require_tree .
 
 //言語切り替えがクリックされたとき、ドロップダウンメニューの選択の制御
@@ -181,16 +186,24 @@ function setSchdules(json, textStatus, jqXHR) {
 }
 //予約明細日程にカレンダーを表示する
 function datePickerHandler(target,guide_id,booking_id){
+  switch (I18n.locale) {
+    case 'en':
+      $.datepicker.setDefaults($.datepicker.regional['en-GB']);
+      break;
+    case 'ko':
+      $.datepicker.setDefaults($.datepicker.regional['ko']);
+      break;
+    case 'zh':
+      $.datepicker.setDefaults($.datepicker.regional['zh-CN']);
+      break;
+    default:
+      $.datepicker.setDefaults($.datepicker.regional['ja']);
+      break;
+  }
   //jquery uiのdatepickerを設定する
   target.datepicker({
     //選択した日付戻り値のフォーマット
     dateFormat: "yy-mm-dd"
-    //dayNamesMin: [ "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" ],
-    //周の名前、国際化の際修正する
-    ,dayNamesMin: [ "日", "月", "火", "水", "木", "金", "土" ]
-    //月の名前、国際化の際修正する
-    //,monthNames:[ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
-    ,monthNames:[ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" ]
     //カレンダー表示される前
     ,beforeShow:function(input,picker){
       var currentDate = $(input).datepicker("getDate") || new Date();
