@@ -21,6 +21,8 @@
 
 ja:
   traveler_bookings:
+    create:
+      created: "予約を作成しました。"
     update:
       updated: "予約を更新しました。"
     destroy:

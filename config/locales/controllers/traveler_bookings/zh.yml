@@ -21,6 +21,8 @@
 
 zh:
   traveler_bookings:
+    create:
+      created: "予約を作成しました。_zh"
     update:
       updated: "予約を更新しました。_zh"
     destroy:
