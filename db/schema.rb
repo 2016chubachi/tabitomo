@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20161103025855) do
   end
 
   create_table "countries", force: :cascade do |t|
+    t.string   "code"
     t.string   "text_ja"
     t.string   "text_en"
     t.string   "text_ko"
