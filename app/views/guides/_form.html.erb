@@ -38,18 +38,16 @@
           <div class="thumbnail">
                 <%= f.fields_for :member do |mp| %>
                     <%= mp.fields_for :member_picture do |imgf| %>
-                        <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
                         <div>
-                          <%= member_image_tag @guide.member %>
+                        <%= member_image_tag @guide.member %>
+                        <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
                           <%= imgf.check_box :_destroy %>
                           <%= imgf.label :_destroy %>
                           <%= imgf.hidden_field :id %>
-                        </div>
                         <% end %>
-                        <th>
                           <%= imgf.label :uploaded_image %>
-                        </th>
                           <%= imgf.file_field :uploaded_image %>
+                        </div>
                     <% end %>
                 <% end %>
           </div>
@@ -127,10 +125,8 @@
                           <%= lp.hidden_field :id %>
                         </div>
                         <% end %>
-                        <th><%= lp.label :uploaded_l_image %></th>
-                        <td>
-                          <%= lp.file_field :uploaded_l_image %>
-                        </td>
+                        <%= lp.label :uploaded_l_image %>
+                        <%= lp.file_field :uploaded_l_image %>  
                 <% end %>
           </div>
       </div>

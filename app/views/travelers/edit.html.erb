@@ -1,0 +1,19 @@
+<!-- スライドをレイアウトの[main_header]に入れる部-->
+
+<% content_for :main_header do %>
+    <%= render partial: "shared/tab_header", locals: {tab_id: 'profile'} %>
+<% end %>
+
+<% content_for :error_messages do %>
+  <%= render partial: "shared/error", locals: {obj: @traveler} %>
+<% end %>
+
+
+<!-- 全体を囲むコンテナ -->
+
+    <div class="col-xs-12 col-sm-12">
+    
+      <%= render 'form' %>
+    </div>
+
+<!-- 全体を囲むコンテナ -->

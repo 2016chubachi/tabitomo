@@ -3,4 +3,4 @@
 <li role="profile"><%= link_to(t("tab_profile"), current_member.guide ? edit_guide_path(current_member.guide) : "#"  ) %></li>-->
 <li role="in_message"><%= link_to(t("tab_in_message"), msg_accepts_path  ) %></li>
 <li role="out_message"><%= link_to(t("tab_out_message"), msg_sends_path ) %></li>
-<li role="profile"><%= link_to(t("tab_profile"), current_member.guide ? edit_guide_path(current_member ) : "#"  ) %></li>
+<li role="profile"><%= link_to(t("tab_profile"), current_member.guide ? edit_guide_path(current_member ) : edit_traveler_path(current_member)  ) %></li>
