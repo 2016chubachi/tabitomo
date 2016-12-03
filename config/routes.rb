@@ -31,6 +31,7 @@ Rails.application.routes.draw do
    resources :msg_sends, :only => [:index]
    resources :msg_accepts, :only => [:index]
    resources :licence_pictures, :only => [:show]
+   resources :travelers
 
   #  devise_for :members
 

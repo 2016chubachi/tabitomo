@@ -29,9 +29,9 @@ en:
         last_name: Last_name
         email: E-mail
         password: Password
-        remember_me: Save your password.
-        telphone: Telphone
+        remember_me: Save your password
+        telphone: Telephone
         gender: Gender
         guide: Become Guide
-        country_id: Select your country.
+        country_id: Your country
         password_confirmation: Password confirmation
