@@ -33,5 +33,5 @@ ko:
         telphone: 전화번호
         gender: 성별
         guide: 가이드가 되실려면 체크를 해주세요.
-        country_id: 현재 살고 계신 나라를 선택해주세요.
+        country_id: 거주국
         password_confirmation: 패스워드 확인

@@ -32,6 +32,6 @@ ja:
         remember_me: パスワードを記憶しますか。
         telphone: 電話番号
         gender: 性別
-        guide: ガイドになる場合はチェックして下さい。
-        country_id: 現在住んでいる国を選択して下さい。
+        guide: ガイドになる場合チェックして下さい。
+        country_id: 居住国
         password_confirmation: パスワード確認

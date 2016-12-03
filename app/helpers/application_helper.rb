@@ -6,7 +6,8 @@ module ApplicationHelper
 
   # 会員写真表示
   def member_image_tag(member, options ={})
-    if member.member_picture.present?
+    # binding.pry
+    if member.member_picture.present? && !member.member_picture.new_record?
       path = member_picture_path(member.member_picture,format: member.member_picture.extension)
       image_tag(path, {style: "max-width: 252px"}.merge(options))
     else
@@ -16,7 +17,7 @@ module ApplicationHelper
 
   # license 写真表示
   def licence_image_tag(guide, options ={})
-    if guide.licence_picture.present?
+    if guide.licence_picture.present? && !guide.licence_picture.new_record?
       path = licence_picture_path(guide.licence_picture,format: guide.licence_picture.extension)
       image_tag(path, {style: "max-width: 252px"}.merge(options))
     else
