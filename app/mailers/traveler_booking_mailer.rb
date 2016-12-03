@@ -7,7 +7,7 @@ class TravelerBookingMailer < ApplicationMailer
   #
   def send_new_booking(booking)
     @booking = booking
-    mail to: @booking.guide.member.email,subject: "Tabitomo! Booking is newly created"
+    mail to: @booking.guide.member.email,subject: "Tabitomo! 新規予約作成通知"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -18,6 +18,6 @@ class TravelerBookingMailer < ApplicationMailer
   def send_update_booking(booking)
     # binding.pry
     @booking = booking
-    mail to: @booking.guide.member.email,subject: "Tabitomo! Booking is updated"
+    mail to: @booking.guide.member.email,subject: "Tabitomo! 予約変更通知"
   end
 end
