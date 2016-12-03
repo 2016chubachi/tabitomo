@@ -39,3 +39,4 @@ zh:
   channge_password: "重置密码"
   ignore: "如果您没有申请重置，请无视这封邮件。"
   until: "您如果不点击下面的地址，您的密码不会被重置。"
+  update: Update

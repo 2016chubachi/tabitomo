@@ -66,10 +66,11 @@
             <%= mp.label :country_id, class: "control-label text-left-custom" %>
           </div>
           <div class="col-sm-10">
-            <%= mp.select :country_id, Country.all.map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %></br>
+            <%= mp.select :country_id, Country.all.order("text_#{I18n.locale}").map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %></br>
+
           </div>
         </div>
     </div>
   </div>
-    <%= submit_tag "Update", :class => "btn btn-primary pull-right" %>
+    <%= submit_tag t("update"), :class => "btn btn-primary pull-right" %>
 <% end %>

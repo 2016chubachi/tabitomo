@@ -39,3 +39,4 @@ en:
   channge_password: "Change my password"
   ignore: "If you didn't request this, please ignore this email."
   until: "Your password won't change until you access the link above and create a new one."
+  update: Update
