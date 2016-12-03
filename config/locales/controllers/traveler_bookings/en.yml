@@ -21,6 +21,8 @@
 
 en:
   traveler_bookings:
+    create:
+      created: "Booking is created."
     update:
       updated: "Booking is updated."
     destroy:

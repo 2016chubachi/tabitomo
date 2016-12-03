@@ -44,7 +44,8 @@ class TravelerBookingsController < ApplicationController
     # binding.pry
     if @booking.save
       # binding.pry
-      redirect_to traveler_bookings_path
+      #TravelerBookingMailer.send_new_booking(@booking).deliver_now
+      redirect_to traveler_booking_path(@booking), notice: t(".created")
     else
       # binding.pry
       render "new"

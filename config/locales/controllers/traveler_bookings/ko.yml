@@ -21,6 +21,8 @@
 
 ko:
   traveler_bookings:
+    create:
+      created: "予約を作成しました。_ko"
     update:
       updated: "予約を更新しました。_ko"
     destroy:
