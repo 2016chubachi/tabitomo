@@ -19,7 +19,7 @@ class GuidesController < ApplicationController
     @guide = Guide.find(params[:id])
     @guide.update_attributes(guide_params)
     if @guide.save
-      flash.now[:success] = 'Succeed saving profile information.'
+      flash[:success] = 'Succeed saving profile information.'
       redirect_to edit_guide_path @guide
     else
       render 'edit'
