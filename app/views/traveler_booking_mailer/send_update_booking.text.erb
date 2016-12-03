@@ -1,3 +1,8 @@
-TravelerBookingMailer#send_update_booking
+予約変更通知
 
-<%= @greeting %>, find me in app/views/traveler_booking_mailer/send_update_booking.text.erb
+こんにちは<%= @booking.guide.member.first_name + " " + @booking.guide.member.last_name %>さん
+
+予約が変更加されました。下記のURLから確認してください。
+
+URL:
+  <%= edit_guide_booking_url(id: @booking) %>

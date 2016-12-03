@@ -210,7 +210,7 @@ Country.create(code: "SY", text_ja: "シリア・アラブ共和国", text_en: "
 Country.create(code: "SZ", text_ja: "スワジランド", text_en: "Swaziland", text_ko: "스와질란드 스와질란드", text_zh: " 斯威士兰")
 Country.create(code: "TC", text_ja: "タークス・カイコス諸島", text_en: "Turks and Caicos Islands", text_ko: "터크스 케이커스 제도 터크스 케이커스 제도", text_zh: " 特克斯和凯科斯群岛")
 Country.create(code: "TD", text_ja: "チャド", text_en: "Chad", text_ko: "차드 차드", text_zh: " 乍得")
-Country.create(code: "TF", text_ja: "Flag of the French Southern and Antarctic Lands.svg フランス領南方・南極地域", text_en: "French Southern Territories", text_ko: "프랑스령 남방 및 남극 프랑스령 남방 및 남극", text_zh: " 法属南部领地")
+Country.create(code: "TF", text_ja: "フランス領南方・南極地域", text_en: "French Southern Territories", text_ko: "프랑스령 남방 및 남극 프랑스령 남방 및 남극", text_zh: " 法属南部领地")
 Country.create(code: "TG", text_ja: "トーゴ", text_en: "Togo", text_ko: "토고 토고", text_zh: " 多哥")
 Country.create(code: "TH", text_ja: "タイ", text_en: "Thailand", text_ko: "타이 타이", text_zh: " 泰國")
 Country.create(code: "TJ", text_ja: "タジキスタン", text_en: "Tajikistan", text_ko: "타지키스탄 타지키스탄", text_zh: " 塔吉克斯坦")
@@ -244,4 +244,3 @@ Country.create(code: "YT", text_ja: "マヨット", text_en: "Mayotte", text_ko:
 Country.create(code: "ZA", text_ja: "南アフリカ", text_en: "South Africa", text_ko: "남아프리카 공화국 남아프리카 공화국", text_zh: " 南非")
 Country.create(code: "ZM", text_ja: "ザンビア", text_en: "Zambia", text_ko: "잠비아 잠비아", text_zh: " 尚比亞")
 Country.create(code: "ZW", text_ja: "ジンバブエ", text_en: "Zimbabwe", text_ko: "짐바브웨 짐바브웨", text_zh: " 辛巴威")
-

@@ -1,5 +1,11 @@
 <h2>予約変更通知</h2>
 
+<p>こんにちは <%= @booking.guide.member.first_name + " " + @booking.guide.member.last_name %>
+  さん</p>
+
+<P>
+予約が変更されました。下記のリンクから確認してください。
+</p>
 <p>
-  <%= @greeting %>, find me in app/views/traveler_booking_mailer/send_update_booking.html.erb
+  <%= link_to "予約確認" , edit_guide_booking_url(id: @booking) %>
 </p>

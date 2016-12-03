@@ -58,8 +58,8 @@ class TravelerBookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.assign_attributes(booking_params)
     if @booking.save
+      TravelerBookingMailer.send_update_booking(@booking).deliver_now
       redirect_to traveler_booking_path, notice: t(".updated")
-      #
     else
       render "edit"
       # binding.pry
