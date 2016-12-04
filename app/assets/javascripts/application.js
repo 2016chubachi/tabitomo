@@ -232,3 +232,7 @@ function datePickerHandler(target,guide_id,booking_id){
     }
   });
 }
+
+function messageClick(target){
+  $(target).children('div:first').popover('show');
+}

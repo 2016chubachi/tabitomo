@@ -148,3 +148,12 @@ text-rightが勝つので、importantで強くする*/
   background-color: #fff;
   cursor: pointer;
 }
+
+
+/*メッセージポップアップ系*/
+.msg-popup-content{
+  position: absolute;
+  width: 50em;
+  left:100px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+}
