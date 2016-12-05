@@ -3,19 +3,24 @@ class MessagesController < ApplicationController
 
   # 返信
   def new
-    if params[:target].present? || params[:guide_id].present?
-      # 新規メッセージの観点から自分が送信者、ターゲットが受信者になる
-      msg_rel_member = {receiver: params[:target]||params[:guide_id] , sender: current_member.id}
-      @new_msg = Message.new
-      @new_msg.receiver_id = msg_rel_member[:receiver]
-      @new_msg.sender_id = msg_rel_member[:sender]
-      @messages = Message.where("(receiver_id = ? and sender_id = ?) or (receiver_id = ? and sender_id = ?)",
-                              msg_rel_member[:receiver],
-                              msg_rel_member[:sender],
-                              msg_rel_member[:sender],
-                              msg_rel_member[:receiver]).order(updated_at: :DESC)
+    if params[:source].present?
+      flash[:notice] = "貴方のいるユーザーグループでは、該当する権限が有りません！"
+      redirect_to guide_detail_path(params[:guide_id])
     else
-      raise "不正なアクセス！"
+      if params[:target].present? || params[:guide_id].present?
+        # 新規メッセージの観点から自分が送信者、ターゲットが受信者になる
+        msg_rel_member = {receiver: params[:target]||params[:guide_id] , sender: current_member.id}
+        @new_msg = Message.new
+        @new_msg.receiver_id = msg_rel_member[:receiver]
+        @new_msg.sender_id = msg_rel_member[:sender]
+        @messages = Message.where("(receiver_id = ? and sender_id = ?) or (receiver_id = ? and sender_id = ?)",
+                                msg_rel_member[:receiver],
+                                msg_rel_member[:sender],
+                                msg_rel_member[:sender],
+                                msg_rel_member[:receiver]).order(updated_at: :DESC)
+      else
+        raise "不正なアクセス！"
+      end
     end
   end
   
