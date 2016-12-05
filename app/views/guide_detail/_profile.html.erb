@@ -49,5 +49,7 @@
   <hr/>
 </div>
 <div class="col-sm-12">
-  <%= render "booking_button"%>
+  <%if !current_member.present? || current_member.traveler.present?%>
+    <%= render "booking_button"%>
+  <%end%>
 </div>

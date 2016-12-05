@@ -15,17 +15,22 @@ class TravelerBookingsController < ApplicationController
   end
 
   def new
-    # binding.pry
-    @guide = Guide.find(params[:guide_id])
-    @member = current_member
-    @traveler = current_member.traveler
-
-    @booking = Booking.new
-    @booking.assign_attributes(guide_id: @guide.id, traveler_id: @traveler.id,traveler_telphone: @member.telphone)
-
-    @booking.booking_schedules.build
-    @booking.build_traveler_booking_comment
-    # binding.pry
+    if current_member.traveler.present?
+      # binding.pry
+      @guide = Guide.find(params[:guide_id])
+      @member = current_member
+      @traveler = current_member.traveler
+  
+      @booking = Booking.new
+      @booking.assign_attributes(guide_id: @guide.id, traveler_id: @traveler.id,traveler_telphone: @member.telphone)
+  
+      @booking.booking_schedules.build
+      @booking.build_traveler_booking_comment
+      # binding.pry
+    else
+      flash[:notice] = "貴方のいるユーザーグループでは、該当する権限が有りません！"
+      redirect_to guide_detail_path(params[:guide_id])
+    end
   end
 
   def edit

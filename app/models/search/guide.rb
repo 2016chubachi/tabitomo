@@ -38,7 +38,7 @@ class Search::Guide < Search::Base
     
     if city.present?
       # Guide => GuideCity => CityMasterの順でJOINする
-      guides = guides.joins({guide_cities: :city_master}).where("city_masters.text_ja LIKE :city OR city_masters.text_en LIKE :city OR city_masters.text_zh LIKE :city OR city_masters.text_ko LIKE :city",city: "%#{city}%").uniq()
+      guides = guides.joins({guide_cities: :city_master}).where("city_masters.text_ja LIKE :city OR lower(city_masters.text_en) LIKE :city_lower OR city_masters.text_zh LIKE :city OR city_masters.text_ko LIKE :city",city: "%#{city}%",city_lower: "%#{city.downcase}%").uniq()
     end
     
     guides
