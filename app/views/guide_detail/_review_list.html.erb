@@ -27,7 +27,7 @@
     <script type="text/javascript">
       jQuery(function($){
         $("#review_display_div div.panel-heading.header-pointer").on("click",function(){
-          $(this).nextAll("div[class*='panel-']").slideToggle(function(){
+          $(this).nextAll("div[class*='panel-']").toggle(function(){
             $(document).trigger("resize");
           });
           $(this).children(".glyphicon").toggleClass("glyphicon-minus glyphicon-plus");
