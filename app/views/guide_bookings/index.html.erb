@@ -14,9 +14,9 @@
 
     <div class="col-sm-offset-3 col-sm-9 text-right">
       <% if booking.status_master.id == 1 %>
-        <%= link_to "更新", edit_guide_booking_path(booking), class: "btn btn-primary" %>
+        <%= link_to t("update_button"), edit_guide_booking_path(booking), class: "btn btn-primary" %>
       <% else %>
-        <%= link_to "詳細", guide_booking_path(booking), class: "btn btn-primary" %>
+        <%= link_to t("detail_button"), guide_booking_path(booking), class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

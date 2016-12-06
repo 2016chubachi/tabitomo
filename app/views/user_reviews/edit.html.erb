@@ -10,9 +10,9 @@
         <%= render "form", f: f %>
         <div class="form-group">
           <div class="col-sm-offset-3 col-sm-9 text-right">
-            <%= f.submit "更新",class: "btn btn-primary" %>
-            <%= link_to "削除" ,@UserReview, method: :delete, class: "btn btn-primary",
-                data: {confirm: "本当に削除しますか？"} %>
+            <%= f.submit t("update_button"),class: "btn btn-primary" %>
+            <%= link_to t("delete_button") ,@UserReview, method: :delete, class: "btn btn-primary",
+                data: {confirm: t("delete_confirmation")} %>
           </div>
         </div>
       <% end %>

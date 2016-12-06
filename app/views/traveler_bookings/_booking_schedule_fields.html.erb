@@ -8,7 +8,7 @@
     <%= f.select :city_master_id, @booking.guide.guide_cities.map{|i| [i.city_master.send("text_#{I18n.locale}"), i.city_master.id ]} ,{}, {class: "form-control" } %>
   </td>
   <td>
-    <%= link_to_remove_association '削除', f, class: "btn btn-default" %>
+    <%= link_to_remove_association t("delete_button"), f, class: "btn btn-default" %>
   </td>
   <%= f.hidden_field :id %>
 </tr>

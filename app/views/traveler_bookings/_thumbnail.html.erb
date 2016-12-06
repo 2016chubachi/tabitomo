@@ -14,7 +14,7 @@
           <!-- パラメーター：booking_id で次の画面に渡す-->
           <%#= link_to image_tag("/assets/ico_grade6_0.gif"), new_user_review_path(booking_id:   booking.id) %>
           <div class="text-center">
-            <%= link_to "評価する", new_user_review_path(booking_id:   booking.id), class: "btn btn-primary" %>
+            <%= link_to t("user_review_button"), new_user_review_path(booking_id:   booking.id), class: "btn btn-primary" %>
         </div>
         <% end %>
       <% end %>
