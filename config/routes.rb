@@ -45,7 +45,7 @@ Rails.application.routes.draw do
      :sessions => 'members/sessions'
    }
 
-   devise_scope :user do
+   devise_scope :member do
      get "sign_in", :to => "members/sessions#new"
      get "sign_out", :to => "members/sessions#destroy"
    end

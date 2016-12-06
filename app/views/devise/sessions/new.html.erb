@@ -2,6 +2,11 @@
 <% content_for :main_header do %>
 <% end %>
 
+<% content_for :error_messages do %>
+  <!-- エラーメッセージの表示エリアをレンダリング-->
+  <%= render partial: "shared/error", locals: {obj: resource} %>
+<% end %>
+
 <h2><%= t("login_link") %></h2>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
@@ -9,7 +14,7 @@
             <tr>
               <td>
                   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                  　　　　<%= devise_error_messages! %>
+                  　　　　<!-- <%= devise_error_messages! %> -->
                       <div class="form-group">
                         <div class="field">
                           <%= f.label :email %><br />

@@ -69,7 +69,6 @@
       <div class="form-group">
         <%= members_f.label :gender, class: "col-sm-3 control-label text-left-custom" %>
         <div class="col-sm-9">
-        <!-- <%= members_f.select :gender, options_for_select([[t(".male"),"1"],[t(".female"),"2"]]), {:prompt => true }, {:class => "form-control"} %> -->
         <% options = [[t("male"), 1], [t("female"), 2]] %>
         <%= members_f.select :gender, options, {:prompt => true }, {:class => "form-control"} %>
       </div>
@@ -89,7 +88,7 @@
       <div class="form-group">
         <%= members_f.label :country_id, class: "col-sm-3 control-label text-left-custom" %>
         <div class="col-sm-9">
-          <%= members_f.select :country_id, Country.all.map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %>
+          <%= members_f.select :country_id, Country.all.order("text_#{I18n.locale}").map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %>
         </div>
       </div>
       <% end %>
@@ -109,7 +108,6 @@
       <div class="form-group">
          <%= f.label :license_flg, class: "col-sm-3 control-label text-left-custom" %>
         <div class="col-sm-9">
-          <!-- <%= f.select :license_flg, options_for_select([[t(".yes"), "0"], [t(".no"), "１"]]), {:prompt => true}, {:class => "form-control"} %> -->
           <% options = [[t("yes"), 1 ], [t("no"), 0 ]] %>
           <%= f.select :license_flg, options, {:prompt => true }, {:class => "form-control"} %>
       </div>
@@ -126,12 +124,12 @@
                         </div>
                         <% end %>
                         <%= lp.label :uploaded_l_image %>
-                        <%= lp.file_field :uploaded_l_image %>  
+                        <%= lp.file_field :uploaded_l_image %>
                 <% end %>
           </div>
       </div>
       <br>
   </div>
-<%= submit_tag "Update", :class => "btn btn-primary" %>
+<%= submit_tag t("update"), :class => "btn btn-primary" %>
 
 <% end %>

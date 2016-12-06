@@ -25,6 +25,6 @@ ko:
       user_review:
     attributes:
       user_review:
-        star_master_id: "評価_ko"
-        title: "タイトル_ko"
-        detail: "詳細_ko"
+        star_master_id: "평가"
+        title: "타이틀"
+        detail: "자세한 내용"

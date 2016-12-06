@@ -25,7 +25,7 @@ ko:
       booking:
     attributes:
       booking:
-        star_master_id: "ステータス_ko"
-        traveler_id: "旅行者_ko"
-        guide_id: "ガイド_ko"
-        traveler_telphone: "電話番号_ko"
+        star_master_id: "예약상태"
+        traveler_id: "여행자"
+        guide_id: "가이드"
+        traveler_telphone: "전화번호"

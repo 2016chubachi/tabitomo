@@ -26,17 +26,17 @@ ko:
       booking_schedules:
     attributes:
       booking_schedule:
-        traveler_count: "人数_ko"
-        city_master_id: "場所_ko"
-        traveler_date: "日程_ko"
+        traveler_count: "인원수"
+        city_master_id: "장소"
+        traveler_date: "일정"
       booking_schedules:
-        traveler_count: "人数_ko"
-        city_master_id: "場所_ko"
-        traveler_date: "日程_ko"
+        traveler_count: "인원수"
+        city_master_id: "장소"
+        traveler_date: "일정"
     errors:
       messages:
-        invalid_traveler_count: "は半角英数字で入力してください。_ko"
+        invalid_traveler_count: "는 숫자를 넣어주세요."
     info:
         messages:
-          approved: "承認しました。_ko"
-          cancelled: "却下しました。_ko"        
+          approved: "승인하였습니다."
+          cancelled: "거절되었습니다."        

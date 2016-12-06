@@ -2,6 +2,10 @@
 <% content_for :main_header do %>
 <% end %>
 
+<% content_for :error_messages do %>
+  <!-- エラーメッセージの表示エリアをレンダリング-->
+  <%= render partial: "shared/error", locals: {obj: resource} %>
+<% end %>
 <h2><%= t("password_reset") %></h2>
 
       <div class="row">
@@ -10,7 +14,7 @@
             <tr>
               <td>
                   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-                    <%= devise_error_messages! %>
+                    <!-- <%= devise_error_messages! %> -->
 
                       <div class="form-group">
                         <div class="field">
