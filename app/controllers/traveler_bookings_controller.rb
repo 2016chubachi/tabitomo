@@ -6,7 +6,7 @@ class TravelerBookingsController < ApplicationController
   def index
     # 更新が新しい順で表示する
     # binding.pry
-    @bookings = Booking.where(traveler_id: current_member.traveler).order(updated_at: :desc)
+    @bookings = Booking.where(traveler_id: current_member.traveler).order(updated_at: :desc).page(params[:page]).per(5)
     # binding.pry
   end
 
@@ -20,10 +20,10 @@ class TravelerBookingsController < ApplicationController
       @guide = Guide.find(params[:guide_id])
       @member = current_member
       @traveler = current_member.traveler
-  
+
       @booking = Booking.new
       @booking.assign_attributes(guide_id: @guide.id, traveler_id: @traveler.id,traveler_telphone: @member.telphone)
-  
+
       @booking.booking_schedules.build
       @booking.build_traveler_booking_comment
       # binding.pry

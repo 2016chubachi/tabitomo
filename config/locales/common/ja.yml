@@ -49,3 +49,10 @@ ja:
   approve_button: "承認"
   reject_button: "却下"
   user_review_button: " 評価する"
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "&hellip;"
