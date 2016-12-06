@@ -49,3 +49,10 @@ en:
   approve_button: "Approve"
   reject_button: "Reject"
   user_review_button: "User Review"
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"

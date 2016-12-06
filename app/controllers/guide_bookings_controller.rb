@@ -5,7 +5,7 @@ class GuideBookingsController < ApplicationController
   def index
     # 更新が新しい順で表示する
     # binding.pry
-    @bookings = Booking.where(guide_id: current_member.guide).order(updated_at: :desc)
+    @bookings = Booking.where(guide_id: current_member.guide).order(updated_at: :desc).page(params[:page]).per(5)
 
   end
 
