@@ -1,137 +1,153 @@
 <%= form_for @guide do |f| %>
-<div class="row clearfix">
-
-      <div class="col-md-8 column">
-
-          <div class="form-group">
-            <%= f.label :profile, class: "control-label" %>
-            <%= f.text_area :profile, rows: 3, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :guide_service, class: "control-label" %>
-            <%= f.text_area :guide_service, rows: 3, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :guide_transportation, class: "control-label" %>
-            <%= f.text_area :guide_transportation, rows: 3, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :guide_interest, class: "control-label" %>
-            <%= f.text_area :guide_interest, rows: 3, :class => "form-control" %>
-          </div>
-          <!-- <div class="form-group">
-            <%= f.label :guide_languages, id: 'g_lng', class: "control-label" %>
-            <%= f.text_area :guide_languages, id:'g_lng', rows: 3, :class => "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :guide_cities, id: 'g_city', class: "control-label" %>
-            <%= f.text_area :guide_cities, id:'g_city', rows: 3, :class => "form-control" %>
-          </div> -->
-        <!-- </div -->
-      </div>
-  <div class="col-md-4 column">
-    <br/>
-    <br>
-    <!--personal information-->
-    <div class="form-horizontal">
+  <div class="row clearfix">
+    <div class="col-md-8">
       <div class="form-group">
-          <div class="thumbnail">
-                <%= f.fields_for :member do |mp| %>
-                    <%= mp.fields_for :member_picture do |imgf| %>
-                        <div>
-                        <%= member_image_tag @guide.member %>
-                        <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
-                          <%= imgf.check_box :_destroy %>
-                          <%= imgf.label :_destroy %>
-                          <%= imgf.hidden_field :id %>
-                        <% end %>
-                          <%= imgf.label :uploaded_image %>
-                          <%= imgf.file_field :uploaded_image %>
-                        </div>
-                    <% end %>
-                <% end %>
-          </div>
+        <h4><%= f.label :profile, class: "control-label" %></h4>
+        <%= f.text_area :profile, rows: 15, :class => "form-control" %>
       </div>
-      <div class="field">
-        <%= f.fields_for :member do |members_f| %>
       <div class="form-group">
-        <%= members_f.label :last_name, class: "col-sm-4 control-label text-left-custom" %>
-        <div class="col-sm-8">
+        <h4><%= f.label :guide_service, class: "control-label" %></h4>
+        <%= f.text_area :guide_service, rows: 15, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <h4><%= f.label :guide_transportation, class: "control-label" %></h4>
+        <%= f.text_area :guide_transportation, rows: 10, :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <h4><%= f.label :guide_interest, class: "control-label" %></h4>
+        <%= f.text_area :guide_interest, rows: 15, :class => "form-control" %>
+      </div>
+  </div>
+    <div class="col-md-4">
+      <!--personal information-->
+      <%= f.fields_for :member do |mp| %>
+        <%= mp.fields_for :member_picture do |imgf| %>
+          <div class="form-group">
+              <div class="thumbnail text-center-custom">
+                <%= member_image_tag @guide.member %>
+                <div>
+                  <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
+                    <%= imgf.check_box :_destroy %>
+                    <%= imgf.label :_destroy %>
+                    <%= imgf.hidden_field :id %>
+                  <% end %>
+                </div>
+                <label class="btn btn-info btn-sm">
+                  ＋写真を選択
+                  <%= imgf.file_field :uploaded_image ,:class => "hidden"%>
+                </label>
+                <label></label>
+              </div>
+          </div>
+        <% end %>
+      <% end %>
+      <%= f.fields_for :member do |members_f| %>
+        <div class="form-group">
+          <%= members_f.label :last_name %>
           <%= members_f.text_field :last_name, :class => "form-control" %>
         </div>
-      </div>
-      <div class="form-group">
-        <%= members_f.label :first_name, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
+        <div class="form-group">
+          <%= members_f.label :first_name %>
           <%= members_f.text_field :first_name, :class => "form-control" %>
         </div>
-      </div>
-      <div class="form-group">
-        <%= members_f.label :gender, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
-        <!-- <%= members_f.select :gender, options_for_select([[t(".male"),"1"],[t(".female"),"2"]]), {:prompt => true }, {:class => "form-control"} %> -->
-        <% options = [[t("male"), 1], [t("female"), 2]] %>
-        <%= members_f.select :gender, options, {:prompt => true }, {:class => "form-control"} %>
-      </div>
-      </div>
-      <div class="form-group">
-        <%= members_f.label :telphone, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
+        <div class="form-group">
+          <%= members_f.label :gender %>
+          <!-- %= members_f.select :gender, options_for_select([[t(".male"),"1"],[t(".female"),"2"]]), {:prompt => true }, {:class => "form-control"} %> -->
+          <% options = [[t("male"), 1], [t("female"), 2]] %>
+          <%= members_f.select :gender, options, {:prompt => true }, {:class => "form-control"} %>
+        </div>
+        <div class="form-group">
+          <%= members_f.label :telphone %>
           <%= members_f.telephone_field :telphone, :class => "form-control" %>
         </div>
-      </div>
-      <div class="form-group">
-        <%= members_f.label :email, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
+        <div class="form-group">
+          <%= members_f.label :email%>
           <%= members_f.email_field :email, :class => "form-control", :readonly => "true" %>
         </div>
-      </div>
-      <div class="form-group">
-        <%= members_f.label :country_id, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
+        <div class="form-group">
+          <%= members_f.label :country_id %>
           <%= members_f.select :country_id, Country.all.map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %>
         </div>
-      </div>
       <% end %>
-      </div>
-            <div class="form-group">
-        <%= f.label :birth_year, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
+      <div class="form-group">
+        <%= f.label :birth_year%>
         <%=f.date_select(:birth_year, {:start_year => Date.current.year - 20, :end_year => Date.current.year - 65, :discard_day => "true", :discard_month => "true", :prompt => true }, {:class => "form-control"})%>
-        </div>
       </div>
       <div class="form-group">
-        <%= f.label :experience, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
+        <%= f.label :experience%>
         <%= f.text_field :experience, :class => "form-control" %>
+      </div>
+      <div id="guide_license" class="form-group">
+        <%= f.label :license_flg%>
+        <!-- %= f.select :license_flg, options_for_select([[t(".yes"), "0"], [t(".no"), "１"]]), {:prompt => true}, {:class => "form-control"} %> -->
+        <% options = [[t("yes"), 1 ], [t("no"), 0 ]] %>
+        <%= f.select :license_flg, options, {:prompt => true }, {:class => "form-control"} %>
+      </div>
+      <div class="form-group">
+        <div class="thumbnail text-center-custom">
+          <%= f.fields_for :licence_picture do |lp| %>
+            <% if lp.object.present? && !lp.object.new_record? && lp.object.errors.empty? %>
+              <%= licence_image_tag @guide %>
+              <%= lp.check_box :_destroy %>
+              <%= lp.label :_destroy %>
+              <%= lp.hidden_field :id %>
+            <% end %>
+            <div>
+              <label class="btn btn-info btn-sm">
+                ＋写真を選択
+                <%= lp.file_field :uploaded_l_image ,:class => "hidden"%>
+              </label>
+              <label></label>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="form-group">
-         <%= f.label :license_flg, class: "col-sm-3 control-label text-left-custom" %>
-        <div class="col-sm-9">
-          <!-- <%= f.select :license_flg, options_for_select([[t(".yes"), "0"], [t(".no"), "１"]]), {:prompt => true}, {:class => "form-control"} %> -->
-          <% options = [[t("yes"), 1 ], [t("no"), 0 ]] %>
-          <%= f.select :license_flg, options, {:prompt => true }, {:class => "form-control"} %>
-      </div>
+        <%= f.label :guide_languages, id: 'g_lng', class: "control-label" %>
+        <table id="guide_languages" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="table-header-align col-sm-5">言語</th>
+              <th class="table-header-align col-sm-5">スキルレベル</th>
+              <th><%= link_to_add_association '追加' , f, :guide_languages,
+                  class: "btn btn-default btn-sm float-right",
+                  data: {
+                    association_insertion_node: "#guide_languages_tbody",
+                    association_insertion_method: "append" }
+                 %>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="guide_languages_tbody">
+            <%= f.fields_for :guide_languages do |language| %>
+              <%= render "guide_language_fields", f: language %>
+            <% end %>
+          </tbody>
+        </table>
       </div>
       <div class="form-group">
-          <div class="thumbnail">
-                <%= f.fields_for :licence_picture do |lp| %>
-                        <% if lp.object.present? && !lp.object.new_record? && lp.object.errors.empty? %>
-                        <div>
-                          <%= licence_image_tag @guide %>
-                          <%= lp.check_box :_destroy %>
-                          <%= lp.label :_destroy %>
-                          <%= lp.hidden_field :id %>
-                        </div>
-                        <% end %>
-                        <%= lp.label :uploaded_l_image %>
-                        <%= lp.file_field :uploaded_l_image %>  
-                <% end %>
-          </div>
+        <%= f.label :guide_cities, id: 'g_city', class: "control-label" %>
+        <table id="guide_cities" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th class="table-header-align col-sm-10">都市</th>
+              <th><%= link_to_add_association '追加' , f, :guide_cities,
+                class: "btn btn-default btn-sm float-right",
+                data: {
+                  association_insertion_node: "#guide_cities_tbody",
+                  association_insertion_method: "append" }
+                 %>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="guide_cities_tbody">
+            <%= f.fields_for :guide_cities do |city| %>
+              <%= render "guide_city_fields", f: city %>
+            <% end %>
+          </tbody>
+        </table>        
       </div>
-      <br>
+    </div>
   </div>
-<%= submit_tag "Update", :class => "btn btn-primary" %>
-
+  <%= submit_tag "Update", :class => "btn btn-primary btn-lg float-right" %>
 <% end %>

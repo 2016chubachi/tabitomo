@@ -69,6 +69,10 @@
   display: none;
 }
 
+.table-header-align{
+  vertical-align: middle !important;
+}
+
 
 
 /*カレンダー用css*/
@@ -129,6 +133,13 @@
   padding-left: 50px;
 }
 
+.image-upload{
+  color: white;  
+  background-color: red;
+  padding: 6px;
+  border-radius: 12px;
+}
+
 /*form controlを左寄せ*/
 /*例として残しておくが、いまのところ使わない*/
 /*使い方　class="control-label text-left"*/
@@ -141,6 +152,9 @@ text-rightが勝つので、importantで強くする*/
 /*使い方　class="control-label text-left-custom"*/
 .text-left-custom{
  text-align:left !important;
+}
+.text-center-custom{
+  text-align:center;
 }
 
 /*予約日程の日づ受選択ボックスの背景色とカーソル設定*/

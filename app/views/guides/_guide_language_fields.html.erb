@@ -1,0 +1,8 @@
+<tr class="nested-fields">
+  <td><%= f.select :language_code_id, LanguageCode.all.map{|lang| [ lang.send("text_#{I18n.locale}"), lang.id]} ,{include_blank: false},{class: "form-control"}  %></td>
+  <td><%= f.select :language_skill_id, LanguageSkill.all.map{|skill| [ skill.send("text_#{I18n.locale}"), skill.id]} ,{include_blank: false},{class: "form-control"}  %></td>
+  <td>
+    <%= link_to_remove_association t("delete_button"), f, class: "btn btn-default btn-sm" %>
+      <%= f.hidden_field :id %>
+  </td>
+</tr>

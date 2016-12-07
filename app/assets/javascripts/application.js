@@ -232,3 +232,16 @@ function datePickerHandler(target,guide_id,booking_id){
     }
   });
 }
+
+function initGuideLicense(){
+  var licence = $('#guide_license');
+  if(licence.children('select').val() === '1'){
+    //ライセンス有の際、写真アップロードエリア表示
+    licence.next('div.form-group').show().find('input[type=checkbox]').prop('checked',false);
+    
+  }
+  else{
+    //ライセンス無の際、写真アップロードエリア非表示
+    licence.next('div.form-group').hide().find('input[type=checkbox]').prop('checked',true);
+  }
+}
