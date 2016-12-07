@@ -63,8 +63,6 @@ class GuidesController < ApplicationController
     @guide = Guide.find(params[:id])
     @guide.member.build_member_picture unless @guide.member.member_picture
     @guide.build_licence_picture unless @guide.licence_picture
-    # @guide.build_guide_languages unless @guide.guide_languages
-    # @guide.build_guide_cities unless @guide.guide_cities
   end
 
   def create
