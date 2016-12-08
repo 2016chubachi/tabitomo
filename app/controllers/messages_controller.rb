@@ -3,7 +3,8 @@ class MessagesController < ApplicationController
 
   # 返信
   def new
-    if params[:source].present?
+    if params[:source].present? && !current_member.traveler.present?
+      # ガイド詳細ページからのメッセージはトラベラーしかできない
       flash[:notice] = "貴方のいるユーザーグループでは、該当する権限が有りません！"
       redirect_to guide_detail_path(params[:guide_id])
     else
