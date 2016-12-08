@@ -1,11 +1,17 @@
-
+<script type="text/javascript">
+// ユーザー
+if(window.location.href.search(/members\/?$/) >=0 ){
+  // urlをmembersからmembers/sign_upに修正する、ただしページ遷移はない
+  window.history.replaceState('','',window.location.pathname.replace(/members\/?$/,'members/sign_up'));
+} 
+</script>
 <!-- member 登録画面-->
 <% content_for :main_header do %>
 <% end %>
 
 <% content_for :error_messages do %>
   <!-- エラーメッセージの表示エリアをレンダリング-->
-  <%= render partial: "shared/error", locals: {obj: @resource} %>
+  <%= render partial: "shared/error", locals: {obj: resource} %>
 <% end %>
 
   <h2><%= t("member_sigup_link") %></h2>
