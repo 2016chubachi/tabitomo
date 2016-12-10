@@ -36,7 +36,7 @@
   </main>
   <!--フーター内容 -->
   <footer id="layout_footer">
-    <div class="page-footer">
+    <%#<div class="page-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -50,17 +50,17 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>%>
     <script>
       jQuery(document).ready(function($){
-        $(window).on("load resize",function(){
-          var innerHeight = $(window).height();
-          var bodyHeight = $("body").height();
-          if(innerHeight > bodyHeight){
-            var height = innerHeight - bodyHeight + $("#layout_main").height();
-            $("#layout_main").height(height);
-          }
-        });
+        //$(window).on("load resize",function(){
+        //  var innerHeight = $(window).height();
+        //  var bodyHeight = $("body").height();
+        //  if(innerHeight > bodyHeight){
+        //    var height = innerHeight - bodyHeight + $("#layout_main").height();
+        //    $("#layout_main").height(height);
+        //  }
+        //});
           
         $(document).on('click','a[href="#"]',function(){
           return false;
