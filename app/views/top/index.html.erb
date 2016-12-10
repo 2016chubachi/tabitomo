@@ -1,6 +1,6 @@
 <!-- スライドをレイアウトの[main_header]に入れる部-->
 <% content_for :main_header do %>
-  <%= render "slide_header" %> 
+  <%= render "slide_header" %>
   <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
   <!--%= render partial: "shared/tab_header", locals: {tab_id: 'booking'} %>-->
 <% end %>
@@ -27,14 +27,14 @@
       <a href="<%= search_guides_path(sp_search: '',city: '2')%>">
         <div class="col-xs-12 col-sm-4">
           <div class="thumbnail city-img-postion">
-            <img src="/assets/castle-02.jpg">
+            <img src="/assets/02.jpg">
               <div>
                 <h2>Kyoto</h2>
               </div>
           </div>
         </div>
       </a>
-    
+
       <a href="<%= search_guides_path(sp_search: '',city: '3')%>">
         <div class="col-xs-12 col-sm-4">
           <div class="thumbnail city-img-postion">
