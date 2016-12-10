@@ -6,7 +6,7 @@
         <%= render "search_form", f: f %>
       <% end %>
   
-      <h1 class="page-header">検索結果</h1>
+      <h1 class="page-header"><%=t(".search_result")%></h1>
     </div>
   </div>
 </div>
@@ -23,12 +23,22 @@
         <%= link_to(member_image_tag(guide.member),guide_detail_path(guide)) %>
         <div class="caption">
           <h3><%= guide.member.first_name + "  " + guide.member.last_name%></h3>
-          <p><%= "経験年数：" + guide.experience.to_s + "年"%></p>
-          <p><%= "ライセンス：" + (guide.license_flg.to_s === "1" ? "有" : "無") %></p>
-          <p><%= "ガイド都市：" + guide.guide_cities[0].city_master.text_ja %></p>
-          <p><%= "性別：" + (guide.member.gender.to_s === "1" ? "男" : "女") %></p>
+          <p>
+          <%= t("activerecord.attributes.guide.experience") +"：" + guide.experience.to_s + t("year")%></p>
+          <p><%= t("activerecord.attributes.guide.license_flg")+"：" + (guide.license_flg.to_s === "1" ? t("has") : t("not")) %></p>
+          <% city_str = ''%>
+          <% guide.guide_cities.each do |city|
+              unless city_str.empty?
+                city_str += ' | '
+              end
+              city_str += city.city_master.send("text_#{I18n.locale}")
+            end
+          %>
+          <p><%= t("activerecord.attributes.guide.guide_cities")+"：" + city_str%>
+          </p>
+          <p><%= t("activerecord.attributes.member.gender")+"：" + (guide.member.gender.to_s === "1" ? t("male") : t("female")) %></p>
           <!--ガイド詳細ページ遷移-->
-          <%= link_to('詳細>>',guide_detail_path(guide),class: "btn btn-sm btn-default") %>
+          <%= link_to(t("detail_button")+'>>',guide_detail_path(guide),class: "btn btn-sm btn-default") %>
         </div>
       </div>
     </div>

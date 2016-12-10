@@ -52,7 +52,6 @@
         </div>
         <div class="form-group">
           <%= members_f.label :gender %>
-          <!-- %= members_f.select :gender, options_for_select([[t(".male"),"1"],[t(".female"),"2"]]), {:prompt => true }, {:class => "form-control"} %> -->
           <% options = [[t("male"), 1], [t("female"), 2]] %>
           <%= members_f.select :gender, options, {:prompt => true }, {:class => "form-control"} %>
         </div>
@@ -79,8 +78,7 @@
       </div>
       <div id="guide_license" class="form-group">
         <%= f.label :license_flg%>
-        <!-- %= f.select :license_flg, options_for_select([[t(".yes"), "0"], [t(".no"), "１"]]), {:prompt => true}, {:class => "form-control"} %> -->
-        <% options = [[t("yes"), 1 ], [t("no"), 0 ]] %>
+        <% options = [[t("has"), 1 ], [t("not"), 0 ]] %>
         <%= f.select :license_flg, options, {:prompt => true }, {:class => "form-control"} %>
       </div>
       <div class="form-group">

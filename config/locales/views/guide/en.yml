@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  view_member_hello: "Hello world"
+  form:
+    male: 男
+    female: 女
+    yes: 有り
+    no: 無し

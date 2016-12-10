@@ -48,7 +48,13 @@ ja:
   detail_button: "詳細"
   approve_button: "承認"
   reject_button: "却下"
+  clear_button: "クリア"
   user_review_button: " 評価する"
+  male: "男"
+  female: "女"
+  has: "有り"
+  not: "無し"
+  year: "年"
   views:
     pagination:
       first: "&laquo; 最初"

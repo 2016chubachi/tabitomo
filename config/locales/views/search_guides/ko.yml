@@ -20,17 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ko:
-  activerecord:
-    models:
-      guide:
-    attributes:
-      guide:
-        experience: 経験年数ko
-        birth_year: 出生年ko
-        profile: 個人説明 ko
-        guide_service: ガイドサービスko
-        guide_transportation: 移動手段ko
-        guide_interest: guide_interestko
-        license_flg: ライセンスko
-        guide_languages: ガイド言語・スキルレベルko
-        guide_cities: ガイド都市ko
+  search_guides:
+    index:
+      search_result: "検索結果_ko"

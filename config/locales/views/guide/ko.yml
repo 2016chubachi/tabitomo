@@ -21,5 +21,7 @@
 
 ko:
   form:
-    male: 男ko
-    female: 女ko
+    male: 男
+    female: 女
+    yes: 有り
+    no: 無し

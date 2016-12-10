@@ -48,7 +48,13 @@ ko:
   detail_button: "詳細_ko"
   approve_button: "承認_ko"
   reject_button: "却下_ko"
+  clear_button: "クリア_ko"
   user_review_button: "評価する_ko"
+  male: "男_ko"
+  female: "女_ko"
+  has: "有り_ko"
+  not: "無し_ko"
+  year: "年_ko"
   views:
     pagination:
       first: "&laquo; 처음"
