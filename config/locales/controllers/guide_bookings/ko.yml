@@ -22,5 +22,5 @@
 ko:
   guide_bookings:
     update:
-      approved: "予約を承認しました。_ko"
-      rejected: "予約を却下しました。_ko"
+      approved: "예약을 승인 하였습니다."
+      rejected: "예약을 취소 하였습니다."

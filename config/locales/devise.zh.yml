@@ -43,9 +43,9 @@ zh:
       update_needs_confirmation: "您已成功更新您的帐号，但我们必须验证您新的电子邮件地址。请激活新的电子邮件地址。"
       updated: "您的帐号已更新成功。"
     sessions:
-      signed_in: ""
-      signed_out: ""
-      already_signed_out: ""
+      already_signed_out: Already logout.
+      signed_in: Successfully login.
+      signed_out: Successfully logout.
     unlocks:
       send_instructions: "稍后，您将会收到一封电子邮件，指引你如何解封帐号。"
       send_paranoid_instructions: "稍后，您将会收到一封电子邮件，指引您如何解封帐号。"
