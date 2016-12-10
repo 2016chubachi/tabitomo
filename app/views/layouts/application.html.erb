@@ -73,13 +73,18 @@
         // datepickerの言語設定
         setDatePickerLanguage();
         // 言語切り替えクリック処理
-        $(document).on('click','#language_list a[data-language]',function(){
+        $(document).on('click','#language_list a[data-language]',function(event){
+          //リンクの既存処理を止める
+          event.preventDefault();
           //言語切り替えがクリックされたとき、ドロップダウンメニューの選択の制御
           //該当言語の方はクリックできないようにする
           $('#language_name').text(this.text);
           I18n.locale = $('#language_list li').removeClass('disabled').find(this).addClass('disabled').attr('data-language');
           // datepickerの言語設定
           setDatePickerLanguage();
+          //今のページの上で言語切り替え
+          window.location.assign(window.location.pathname.replace(/(^\/en|\/ja|\/ko|\/zh)?/,'/'+$(this).attr('data-language')));
+          
         });
         
         // datepickerの言語設定処理
