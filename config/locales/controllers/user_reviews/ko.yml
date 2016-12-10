@@ -22,8 +22,8 @@
 ko:
   user_reviews:
     create:
-      created: "ユーザーレビューを作成しました。_ko"
+      created: "유저리뷰를 작성 하였습니다."
     update:
-      updated: "ユーザーレビューを更新しました。_ko"
+      updated: "유저리뷰를 갱신 하였습니다."
     destroy:
-      deleted: "ユーザーレビューを削除しました。_ko"
+      deleted: "유저 리뷰를 삭제 하였습니다."

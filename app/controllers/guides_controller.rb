@@ -30,7 +30,7 @@ class GuidesController < ApplicationController
         @guide.errors[:base] << "ガイド言語が重複しています！"
       else
         langs << (lan.language_code_id)
-      end 
+      end
     end
     # ガイドシティの重複チェック
     cities = []
@@ -39,7 +39,7 @@ class GuidesController < ApplicationController
         @guide.errors[:base] << "ガイド都市が重複しています！"
       else
         cities << (c.city_master_id)
-      end 
+      end
     end
     if @guide.errors.present?
       # エラー情報を遷移先に渡す
@@ -48,7 +48,7 @@ class GuidesController < ApplicationController
       redirect_to edit_guide_path @guide
     else
       if @guide.save
-        flash[:success] = 'Succeed saving profile information.'
+        flash[:success] = t('success')
         redirect_to edit_guide_path @guide
       else
         # エラー情報を遷移先に渡す

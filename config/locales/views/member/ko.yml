@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ko:
-  view_member_hello: "Hello world"
+  activerecord:
+    models:
+      member:
+    attributes:
+      member:
+        first_name: 명
+        last_name: 성
+        email: 이메일
+        password: 패스워드
+        telphone: 전화번호
+        gender: 성별

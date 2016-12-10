@@ -37,10 +37,14 @@ en:
   confirm_account: "You can confirm your account email through the link below:"
   confirm_my_account: "Confirm my account"
   someone: "Someone has requested a link to change your password. You can do this through the link below."
-  channge_password: "Change my password"
+  change_password: "Change my password"
   ignore: "If you didn't request this, please ignore this email."
   until: "Your password won't change until you access the link above and create a new one."
   delete_confirmation: "Are you sure to delete?"
+  create_confirmation: "Would you like to register as a member? You will receive an email to activate your account in the mailbox you used when registering"
+  new_password: "New Password"
+  confirm_password: "Confirm new password"
+  contacting: "We're contacting you to notify you that your password has been changed."
   button:
   add_button: "Add"
   update_button: "Update"
@@ -55,6 +59,8 @@ en:
   has: "Yes"
   not: "No"
   year: "year"  
+  select_picture: "Select Picture"
+  select_l_picture: "Select License Picture"
   views:
     pagination:
       first: "&laquo; First"

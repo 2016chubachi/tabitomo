@@ -41,6 +41,12 @@ zh:
   ignore: "如果您没有申请重置，请无视这封邮件。"
   until: "您如果不点击下面的地址，您的密码不会被重置。"
   delete_confirmation: "请确认是否删除？"
+  create_confirmation: "请确认是否创建账号，我们会发送账号激活的邮件到您登录的邮箱地址。"
+  new_password: "新密码"
+  confirm_password: "新确认密码"
+  contacting: "密码修改成功。"
+  select_picture: "选择照片"
+  select_l_picture: "选择资格证明照片"
   button:
   add_button: "添加"
   update_button: "修改"

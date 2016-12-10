@@ -1,4 +1,5 @@
 class TravelersController < ApplicationController
+  before_action :authenticate_member!
 
   def new
     @traveler = Traveler.new
@@ -9,7 +10,7 @@ class TravelersController < ApplicationController
     @traveler = Member.find(params[:id])
     @traveler.update_attributes(traveler_params)
     if @traveler.save
-      flash[:success] = 'Succeed saving profile information.'
+      flash[:success] = t('success')
       redirect_to edit_traveler_path @traveler
     else
       render 'edit'
@@ -21,12 +22,6 @@ class TravelersController < ApplicationController
     @member.build_member_picture unless @member.member_picture
   end
 
-  # def create
-  #   @traveler = Traveler.new(traveler_params)
-  #   @traveler.save
-  #   redirect_to @traveler
-  #
-  # end
 
   private
     def traveler_params

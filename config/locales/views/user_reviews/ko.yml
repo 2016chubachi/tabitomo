@@ -22,8 +22,8 @@
 ko:
   user_reviews:
     form:
-      star1: "星1つ_Ko"
-      star2: "星2つ_Ko"
-      star3: "星3つ_Ko"
-      star4: "星4つ_Ko"
-      star5: "星5つ_Ko"
+      star1: "별 하나"
+      star2: "별 둘"
+      star3: "별 셋"
+      star4: "별 넷"
+      star5: "별 다섯"

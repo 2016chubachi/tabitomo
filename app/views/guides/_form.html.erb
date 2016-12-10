@@ -33,7 +33,7 @@
                   <% end %>
                 </div>
                 <label class="btn btn-info btn-sm">
-                  ＋写真を選択
+                  ＋<%= t('select_picture') %>
                   <%= imgf.file_field :uploaded_image ,:class => "hidden"%>
                 </label>
                 <label></label>
@@ -92,7 +92,7 @@
             <% end %>
             <div>
               <label class="btn btn-info btn-sm">
-                ＋写真を選択
+                ＋<%= t('select_l_picture') %>
                 <%= lp.file_field :uploaded_l_image ,:class => "hidden"%>
               </label>
               <label></label>
@@ -143,7 +143,7 @@
               <%= render "guide_city_fields", f: city %>
             <% end %>
           </tbody>
-        </table>        
+        </table>
       </div>
     </div>
   </div>
