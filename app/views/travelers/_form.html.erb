@@ -1,22 +1,24 @@
 <%= form_for @member, :url => traveler_path do |mp| %>
     <div class="form-group">
       <div class="col-md-4 ">
-        <div class="thumbnail">
+        <div class="thumbnail text-center-custom">
           <%= mp.fields_for :member_picture do |imgf| %>
-            <div>
-              <%= member_image_tag @member %>
-            <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
-                  <%= imgf.check_box :_destroy %>
-                  <%= imgf.label :_destroy %>
-                  <%= imgf.hidden_field :id %>
-            <% end %>
-                  </br>
-                  <%= imgf.label :uploaded_image %>
-                  <%= imgf.file_field :uploaded_image %>
+                  <%= member_image_tag @member %>
+                  <div>
+                    <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
+                      <%= imgf.check_box :_destroy %>
+                      <%= imgf.label :_destroy %>
+                      <%= imgf.hidden_field :id %>
+                    <% end %>
+                  </div>
+                  <label class="btn btn-info btn-sm">
+                    ＋<%= t('select_picture') %>
+                    <%= imgf.file_field :uploaded_image ,:class => "hidden"%>
+                  </label>
+                  <label></label>
+                </div>
             </div>
           <% end %>
-        </div>
-      </div>
     </div>
   <div class="form-group">
     <div class="col-md-8 ">
@@ -66,10 +68,10 @@
             <%= mp.label :country_id, class: "control-label text-left-custom" %>
           </div>
           <div class="col-sm-10">
-            <%= mp.select :country_id, Country.all.map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %></br>
+           <%= mp.select :country_id, Country.all.order("text_#{I18n.locale}").map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %></br>
           </div>
         </div>
     </div>
   </div>
-    <%= submit_tag "Update", :class => "btn btn-primary pull-right" %>
+    <%= submit_tag t("update_button"), :class => "btn btn-primary pull-right" %>
 <% end %>
