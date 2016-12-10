@@ -23,3 +23,5 @@ ja:
   search_guides:
     index:
       search_result: "検索結果"
+    search_box:
+      search_condition: "検索条件"
