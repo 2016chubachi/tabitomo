@@ -37,10 +37,14 @@ ja:
   confirm_account: "アカウントを有効にするには下記のリンクをクリックして下さい。"
   confirm_my_account: "アカウント有効化"
   someone: "パスワードの変更する場合は下記のリンクをクリックして下さい。"
-  channge_password: "パスワード変更"
+  change_password: "パスワード変更"
   ignore: "パスワードを変更を要請していない場合はこのメールを無視して下さい。"
   until: "このリンクをクリックしない限りパスワードは変更されません。"
   delete_confirmation: "削除してよいですか？"
+  create_confirmation: "メンバー登録して宜しいですか。登録時に使ったメールのメールボックスにアカウントを有効にするメールが届きます。"
+  new_password: "新しいパスワード"
+  confirm_password: "新しいパスワードの再入力"
+  contacting: "新しく設定したパスワードが正しく変更されました。"
   button:
   add_button: "追加"
   update_button: "更新"
@@ -49,6 +53,8 @@ ja:
   approve_button: "承認"
   reject_button: "却下"
   user_review_button: " 評価する"
+  select_picture: "写真選択"
+  select_l_picture: "ライセンス写真選択"
   views:
     pagination:
       first: "&laquo; 最初"

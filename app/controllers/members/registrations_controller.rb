@@ -28,7 +28,6 @@ class Members::RegistrationsController < Devise::RegistrationsController
           @traveler.save
         end
       end
-        # return redirect_to (new_member_registration_path)
     end
 
 

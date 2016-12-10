@@ -3,7 +3,7 @@
 if(window.location.href.search(/members\/?$/) >=0 ){
   // urlをmembersからmembers/sign_upに修正する、ただしページ遷移はない
   window.history.replaceState('','',window.location.pathname.replace(/members\/?$/,'members/sign_up'));
-} 
+}
 </script>
 <!-- member 登録画面-->
 <% content_for :main_header do %>
@@ -17,11 +17,7 @@ if(window.location.href.search(/members\/?$/) >=0 ){
   <h2><%= t("member_sigup_link") %></h2>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-            <table class="table">
-              <tr>
-                <td>
                     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                                <!-- <%= devise_error_messages! %> -->
                               <div class="form-group">
                                 <div class="field">
                                   <%= f.label :last_name, class: "control-label text-left-custom" %><br />
@@ -63,11 +59,9 @@ if(window.location.href.search(/members\/?$/) >=0 ){
                               <div class="form-group">
                                 <div class="field">
                                   <%= f.label :country_id, class: "control-label text-left-custom" %><br />
-                                    <%= f.select :country_id, Country.all.map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %>
+                                    <%= f.select :country_id, Country.all.order("text_#{I18n.locale}").map{|c| [ c.send("text_#{I18n.locale}"), c.id]} ,{include_blank: true},{class: "form-control"}  %>
                                 </div>
                               </div>
-
-
                               <div class="form-group">
                                 <div class="field">
                                   <%= f.label :guide, class: "control-label text-left-custom" %><br />
@@ -75,13 +69,8 @@ if(window.location.href.search(/members\/?$/) >=0 ){
                                 </div>
                               </div>
 
-                      <%= f.submit t("member_sigup_link"),data: { confirm: 'メンバー登録して宜しいですか。登録時に使ったメールのメールボックスにアカウントを有効にするメールが届きます。', disabled_with: '処理中...'}, class: "btn btn-primary" %>
+                      <%= f.submit t("member_sigup_link"),data: { confirm: t("create_confirmation")}, class: "btn btn-primary" %>
                     <% end %></br>
                   <%= render "devise/shared/links" %>
-                </td>
-
-              </tr>
-
-            </table>
       </div>
     </div>
