@@ -22,5 +22,5 @@
 ko:
   traveler_bookings:
     booking_schedule:
-      booking_schedule: "予約スケジュール_KO"
-      add_schedule: "スケジュール追加_KO"
+      booking_schedule: "예약스케쥴"
+      add_schedule: "스케쥴 추가"
