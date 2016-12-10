@@ -23,3 +23,5 @@ en:
   search_guides:
     index:
       search_result: "Search Result"
+    search_box:
+      search_condition: "Search Condition"

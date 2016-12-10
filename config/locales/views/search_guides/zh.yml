@@ -23,3 +23,5 @@ zh:
   search_guides:
     index:
       search_result: "搜索结果"
+    search_box:
+      search_condition: "搜索条件"
