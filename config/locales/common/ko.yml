@@ -48,6 +48,19 @@ ko:
   select_picture: "사진 선택"
   select_l_picture: "라이센스 사진 선택"
   button:
+  add_button: "追加_ko"
+  update_button: "更新_ko"
+  delete_button: "削除_ko"
+  detail_button: "詳細_ko"
+  approve_button: "承認_ko"
+  reject_button: "却下_ko"
+  clear_button: "クリア_ko"
+  user_review_button: "評価する_ko"
+  male: 남자
+  female: 여자
+  has: "有り_ko"
+  not: "無し_ko"
+  year: "年_ko"
   add_button: "추가"
   update_button: "변경"
   delete_button: "삭제"

@@ -20,6 +20,4 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ko:
-  form:
-    male: 남자
-    female: 여자
+  guide_key:

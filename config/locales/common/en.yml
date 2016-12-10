@@ -52,7 +52,13 @@ en:
   detail_button: "Detail"
   approve_button: "Approve"
   reject_button: "Reject"
+  clear_button: "Clear"
   user_review_button: "User Review"
+  male: "Man"
+  female: "Woman"
+  has: "Yes"
+  not: "No"
+  year: "year"  
   select_picture: "Select Picture"
   select_l_picture: "Select License Picture"
   views:

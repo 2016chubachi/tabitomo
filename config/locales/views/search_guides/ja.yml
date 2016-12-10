@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  guide_key:
+  search_guides:
+    index:
+      search_result: "検索結果"

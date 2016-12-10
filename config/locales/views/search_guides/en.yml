@@ -19,5 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ja:
-  guide_key:
+en:
+  search_guides:
+    index:
+      search_result: "Search Result"
