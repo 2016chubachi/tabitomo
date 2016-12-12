@@ -22,8 +22,8 @@
 ko:
   user_reviews:
     create:
-      created: "유저리뷰를 작성 하였습니다."
+      created: "유저 리뷰를 작성 하였습니다."
     update:
-      updated: "유저리뷰를 갱신 하였습니다."
+      updated: "유저 리뷰를 갱신 하였습니다."
     destroy:
       deleted: "유저 리뷰를 삭제 하였습니다."
