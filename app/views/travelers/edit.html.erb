@@ -16,3 +16,15 @@
     </div>
 
 <!-- 全体を囲むコンテナ -->
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+  $('form input[type=file]:hidden').on('change',function(){
+    // プロファイルページで写真アップロード機能に写真を選択した時、選択された写真の名前を表示する
+    $(this).parent().next('label:visible').text(this.value.substring(this.value.lastIndexOf('\\')+1));
+  });
+  //初期化
+  initGuideLicense();
+  // ライセンス有り無し変更時の動き設定
+  $('#guide_license select').on('change',initGuideLicense);
+});
+</script>
