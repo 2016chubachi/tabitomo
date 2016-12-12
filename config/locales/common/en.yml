@@ -54,6 +54,8 @@ en:
   reject_button: "Reject"
   clear_button: "Clear"
   user_review_button: "User Review"
+  message_button: "Message"
+  booking_button: "Booking"
   male: "Man"
   female: "Woman"
   has: "Yes"

@@ -1,34 +1,36 @@
 <div class="col-sm-12">
   <dl class="dl-horizon">
-    <dt>ライセンス有/無：</dt>
-    <dd><%= @guide.license_flg.to_s === "1" ? "有" : "無"%></dd>
+    <dt><%=t('activerecord.attributes.guide.license_flg')%>：</dt>
+    <dd><%= @guide.license_flg.to_s === "1" ? t('has') : t('not')%></dd>
   </dl>
   <div>
-    ライセンス写真表示
+    <%if @guide.license_flg.to_s === "1" && @guide.licence_picture.present?%>
+      <%= licence_image_tag @guide,{style: "max-width: 100px"} %>
+    <%end%>
   </div>
   <hr>
 </div>
 <div class="col-sm-12">
   <dl class="dl-horizon">
-    <dt>性別：</dt>
-    <dd><%= @guide.member.gender.to_s === "1" ? "男" : "女"%></dd>
+    <dt><%=t('activerecord.attributes.member.gender')%>：</dt>
+    <dd><%= @guide.member.gender.to_s === "1" ? t('male') : t('female')%></dd>
   </dl>
 </div>
 <div class="col-sm-12">
   <dl class="dl-horizon">
-    <dt>経験年数：</dt>
+    <dt><%=t('activerecord.attributes.guide.experience')%>：</dt>
     <dd><%= @guide.experience%></dd>
   </dl>
 </div>
 <div class="col-sm-12">
   <dl class="dl-horizon">
-    <dt>生年：</dt>
+    <dt><%=t('activerecord.attributes.guide.birth_year')%>：</dt>
     <dd><%= @guide.birth_year%></dd>
   </dl>
 </div>
 <div class="col-sm-12">
   <dl class="dl-vertical">
-    <dt>ガイド都市：</dt>
+    <dt><%=t('activerecord.attributes.guide.guide_cities')%>：</dt>
     <%if @guide.guide_cities.present?%>
       <% @guide.guide_cities.each do |city| %>
         <dd><%= city.city_master.send("text_#{I18n.locale}")%></dd>
@@ -39,7 +41,7 @@
 </div>
 <div class="col-sm-12">
   <dl class="dl-vertical">
-    <dt>案内言語：</dt>
+    <dt><%=t('activerecord.attributes.guide.guide_languages')%>：</dt>
     <%if @guide.guide_languages.present?%>
       <% @guide.guide_languages.each do |language| %>
         <dd><%= "#{language.language_code.send("text_#{I18n.locale}")}:  #{language.language_skill.send("text_#{I18n.locale}")}"%></dd>
