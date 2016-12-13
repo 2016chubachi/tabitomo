@@ -1,6 +1,6 @@
 class GuideBookingsController < ApplicationController
   before_action :authenticate_member!
-  before_action :check_guide_booking_edit, only: [:edit, :update]
+  before_action :check_guide_booking_edit, only: [:show, :edit, :update]
 
   def index
     # 更新が新しい順で表示する
