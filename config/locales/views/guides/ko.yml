@@ -19,5 +19,9 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ja:
-  guide_key:
+ko:
+  guides:
+    form:
+      language: "言語_ko"
+      rank: "スキルレベル_ko"
+      city: "都市_ko"

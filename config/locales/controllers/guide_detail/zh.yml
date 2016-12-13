@@ -21,24 +21,5 @@
 
 zh:
   guide_detail:
-    show:
-      guide_detail: "ガイド詳細_ZH"
-    side_left:
-      profile_title: "プロファイル_zh"
-      service_title: "サンプル_zh"
-      transportation_title: "交通手段_zh"
-      interest_title: "趣味興味_zh"
-      review_title: "会員レビュー_zh"
-      review_list_title: "レビュー一覧_zh"
-    review_list:
-      review_date: "投稿日_zh"
-      review_empty: "レビュー有りません_zh"
-    calendar:
-      sunday: "日"
-      monday: "一"
-      tuesday: "二"
-      wednesday: "三"
-      thursday: "四"
-      friday: "五"
-      saturday: "六"
-      current_day: "今天"
+    schedule:
+      access_error: "zh_不正なアクセス！"

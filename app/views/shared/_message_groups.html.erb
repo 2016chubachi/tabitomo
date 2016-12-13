@@ -6,12 +6,12 @@
     <%= render partial: "shared/member_box", locals: {member: Member.find(pageType == 'accept'? msg_group[1] : msg_group[0])} %>
   </div>
   <div class="col-xs-12 col-sm-9">
-    <%= link_to (pageType == 'accept'? '返信' : '送信')+'>>', new_message_path(:target => pageType == 'accept'? msg_group[1] : msg_group[0],:pageType => pageType), class: "btn btn-info margin-bottom-10" %>
+    <%= link_to (pageType == 'accept'? t('.accept') : t('.send'))+'>>', new_message_path(:target => pageType == 'accept'? msg_group[1] : msg_group[0],:pageType => pageType), class: "btn btn-info margin-bottom-10" %>
     <table class="table table-striped table-bordered margin-bottom-10">
       <thead>
         <tr>
-          <th>タイトル</th>
-          <th><%= pageType == 'accept'? '受信日時' : '送信日時'%></th>
+          <th><%=t('.title')%></th>
+          <th><%= pageType == 'accept'? t('.accept_date') : t('.send_date')%></th>
         </tr>
       </thead>
       <tbody>
@@ -34,7 +34,7 @@
       </tbody>
     </table>
     <%if messages.length > 5 %>
-      <%= link_to 'もっと見る...', new_message_path(:target => pageType == 'accept'? msg_group[1] : msg_group[0],:pageType => pageType), class: "float-right btn-link" %>
+      <%= link_to t('.more'), new_message_path(:target => pageType == 'accept'? msg_group[1] : msg_group[0],:pageType => pageType), class: "float-right btn-link" %>
     <%end%>
   </div>
 </div>

@@ -19,5 +19,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ko:
-  guide_key:
+en:
+  activerecord:
+    models:
+      message:
+    attributes:
+      message:
+        title: "タイトル_en"
+        content: "問い合わせ内容_en"
+        sender_id: "送信者_en"
+        receiver_id: "受信者_en"

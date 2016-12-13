@@ -19,26 +19,15 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  guide_detail:
-    show:
-      guide_detail: "Guide Detail"
-    side_left:
-      profile_title: "Profile"
-      service_title: "Service"
-      transportation_title: "Transportation"
-      interest_title: "Interest"
-      review_title: "Review"
-      review_list_title: "Review List"
-    review_list:
-      review_date: "Reviewed Date"
-      review_empty: "No review record"
-    calendar:
-      sunday: "Sun"
-      monday: "Mon"
-      tuesday: "Tue"
-      wednesday: "Wed"
-      thursday: "Thu"
-      friday: "Fri"
-      saturday: "Sat"
-      current_day: "Today"
+ko:
+  messages:
+    new:
+      auth_error: "ko_貴方のいるユーザーグループでは、該当する権限が有りません！"
+      access_error: "ko_不正なアクセス！"
+      sended: "ko_メッセージを送信しました。"
+  msg_accepts:
+    index:
+      nothing: "ko_受信したメッセージありません！"
+  msg_sends:
+    index:
+      nothing: "ko_送信したメッセージありません！"

@@ -19,26 +19,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  guide_detail:
-    show:
-      guide_detail: "Guide Detail"
-    side_left:
-      profile_title: "Profile"
-      service_title: "Service"
-      transportation_title: "Transportation"
-      interest_title: "Interest"
-      review_title: "Review"
-      review_list_title: "Review List"
-    review_list:
-      review_date: "Reviewed Date"
-      review_empty: "No review record"
-    calendar:
-      sunday: "Sun"
-      monday: "Mon"
-      tuesday: "Tue"
-      wednesday: "Wed"
-      thursday: "Thu"
-      friday: "Fri"
-      saturday: "Sat"
-      current_day: "Today"
+ko:
+  shared:
+    message_groups:
+      send: "送信_ko"
+      accept: "受信_ko"
+      title: "タイトル_ko"
+      send_date: "送信日時_ko"
+      accept_date: "受信日時_ko"
+      more: "もっと見る..._ko"
+    new_message:
+      message: "メッセージ_ko"
+      title: "タイトル_ko"
+      question: "問い合わせ内容_ko"
+      send_button: "送信_ko"
+      confirm: "メッセージを送信してもいいですか？_ko"
+      disable_with: "処理中..._ko"
+
