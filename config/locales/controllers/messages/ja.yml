@@ -19,5 +19,15 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-zh:
-  guide_key:
+ja:
+  messages:
+    new:
+      auth_error: "貴方のいるユーザーグループでは、該当する権限が有りません！"
+      access_error: "不正なアクセス！"
+      sended: "メッセージを送信しました。"
+  msg_accepts:
+    index:
+      nothing: "受信したメッセージありません！"
+  msg_sends:
+    index:
+      nothing: "送信したメッセージありません！"

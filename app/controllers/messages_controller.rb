@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   def new
     if params[:source].present? && !current_member.traveler.present?
       # ガイド詳細ページからのメッセージはトラベラーしかできない
-      flash[:notice] = "貴方のいるユーザーグループでは、該当する権限が有りません！"
+      flash[:notice] = t('.auth_error')
       redirect_to guide_detail_path(params[:guide_id])
     else
       if params[:target].present? || params[:guide_id].present?
@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
                                 msg_rel_member[:sender],
                                 msg_rel_member[:receiver]).order(updated_at: :DESC)
       else
-        raise "不正なアクセス！"
+        raise t('.access_error')
       end
     end
   end
@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
   def create
     @new_msg = Message.new(message_params)
     if @new_msg.save
-      flash.now[:notice] = "メッセージを送信しました。"
+      flash.now[:notice] = t('.sended')
       redirect_to msg_sends_path
     else
       # エラー情報を遷移先に渡す

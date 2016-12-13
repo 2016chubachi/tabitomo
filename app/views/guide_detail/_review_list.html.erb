@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-        <div class="panel-footer"><%= "#{t('review_date')}:#{rev.updated_at.strftime("%Y/%m/%d %H:%M:%S")}"%></div>
+        <div class="panel-footer"><%= "#{t('.review_date')}:#{rev.updated_at.strftime("%Y/%m/%d %H:%M:%S")}"%></div>
       </div>        
     <% end%>
     <script type="text/javascript">
@@ -35,5 +35,5 @@
       });
     </script>
 <% else%>
-  <p><%=t('review_empty')%></p>
+  <p><%=t('.review_empty')%></p>
 <% end%>

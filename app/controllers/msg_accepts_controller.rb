@@ -5,7 +5,7 @@ class MsgAcceptsController < ApplicationController
   def index
     @accepts = Message.where(:receiver_id => current_member).pluck(:receiver_id, :sender_id).uniq
     unless @accepts.present?
-      flash.now[:notice] = "受信したメッセージありません！"
+      flash.now[:notice] = t('.nothing')
     end
   end
 end

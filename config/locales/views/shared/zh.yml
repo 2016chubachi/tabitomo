@@ -19,5 +19,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ko:
-  guide_key:
+zh:
+  shared:
+    message_groups:
+      send: "送信_zh"
+      accept: "受信_zh"
+      title: "タイトル_zh"
+      send_date: "送信日時_zh"
+      accept_date: "受信日時_zh"
+      more: "もっと見る..._zh"
+    new_message:
+      message: "メッセージ_zh"
+      title: "タイトル_zh"
+      question: "問い合わせ内容_zh"
+      send_button: "送信_zh"
+      confirm: "メッセージを送信してもいいですか？_zh"
+      disable_with: "処理中..._zh"

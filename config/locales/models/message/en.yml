@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  guide_key:
+  activerecord:
+    models:
+      message:
+    attributes:
+      message:
+        title: "タイトル_en"
+        content: "問い合わせ内容_en"
+        sender_id: "送信者_en"
+        receiver_id: "受信者_en"

@@ -20,25 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  guide_detail:
-    show:
-      guide_detail: "Guide Detail"
-    side_left:
-      profile_title: "Profile"
-      service_title: "Service"
-      transportation_title: "Transportation"
-      interest_title: "Interest"
-      review_title: "Review"
-      review_list_title: "Review List"
-    review_list:
-      review_date: "Reviewed Date"
-      review_empty: "No review record"
-    calendar:
-      sunday: "Sun"
-      monday: "Mon"
-      tuesday: "Tue"
-      wednesday: "Wed"
-      thursday: "Thu"
-      friday: "Fri"
-      saturday: "Sat"
-      current_day: "Today"
+  shared:
+    message_groups:
+      send: "送信_en"
+      accept: "受信_en"
+      title: "タイトル_en"
+      send_date: "送信日時_en"
+      accept_date: "受信日時_en"
+      more: "もっと見る..._en"
+    new_message:
+      message: "メッセージ_en"
+      title: "タイトル_en"
+      question: "問い合わせ内容_en"
+      send_button: "送信_en"
+      confirm: "メッセージを送信してもいいですか？_en"
+      disable_with: "処理中..._en"
+

@@ -20,20 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  guide_detail: "ガイド詳細"
-  profile_title: "プロフィール"
-  service_title: "サンプル"
-  transportation_title: "交通手段"
-  interest_title: "趣味興味"
-  review_title: "会員レビュー"
-  review_list_title: "レビュー一覧"
-  review_date: "投稿日"
-  review_empty: "レビュー有りません"
-  sunday: "日"
-  monday: "月"
-  tuesday: "火"
-  wednesday: "水"
-  thursday: "木"
-  friday: "金"
-  saturday: "土"
-  current_day: "今日"
+  guide_detail:
+    show:
+      guide_detail: "ガイド詳細"
+    side_left:
+      profile_title: "プロフィール"
+      service_title: "サンプル"
+      transportation_title: "交通手段"
+      interest_title: "趣味興味"
+      review_title: "会員レビュー"
+      review_list_title: "レビュー一覧"
+    review_list:
+      review_date: "投稿日"
+      review_empty: "レビュー有りません"
+    calendar:
+      sunday: "日"
+      monday: "月"
+      tuesday: "火"
+      wednesday: "水"
+      thursday: "木"
+      friday: "金"
+      saturday: "土"
+      current_day: "今日"

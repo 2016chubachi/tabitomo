@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
-  success: "ユーザー情報が更新されました。"
+  guides:
+    update:
+      success: "ユーザー情報が更新されました。"
+      licence_error: "ライセンスに[有]がチェックされた場合、ライセンス写真が必須です！"
+      language_error: "ガイド言語が重複しています！"
+      city_error: "ガイド都市が重複しています！"
