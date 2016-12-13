@@ -16,7 +16,7 @@ class SearchGuidesController < ApplicationController
       @guides = @search_guide.selectByIndex
     end
     unless @guides.present?
-      flash.now[:notice] = "お探しのガイドはいません！"
+      flash.now[:notice] = t('.nothing')
     end
   end
 

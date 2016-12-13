@@ -25,7 +25,7 @@ class GuideDetailController < ApplicationController
       end
       render json: @schedules, status: :ok
     else
-      render json: "不正なアクセス！", status: :bad_request
+      render json: t('.access_error'), status: :bad_request
     end
   end
 end
