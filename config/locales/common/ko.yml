@@ -56,8 +56,8 @@ ko:
   reject_button: "취소"
   clear_button: "클리어"
   user_review_button: "평가하기"
-  message_button: "メッセージ_ko"
-  booking_button: "予約_zh"
+  message_button: "메세지"
+  booking_button: "예약"
   male: 남자
   female: 여자
   has: "있음"

@@ -4,14 +4,14 @@ class ErrorsController < ActionController::Base
   rescue_from StandardError, with: :render_500
   rescue_from ActionController::RoutingError, with: :render_404
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
-  
+
   def show
-    binding.pry
+    # binding.pry
     raise env["action_dispatch.exception"]
   end
 
   def render_404(exception = nil)
-    binding.pry
+    # binding.pry
     @exception = exception
     if request.xhr?
       render json: { error: '404 error' }, status: 404
@@ -22,7 +22,7 @@ class ErrorsController < ActionController::Base
   end
 
   def render_500(exception = nil)
-    binding.pry
+    # binding.pry
     @exception = exception
     if request.xhr?
       render json: { error: '500 error' }, status: 500
