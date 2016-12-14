@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  success: "Succeed saving profile information."
+  guides:
+    update:
+      success: "Succeed saving profile information."
+      licence_error: "If you select Yes in the license field, you have to upload your license picture."
+      language_error: "Duplicate guide language！"
+      city_error: "Duplicate guide city！"

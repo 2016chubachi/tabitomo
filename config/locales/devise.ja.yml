@@ -102,6 +102,7 @@ ja:
       update_needs_confirmation: "アカウント情報が更新されました。更新の確認メールを新しいメールアドレス宛に送信しましたので、リンクを開いて更新を有効にして下さい。"
       updated: "アカウントが更新されました。"
     sessions:
+      already_signed_out: ""
       signed_in: ""
       signed_out: ""
     unlocks:

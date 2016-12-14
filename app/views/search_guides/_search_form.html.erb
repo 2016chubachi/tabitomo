@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-        <label class="col-sm-4 control-label" for="">ガイド都市</label>
+        <label class="col-sm-4 control-label" for=""><%=t("activerecord.attributes.guide.guide_cities")%></label>
         <div class="col-sm-8">
           <!--%= f.text_field :city, class: 'form-control' %>-->
           <%= f.select :city, @city_masters.map{|t| [t.send("text_#{I18n.locale}"), t.id]},{include_blank: true},{class: "form-control"} %>
@@ -12,14 +12,14 @@
     </div>
     <div class="col-sm-6">
       <div class="form-group">
-        <label class="col-sm-4 control-label" for="">ライセンス</label>
+        <label class="col-sm-4 control-label" for=""><%=t("activerecord.attributes.guide.license_flg")%></label>
         <div class="col-sm-8">
           <!--%= f.text_field :license, class: 'form-control' %>-->
           <label class="checkbox-inline">
-            <%= f.check_box :license_has%>有
+            <%= f.check_box :license_has%><%=t("has")%>
           </label>
           <label class="checkbox-inline">
-            <%= f.check_box :license_not%>無
+            <%= f.check_box :license_not%><%=t("not")%>
           </label>
         </div>
       </div>
@@ -31,14 +31,14 @@
     <div class="col-sm-6">
       
       <div class="form-group">
-        <label class="col-sm-4 control-label" for="">性別</label>
+        <label class="col-sm-4 control-label" for=""><%=t("activerecord.attributes.member.gender")%></label>
         <div class="col-sm-8">
           <!--%= f.text_field :gender, class: 'form-control' %>-->
           <label class="checkbox-inline">
-            <%= f.check_box :gender_man%>男
+            <%= f.check_box :gender_man%><%=t("male")%>
           </label>
           <label class="checkbox-inline">
-            <%= f.check_box :gender_woman%>女
+            <%= f.check_box :gender_woman%><%=t("female")%>
           </label>
         </div>
       </div>
@@ -47,7 +47,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12 row text-center">
-      <button id="btnSearchClear" class="btn btn-default btn-left">クリア</button>
+      <button id="btnSearchClear" class="btn btn-default btn-left"><%=t('clear_button')%></button>
       <button class="btn btn-default btn-primary" type="submit" name="main_search">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span> <%= t('search_button')%>
       </button>

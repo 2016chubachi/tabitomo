@@ -52,7 +52,6 @@
         </div>
         <div class="form-group">
           <%= members_f.label :gender %>
-          <!-- %= members_f.select :gender, options_for_select([[t(".male"),"1"],[t(".female"),"2"]]), {:prompt => true }, {:class => "form-control"} %> -->
           <% options = [[t("male"), 1], [t("female"), 2]] %>
           <%= members_f.select :gender, options, {:prompt => true }, {:class => "form-control"} %>
         </div>
@@ -79,8 +78,7 @@
       </div>
       <div id="guide_license" class="form-group">
         <%= f.label :license_flg%>
-        <!-- %= f.select :license_flg, options_for_select([[t(".yes"), "0"], [t(".no"), "１"]]), {:prompt => true}, {:class => "form-control"} %> -->
-        <% options = [[t("yes"), 1 ], [t("no"), 0 ]] %>
+        <% options = [[t("has"), 1 ], [t("not"), 0 ]] %>
         <%= f.select :license_flg, options, {:prompt => true }, {:class => "form-control"} %>
       </div>
       <div class="form-group">
@@ -107,9 +105,9 @@
         <table id="guide_languages" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th class="table-header-align col-sm-5">言語</th>
-              <th class="table-header-align col-sm-5">スキルレベル</th>
-              <th><%= link_to_add_association '追加' , f, :guide_languages,
+              <th class="table-header-align col-sm-5"><%=t('.language')%></th>
+              <th class="table-header-align col-sm-5"><%=t('.rank')%></th>
+              <th><%= link_to_add_association t('add_button') , f, :guide_languages,
                   class: "btn btn-default btn-sm float-right",
                   data: {
                     association_insertion_node: "#guide_languages_tbody",
@@ -130,8 +128,8 @@
         <table id="guide_cities" class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th class="table-header-align col-sm-10">都市</th>
-              <th><%= link_to_add_association '追加' , f, :guide_cities,
+              <th class="table-header-align col-sm-10"><%=t('.city')%></th>
+              <th><%= link_to_add_association t('add_button') , f, :guide_cities,
                 class: "btn btn-default btn-sm float-right",
                 data: {
                   association_insertion_node: "#guide_cities_tbody",

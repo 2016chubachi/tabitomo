@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ko:
-  success: "유저 등록 정보가 변경되었습니다."
+  guides:
+    update:
+      success: "유저 등록 정보가 변경되었습니다."
+      licence_error: "라이센스가 있음을 체크하셨으면 라이센스 사진은 필수입니다."
+      language_error: "가이드 가능한 언어가 중복되어 있습니다."
+      city_error: "가이드 가능한 도시가 중복되어 있습니다. "

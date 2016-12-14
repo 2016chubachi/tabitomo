@@ -1,6 +1,6 @@
 class TravelerBookingsController < ApplicationController
   before_action :authenticate_member!
-  before_action :check_traveler_booking_edit, only: [:edit, :update]
+  before_action :check_traveler_booking_edit, only: [:show, :edit, :update]
   # before_action :check_traveler_booking_edit
 
   def index
@@ -28,8 +28,7 @@ class TravelerBookingsController < ApplicationController
       @booking.build_traveler_booking_comment
       # binding.pry
     else
-      flash[:notice] = "貴方のいるユーザーグループでは、該当する権限が有りません！"
-      redirect_to guide_detail_path(params[:guide_id])
+      redirect_to top_url, notice: t(".rejected")
     end
   end
 
@@ -91,5 +90,6 @@ class TravelerBookingsController < ApplicationController
     # binding.pry
     redirect_to(top_url) unless Booking.find(params[:id]).traveler == current_member.traveler
   end
+
 
 end

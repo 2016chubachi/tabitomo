@@ -19,7 +19,15 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-ko:
-  form:
-    male: 男ko
-    female: 女ko
+en:
+  messages:
+    new:
+      auth_error: "You do not have authority！"
+      access_error: "Unauthorized access！"
+      sended: "Sent your message."
+  msg_accepts:
+    index:
+      nothing: "There is no received message."
+  msg_sends:
+    index:
+      nothing: "There is no sent message."

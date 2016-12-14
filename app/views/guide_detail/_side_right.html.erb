@@ -1,12 +1,12 @@
 <%= render partial: "shared/member_box", locals: {member: @guide.member} %>
 <div class="row margin-bottom-20">
-  <div class="col-xs-4 col-sm-5">
+  <div class="col-xs-6 col-sm-6">
     <!-- <button class="btn btn-primary">メッセージ</button> -->
     <%if !current_member.present? || current_member.traveler.present?%>
-      <%= link_to 'メッセージ', new_message_path(:guide_id => @guide,:source => 'guide_detail'), class: "btn btn-primary pull-right" %>
+      <%= link_to t('message_button'), new_message_path(:guide_id => @guide,:source => 'guide_detail'), class: "btn btn-primary pull-right" %>
     <%end%>
   </div>
-  <div class="col-xs-8 col-sm-7">
+  <div class="col-xs-6 col-sm-6">
     <%if !current_member.present? || current_member.traveler.present?%>
       <%= render "booking_button"%>
     <%end%>

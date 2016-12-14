@@ -6,10 +6,7 @@
     <%= render "thumbnail", booking: booking %>
   </div>
   <div class="col-xs-12 col-sm-9">
-    <button class="btn btn-info margin-bottom-10">
-      <%= booking.status_master.send("text_#{I18n.locale}")%>
-    </button>
-
+    <div class="stamp"><%= booking.status_master.send("text_#{I18n.locale}")%></div>
     <%= render "table", booking: booking %>
 
     <div class="col-sm-offset-3 col-sm-9 text-right">

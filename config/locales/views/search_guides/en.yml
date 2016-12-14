@@ -19,7 +19,9 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-zh:
-  form:
-    male: 男
-    female: 女
+en:
+  search_guides:
+    index:
+      search_result: "Search Result"
+    search_box:
+      search_condition: "Search Condition"

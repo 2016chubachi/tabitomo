@@ -1,0 +1,37 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+ko:
+  shared:
+    message_groups:
+      send: "송신"
+      accept: "수신"
+      title: "타이틀"
+      send_date: "송신일자"
+      accept_date: "수신일자"
+      more: "자세히보기"
+    new_message:
+      message: "메세지"
+      title: "타이틀"
+      question: "문의내용"
+      send_button: "송신"
+      confirm: "메세지를 보내시겠습니까?"
+      disable_with: "처리중.."
