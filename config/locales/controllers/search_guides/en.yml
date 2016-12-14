@@ -22,4 +22,4 @@
 en:
   search_guides:
     index:
-      nothing: "en_お探しのガイドはいません！"
+      nothing: "There is no suitable guide."

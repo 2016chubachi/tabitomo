@@ -22,12 +22,12 @@
 en:
   messages:
     new:
-      auth_error: "en_貴方のいるユーザーグループでは、該当する権限が有りません！"
-      access_error: "en_不正なアクセス！"
-      sended: "en_メッセージを送信しました。"
+      auth_error: "You do not have authority！"
+      access_error: "Unauthorized access！"
+      sended: "Sent your message."
   msg_accepts:
     index:
-      nothing: "en_受信したメッセージありません！"
+      nothing: "There is no received message."
   msg_sends:
     index:
-      nothing: "en_送信したメッセージありません！"
+      nothing: "There is no sent message."

@@ -25,7 +25,7 @@ ko:
       message:
     attributes:
       message:
-        title: "タイトル_ko"
-        content: "問い合わせ内容_ko"
-        sender_id: "送信者_ko"
-        receiver_id: "受信者_ko"
+        title: "타이틀"
+        content: "문의내용"
+        sender_id: "송신자"
+        receiver_id: "수신자"

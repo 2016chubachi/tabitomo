@@ -22,12 +22,12 @@
 ko:
   messages:
     new:
-      auth_error: "ko_貴方のいるユーザーグループでは、該当する権限が有りません！"
-      access_error: "ko_不正なアクセス！"
-      sended: "ko_メッセージを送信しました。"
+      auth_error: "접근 권한이 없습니다！"
+      access_error: "접근 불가한 사이트 입니다."
+      sended: "메세지를 보냈습니다."
   msg_accepts:
     index:
-      nothing: "ko_受信したメッセージありません！"
+      nothing: "수신한 메세지가 없습니다.！"
   msg_sends:
     index:
-      nothing: "ko_送信したメッセージありません！"
+      nothing: "보내신 메세지가 없습니다.！"

@@ -25,7 +25,7 @@ en:
       message:
     attributes:
       message:
-        title: "タイトル_en"
-        content: "問い合わせ内容_en"
-        sender_id: "送信者_en"
-        receiver_id: "受信者_en"
+        title: "Title"
+        content: "Inquiry"
+        sender_id: "Sender"
+        receiver_id: "Receiver"
