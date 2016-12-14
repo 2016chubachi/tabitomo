@@ -22,8 +22,8 @@
 zh:
   user_reviews:
     form:
-      star1: "星1つ_Zh"
-      star2: "星2つ_Zh"
-      star3: "星3つ_Zh"
-      star4: "星4つ_Zh"
-      star5: "星5つ_Zh"
+      star1: "一颗星"
+      star2: "三颗星"
+      star3: "四颗星"
+      star4: "五颗星"
+      star5: "六颗星"

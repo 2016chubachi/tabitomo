@@ -26,17 +26,17 @@ zh:
       booking_schedules:
     attributes:
       booking_schedule:
-        traveler_count: "人数_zh"
-        city_master_id: "場所_zh"
-        traveler_date: "日程_zh"
+        traveler_count: "人数"
+        city_master_id: "地点"
+        traveler_date: "日期"
       booking_schedules:
-        traveler_count: "人数_zh"
-        city_master_id: "場所_zh"
-        traveler_date: "日程_zh"
+        traveler_count: "人数"
+        city_master_id: "地点"
+        traveler_date: "日期"
     errors:
       messages:
-        invalid_traveler_count: "は半角英数字で入力してください。_zh"
+        invalid_traveler_count: "只能输入半角英数字。"
     info:
         messages:
-          approved: "承認しました。_zh"
-          cancelled: "却下しました。_zh"
+          approved: "您通过了预约请求。"
+          cancelled: "您拒绝了预约请求。"

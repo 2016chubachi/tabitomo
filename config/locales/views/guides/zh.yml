@@ -22,6 +22,6 @@
 zh:
   guides:
     form:
-      language: "言語_zh"
-      rank: "スキルレベル_zh"
-      city: "都市_zh"
+      language: "语言"
+      rank: "熟练度"
+      city: "城市"
