@@ -27,3 +27,5 @@ en:
       updated: "Booking is updated."
     destroy:
       cancelled: "Booking is cancelled."
+    new:
+      rejected: "Not authorized for booking."

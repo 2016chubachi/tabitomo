@@ -27,3 +27,5 @@ ja:
       updated: "予約を更新しました。"
     destroy:
       cancelled: "予約を取消しました。"
+    new:
+      rejected: "予約する権限がありません"

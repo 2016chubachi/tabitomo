@@ -27,3 +27,5 @@ zh:
       updated: "予約を更新しました。_zh"
     destroy:
       cancelled: "予約を取消しました。_zh"
+    new:
+      rejected: "予約する権限がありません_zh"

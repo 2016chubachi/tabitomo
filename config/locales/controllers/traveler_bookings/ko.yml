@@ -27,3 +27,5 @@ ko:
       updated: "예약을 갱신 하였습니다."
     destroy:
       cancelled: "예약을 취소 하였습니다."
+    new:
+      rejected: "予約する権限がありません_ko"
