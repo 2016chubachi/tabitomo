@@ -22,6 +22,6 @@
 ko:
   guides:
     form:
-      language: "言語_ko"
-      rank: "スキルレベル_ko"
-      city: "都市_ko"
+      language: "언어"
+      rank: "스킬레벨"
+      city: "도시"

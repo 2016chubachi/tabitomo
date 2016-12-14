@@ -22,4 +22,4 @@
 ko:
   guide_detail:
     schedule:
-      access_error: "ko_不正なアクセス！"
+      access_error: "잘못된 접근입니다!"

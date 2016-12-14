@@ -22,17 +22,16 @@
 en:
   shared:
     message_groups:
-      send: "送信_en"
-      accept: "受信_en"
-      title: "タイトル_en"
-      send_date: "送信日時_en"
-      accept_date: "受信日時_en"
-      more: "もっと見る..._en"
+      send: "Send"
+      accept: "Receive"
+      title: "Title"
+      send_date: "Send Date"
+      accept_date: "Receive Date"
+      more: "View the details"
     new_message:
-      message: "メッセージ_en"
-      title: "タイトル_en"
-      question: "問い合わせ内容_en"
-      send_button: "送信_en"
-      confirm: "メッセージを送信してもいいですか？_en"
-      disable_with: "処理中..._en"
-
+      message: "Message"
+      title: "Title"
+      question: "Inquiry"
+      send_button: "Send"
+      confirm: "Would you like to send message ?"
+      disable_with: "Processing..."

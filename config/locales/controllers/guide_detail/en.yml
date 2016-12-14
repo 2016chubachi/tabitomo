@@ -22,4 +22,4 @@
 en:
   guide_detail:
     schedule:
-      access_error: "en_不正なアクセス！"
+      access_error: "Unauthorized access."
