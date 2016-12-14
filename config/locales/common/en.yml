@@ -41,7 +41,8 @@ en:
   ignore: "If you didn't request this, please ignore this email."
   until: "Your password won't change until you access the link above and create a new one."
   delete_confirmation: "Are you sure to delete?"
-  create_confirmation: "Would you like to register as a member? You will receive an email to activate your account in the mailbox you used when registering"
+  # create_confirmation: "Would you like to register as a member? You will receive an email to activate your account in the mailbox you used when registering"
+  create_confirmation: "Would you like to register as a member?"
   new_password: "New Password"
   confirm_password: "Confirm new password"
   contacting: "We're contacting you to notify you that your password has been changed."
@@ -60,7 +61,7 @@ en:
   female: "Woman"
   has: "Yes"
   not: "No"
-  year: "year"  
+  year: "year"
   select_picture: "Select Picture"
   select_l_picture: "Select License Picture"
   views:
