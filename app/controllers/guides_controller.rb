@@ -60,7 +60,8 @@ class GuidesController < ApplicationController
   end
 
   def edit
-    @guide = Guide.find(params[:id])
+    # @guide = Guide.find(params[:id])
+    @guide = Guide.find_by(member_id: params[:id])
     @guide.member.build_member_picture unless @guide.member.member_picture
     @guide.build_licence_picture unless @guide.licence_picture
   end
