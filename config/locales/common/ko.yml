@@ -59,18 +59,19 @@ ko:
   user_review_button: "평가하기"
   message_button: "메세지"
   booking_button: "예약"
+  reserve_button: "예약 하기"
   male: 남자
   female: 여자
   has: "있음"
   not: "없음"
   year: "년"
-  add_button: "추가"
-  update_button: "변경"
-  delete_button: "삭제"
-  detail_button: "상세 정보"
-  approve_button: "승인"
-  reject_button: "취소"
-  user_review_button: "평가 하기"
+  # add_button: "예약 하기"
+  # update_button: "변경"
+  # delete_button: "삭제"
+  # detail_button: "상세 정보"
+  # approve_button: "승인"
+  # reject_button: "취소"
+  # user_review_button: "평가 하기"
   views:
     pagination:
       first: "&laquo; 처음"
