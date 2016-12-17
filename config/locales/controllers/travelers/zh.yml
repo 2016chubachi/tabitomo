@@ -20,4 +20,4 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh:
-  success: "Succeed saving profile information."
+  success: "个人信息保存成功。"

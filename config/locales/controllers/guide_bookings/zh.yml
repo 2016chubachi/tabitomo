@@ -22,5 +22,5 @@
 zh:
   guide_bookings:
     update:
-      approved: "予約を承認しました。_zh"
-      rejected: "予約を却下しました。_zh"
+      approved: "您通过了预约请求。"
+      rejected: "您拒绝了预约请求。"
