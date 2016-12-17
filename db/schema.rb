@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20161103025855) do
     t.string   "text_en"
     t.string   "text_ko"
     t.string   "text_zh"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "display_order"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "countries", force: :cascade do |t|
@@ -46,8 +47,9 @@ ActiveRecord::Schema.define(version: 20161103025855) do
     t.string   "text_en"
     t.string   "text_ko"
     t.string   "text_zh"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "display_order"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "guide_booking_comments", force: :cascade do |t|
