@@ -33,23 +33,20 @@ Rails.application.routes.draw do
    resources :licence_pictures, :only => [:show]
    resources :travelers
 
-  #  devise_for :members
+    # devise_for :members, :path => "top#index"
 
-    #   # Rails.application.routes.draw do
-    #   #   devise_for :members, controllers: {
-    #   #     sessions: 'members/sessions'
-    #   # }
-    # end
+
     devise_for :members, :controllers => {
      :registrations => 'members/registrations',
      :sessions => 'members/sessions'
-   }
+    }
 
-   devise_scope :user do
-     get "sign_in", :to => "members/sessions#new"
-     get "sign_out", :to => "members/sessions#destroy"
-   end
+    devise_scope :member do
+      get "sign_in", :to => "members/sessions#new"
+      get "sign_out", :to => "members/sessions#destroy"
+    end
 
+    
   end
 
   # ルーティングエラーハンドリング
