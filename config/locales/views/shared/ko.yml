@@ -35,3 +35,7 @@ ko:
       send_button: "송신"
       confirm: "메세지를 보내시겠습니까?"
       disable_with: "처리중.."
+    error:
+      message: "エラー%{count}件があります。_ko"
+    info:
+      message: "メッセージ%{count}件があります。_ko"
