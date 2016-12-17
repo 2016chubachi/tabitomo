@@ -25,4 +25,4 @@ ko:
       licence_picture:
     attributes:
       licence_picture:
-        _destroy: "Destroy_ko"
+        _destroy: "삭제"

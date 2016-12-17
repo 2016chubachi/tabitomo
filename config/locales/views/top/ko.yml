@@ -22,11 +22,11 @@
 ko:
   top:
     slide_header:
-      caption: "Find a private tour guide __ko"
+      caption: "개인 가이드와 함께 여행을 즐기세요."
     index:
-      tokyo: "東京"
-      kyoto: "京都"
-      nara: "奈良"
-      hiroshima: "広島"
-      okinawa: "沖縄"
-      hokkaido: "北海道"
+      tokyo: "도쿄"
+      kyoto: "교토"
+      nara: "나라"
+      hiroshima: "히로시마"
+      okinawa: "오키나와"
+      hokkaido: "북해도"

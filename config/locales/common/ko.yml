@@ -29,7 +29,7 @@ ko:
   tab_booking: "예약"
   tab_in_message: "받은 메세지"
   tab_out_message: "보낸 메세지"
-  tab_profile: "프로파일"
+  tab_profile: "프로필"
   characters_minimum: "문자 이상"
   password_reset: "패스워드 리셋"
   welcome: "환영합니다."
