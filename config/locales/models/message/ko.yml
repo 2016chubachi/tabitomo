@@ -27,5 +27,5 @@ ko:
       message:
         title: "타이틀"
         content: "문의내용"
-        sender_id: "송신자"
-        receiver_id: "수신자"
+        sender_id: "보내신 분"
+        receiver_id: "받으신 분"

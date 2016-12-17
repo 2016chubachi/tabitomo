@@ -22,17 +22,17 @@
 ko:
   shared:
     message_groups:
-      send: "송신"
-      accept: "수신"
+      send: "보내기"
+      accept: "받은메세지"
       title: "타이틀"
-      send_date: "송신일자"
-      accept_date: "수신일자"
-      more: "자세히보기"
+      send_date: "보낸 날짜"
+      accept_date: "받은 날짜"
+      more: "자세히 보기"
     new_message:
       message: "메세지"
       title: "타이틀"
       question: "문의내용"
-      send_button: "송신"
+      send_button: "보내기"
       confirm: "메세지를 보내시겠습니까?"
       disable_with: "처리중.."
     error:

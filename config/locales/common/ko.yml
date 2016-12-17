@@ -21,7 +21,7 @@
 
 ko:
   hello: "안녕하세요."
-  search_button: "검색버튼"
+  search_button: "검색 버튼"
   search_place: "도시를 입력하세요."
   login_link: "로그인"
   sign_out: "로그 아웃"
@@ -67,10 +67,10 @@ ko:
   add_button: "추가"
   update_button: "변경"
   delete_button: "삭제"
-  detail_button: "상세정보"
+  detail_button: "상세 정보"
   approve_button: "승인"
   reject_button: "취소"
-  user_review_button: "평가하기"
+  user_review_button: "평가 하기"
   views:
     pagination:
       first: "&laquo; 처음"
