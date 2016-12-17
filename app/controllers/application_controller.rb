@@ -50,9 +50,9 @@ class ApplicationController < ActionController::Base
   end
 
   # for session keeping
-  def default_url_options(options = {})
-    { locale: I18n.locale }.merge options
-  end
+  # def default_url_options(options = {})
+  #   { locale: I18n.locale }.merge options
+  # end
 
   protected
   def configure_permitted_parameters
