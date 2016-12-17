@@ -8,12 +8,14 @@ class TravelersController < ApplicationController
 
   def update
     @traveler = Member.find(params[:id])
-    @traveler.update_attributes(traveler_params)
+    @traveler.assign_attributes(traveler_params)
     if @traveler.save
       flash[:success] = t('success')
       redirect_to edit_traveler_path @traveler
     else
-      render 'edit'
+      # エラー情報を遷移先に渡す
+      session[:errors] = @traveler.errors.full_messages
+      redirect_to edit_traveler_path @traveler
     end
   end
 
