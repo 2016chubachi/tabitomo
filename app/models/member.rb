@@ -3,7 +3,9 @@ class Member < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :lockable, :timeoutable
+        #  :confirmable, :lockable, :timeoutable
+        # remove confirmable function.
+        :lockable, :timeoutable
     belongs_to :country
 
   attr_accessor :hantei

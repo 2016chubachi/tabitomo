@@ -22,4 +22,4 @@
 ko:
   search_guides:
     index:
-      nothing: "ko_お探しのガイドはいません！"
+      nothing: "검색된 가이드가 없습니다！"

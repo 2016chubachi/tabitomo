@@ -22,6 +22,6 @@
 en:
   guides:
     form:
-      language: "言語_en"
-      rank: "スキルレベル_en"
-      city: "都市_en"
+      language: "Language"
+      rank: "Skill Level"
+      city: "City"

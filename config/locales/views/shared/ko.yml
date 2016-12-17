@@ -22,17 +22,16 @@
 ko:
   shared:
     message_groups:
-      send: "送信_ko"
-      accept: "受信_ko"
-      title: "タイトル_ko"
-      send_date: "送信日時_ko"
-      accept_date: "受信日時_ko"
-      more: "もっと見る..._ko"
+      send: "송신"
+      accept: "수신"
+      title: "타이틀"
+      send_date: "송신일자"
+      accept_date: "수신일자"
+      more: "자세히보기"
     new_message:
-      message: "メッセージ_ko"
-      title: "タイトル_ko"
-      question: "問い合わせ内容_ko"
-      send_button: "送信_ko"
-      confirm: "メッセージを送信してもいいですか？_ko"
-      disable_with: "処理中..._ko"
-
+      message: "메세지"
+      title: "타이틀"
+      question: "문의내용"
+      send_button: "송신"
+      confirm: "메세지를 보내시겠습니까?"
+      disable_with: "처리중.."
