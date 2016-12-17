@@ -32,7 +32,7 @@ class LicencePicture < ActiveRecord::Base
       def check_image
         if self.image
           if self.image.size > 2048.kilobytes
-            errors.add(:uploaded_image, "too_big_image")
+            errors.add(:uploaded_l_image, "too_big_image")
           end
           unless IMAGE_TYPES.has_key?(pictype)
             errors.add(:uploaded_l_image, "invalid_image")

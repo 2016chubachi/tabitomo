@@ -22,6 +22,6 @@
 ko:
   search_guides:
     index:
-      search_result: "검색결과"
+      search_result: "검색 결과"
     search_box:
-      search_condition: "검색조건"
+      search_condition: "검색 조건"
