@@ -32,7 +32,7 @@ ja:
       review_list_title: "レビュー一覧"
     review_list:
       review_date: "投稿日"
-      review_empty: "レビュー有りません"
+      review_empty: "レビューが有りません"
     calendar:
       sunday: "日"
       monday: "月"

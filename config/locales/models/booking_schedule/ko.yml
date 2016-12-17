@@ -35,8 +35,8 @@ ko:
         traveler_date: "일정"
     errors:
       messages:
-        invalid_traveler_count: "는 숫자를 넣어주세요."
+        # invalid_traveler_count: "는 숫자를 넣어주세요."
     info:
         messages:
-          approved: "승인하였습니다."
-          cancelled: "취소하였습니다."
+          approved: "승인 되었습니다."
+          cancelled: "취소 되었습니다."

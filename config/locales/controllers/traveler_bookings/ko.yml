@@ -22,9 +22,9 @@
 ko:
   traveler_bookings:
     create:
-      created: "예약을 작성 하였습니다."
+      created: "예약이 작성 되었습니다."
     update:
-      updated: "예약을 갱신 하였습니다."
+      updated: "예약이 갱신 되었습니다."
     destroy:
       cancelled: "예약을 취소 하였습니다."
     new:

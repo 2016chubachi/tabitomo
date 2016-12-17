@@ -32,5 +32,5 @@ ko:
         guide_transportation: 이동수단
         guide_interest: 추가사항
         license_flg: 라이센스
-        guide_languages: "가이드 언어・가이드 스킬레벨"
+        guide_languages: "가이드 언어・언어레벨"
         guide_cities: "가이드 가능도시"
