@@ -20,8 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh:
-  guides:
-    form:
-      language: "语言"
-      rank: "熟练程度"
-      city: "城市"
+  top:
+    slide_header:
+      caption: "寻找属于你的私人导游"
+    index:
+      tokyo: "东京"
+      kyoto: "京都"
+      nara: "奈良"
+      hiroshima: "广岛"
+      okinawa: "冲绳"
+      hokkaido: "北海道"

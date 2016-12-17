@@ -23,5 +23,5 @@ ja:
   guides:
     form:
       language: "言語"
-      rank: "スキルレベル"
+      rank: "言語レベル"
       city: "都市"

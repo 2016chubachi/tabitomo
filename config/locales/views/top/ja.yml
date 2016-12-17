@@ -19,9 +19,14 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-zh:
-  guides:
-    form:
-      language: "语言"
-      rank: "熟练程度"
-      city: "城市"
+ja:
+  top:
+    slide_header:
+      caption: "個人ガイドを見つけよう！"
+    index:
+      tokyo: "東京"
+      kyoto: "京都"
+      nara: "奈良"
+      hiroshima: "広島"
+      okinawa: "沖縄"
+      hokkaido: "北海道"

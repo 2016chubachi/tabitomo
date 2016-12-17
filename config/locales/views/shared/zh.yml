@@ -35,3 +35,7 @@ zh:
       send_button: "发信"
       confirm: "确定发送这条消息？"
       disable_with: "发送中..."
+    error:
+      message: "有%{count}条错误"
+    info:
+      message: "有%{count}条信息"

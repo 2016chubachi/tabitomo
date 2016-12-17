@@ -19,9 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-zh:
-  guides:
-    form:
-      language: "语言"
-      rank: "熟练程度"
-      city: "城市"
+en:
+  activerecord:
+    models:
+      licence_picture:
+    attributes:
+      licence_picture:
+        _destroy: "Destroy"
