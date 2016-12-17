@@ -65,7 +65,17 @@ function calendarDrawing(date,headTime){
   }
 
   //配列を「null」で初期化する
-  arrDate.fill(null);
+  if(arrDate.fill){
+    // ie以外
+    arrDate.fill(null);
+  }
+  else{
+    // ieの場合
+    for(var i=0;i<arrDate.length;i++)
+    {
+      arrDate[i] = null;
+    }
+  }
   for(var i = 0;i < lastDate.getDate();i++){
     //日付を配列に設定する
     arrDate[i+firstDayOfWeek] = i+1;
