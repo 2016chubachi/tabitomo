@@ -25,4 +25,4 @@ ko:
       member_picture:
     attributes:
       member_picture:
-        _destroy: "Destroy_ko"
+        _destroy: "삭제"

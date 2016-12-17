@@ -25,37 +25,37 @@ LanguageCode.create(
 )
 LanguageCode.create(
   text_ja: "フランス語",
-  text_en: "",
-  text_ko: "",
+  text_en: "French",
+  text_ko: "프랑스어",
   text_zh: "法语"
 )
 LanguageCode.create(
   text_ja: "スペイン語",
-  text_en: "",
-  text_ko: "",
+  text_en: "Spainsh",
+  text_ko: "스페인어",
   text_zh: "西班牙语"
 )
 LanguageCode.create(
   text_ja: "ドイツ語",
-  text_en: "",
-  text_ko: "",
+  text_en: "German",
+  text_ko: "독일어",
   text_zh: "德语"
 )
 LanguageCode.create(
   text_ja: "ロシア語",
-  text_en: "",
-  text_ko: "",
+  text_en: "Russian",
+  text_ko: "러시아어",
   text_zh: "俄罗斯语"
 )
 LanguageCode.create(
   text_ja: "アラビア語",
-  text_en: "",
-  text_ko: "",
+  text_en: "Arabic",
+  text_ko: "아랍어",
   text_zh: "阿拉伯语"
 )
 LanguageCode.create(
   text_ja: "ポルトガル語",
-  text_en: "",
-  text_ko: "",
+  text_en: "Portuguese",
+  text_ko: "포르투칼어",
   text_zh: "葡萄牙语"
 )
