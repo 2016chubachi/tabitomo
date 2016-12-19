@@ -50,8 +50,8 @@
   </dl>
   <hr/>
 </div>
-<div class="col-sm-12">
+<div class="col-sm-12 margin-bottom-20">
   <%if !current_member.present? || current_member.traveler.present?%>
-    <%= render "booking_button"%>
+    <%= render partial: "booking_button", locals: {right: false} %>
   <%end%>
 </div>
