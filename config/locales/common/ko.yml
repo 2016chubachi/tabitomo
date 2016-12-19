@@ -50,7 +50,7 @@ ko:
   select_l_picture: "라이센스 사진 선택"
   button:
   add_button: "추가"
-  update_button: "변경"
+  update_button: "갱신"
   delete_button: "삭제"
   detail_button: "상세정보"
   approve_button: "승인"

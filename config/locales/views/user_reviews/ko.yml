@@ -28,8 +28,8 @@ ko:
       star4: "별 넷"
       star5: "별 다섯"
     new:
-      review_details: "レビュー詳細_ko"
+      review_details: "리뷰 내용"
     edit:
-      review_details: "レビュー詳細_ko"
+      review_details: "리뷰 내용"
     show:
-      review_details: "レビュー詳細_ko"
+      review_details: "리뷰 내용"
