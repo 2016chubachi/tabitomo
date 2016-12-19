@@ -27,3 +27,9 @@ ja:
       star3: "星3つ"
       star4: "星4つ"
       star5: "星5つ"
+    new:
+      review_details: "レビュー詳細"
+    edit:
+      review_details: "レビュー詳細"
+    show:
+      review_details: "レビュー詳細"

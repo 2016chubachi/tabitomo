@@ -23,7 +23,13 @@ zh:
   user_reviews:
     form:
       star1: "一颗星"
-      star2: "三颗星"
-      star3: "四颗星"
-      star4: "五颗星"
-      star5: "六颗星"
+      star2: "二颗星"
+      star3: "三颗星"
+      star4: "四颗星"
+      star5: "五颗星"
+    new:
+      review_details: "レビュー詳細_zh"
+    edit:
+      review_details: "レビュー詳細_zh"
+    show:
+      review_details: "レビュー詳細_zh"

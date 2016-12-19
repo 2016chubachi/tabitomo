@@ -27,3 +27,9 @@ en:
       star3: "3 stars"
       star4: "4 stars"
       star5: "5 stars"
+    new:
+      review_details: "Review Details"
+    edit:
+      review_details: "Review Details"
+    show:
+      review_details: "Review Details"
