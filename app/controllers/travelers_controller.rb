@@ -10,9 +10,11 @@ class TravelersController < ApplicationController
     @traveler = Member.find(params[:id])
     @traveler.assign_attributes(traveler_params)
     if @traveler.save
-      flash[:success] = t('success')
+      flash[:success] = t('.success')
       redirect_to edit_traveler_path @traveler
     else
+      # 画像アップロードエラー処理
+      setImageError
       # エラー情報を遷移先に渡す
       session[:errors] = @traveler.errors.full_messages
       redirect_to edit_traveler_path @traveler
@@ -31,6 +33,20 @@ class TravelersController < ApplicationController
       attrs_Member << { member_picture_attributes: [:id, :uploaded_image,:_destroy]}
       params.require(:member).permit(attrs_Member)
 
+    end
+    
+    # 画像アップロードエラー処理
+    def setImageError
+      if @traveler.errors[:"member_picture.member_image_size"].present?
+        # 会員画像のサイズエラー
+        @traveler.errors.delete(:"member_picture.member_image_size")
+        @traveler.errors[:base] << t(".member_picture_size_error")
+      end
+      if @traveler.errors[:"member_picture.member_image_type"].present?
+        # 会員画像のタイプエラー
+        @traveler.errors.delete(:"member_picture.member_image_type")
+        @traveler.errors[:base] << t(".member_picture_type_error")
+      end
     end
 
 end
