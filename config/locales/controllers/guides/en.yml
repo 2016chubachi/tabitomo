@@ -26,3 +26,7 @@ en:
       licence_error: "If you select Yes in the license field, you have to upload your license picture."
       language_error: "Duplicate guide language！"
       city_error: "Duplicate guide city！"
+      member_picture_size_error: "en_会員写真のサイズは2MB以内にしてください！"
+      member_picture_type_error: "en_会員写真の種類は[jpg,gif,png]にしてください！"
+      licence_picture_size_error: "en_ライセンス写真のサイズは2MB以内にしてください！"
+      licence_picture_type_error: "en_ライセンス写真の種類は[jpg,gif,png]にしてください！"
