@@ -31,7 +31,7 @@ class MemberPicture < ActiveRecord::Base
 
     def check_image
       if self.image
-        if self.image.size > 104.kilobytes
+        if self.image.size > 2048.kilobytes
           errors.add(:member_image_size, "")
         end
         unless IMAGE_TYPES.has_key?(pictype)
