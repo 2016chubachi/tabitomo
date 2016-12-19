@@ -22,4 +22,4 @@
 zh:
   guide_detail:
     schedule:
-      access_error: "zh_不正なアクセス！"
+      access_error: "拒绝访问！"

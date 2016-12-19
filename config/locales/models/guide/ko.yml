@@ -25,12 +25,12 @@ ko:
       guide:
     attributes:
       guide:
-        experience: "가이드경험 년수"
-        birth_year: 태어난해
+        experience: "가이드 경험 년수"
+        birth_year: 태어난 해
         profile: 프로필
-        guide_service: 가이드서비스
-        guide_transportation: 이동수단
-        guide_interest: 추가사항
+        guide_service: 가이드 서비스
+        guide_transportation: 이동 수단
+        guide_interest: 가이드 흥미・취미
         license_flg: 라이센스
-        guide_languages: "가이드 언어・가이드 스킬레벨"
-        guide_cities: "가이드 가능도시"
+        guide_languages: "가이드 언어・언어 레벨"
+        guide_cities: "가이드 가능 도시"

@@ -9,9 +9,9 @@ module ApplicationHelper
     # binding.pry
     if member.member_picture.present? && !member.member_picture.new_record?
       path = member_picture_path(member.member_picture,format: member.member_picture.extension)
-      image_tag(path, {style: "max-width: 252px"}.merge(options))
+      image_tag(path, {style: "max-height:180px;"}.merge(options))
     else
-      image_tag("/assets/no-image.png",{style: "max-width: 252px"}.merge(options))
+      image_tag("/assets/no-image.png",{style: "max-height:180px;"}.merge(options))
     end
   end
 
@@ -19,9 +19,9 @@ module ApplicationHelper
   def licence_image_tag(guide, options ={})
     if guide.licence_picture.present? && !guide.licence_picture.new_record?
       path = licence_picture_path(guide.licence_picture,format: guide.licence_picture.extension)
-      image_tag(path, {style: "max-width: 252px"}.merge(options))
+      image_tag(path, {style: "max-height:180px;"}.merge(options))
     else
-      image_tag("/assets/no-image.png",{style: "max-width: 252px"}.merge(options))
+      image_tag("/assets/no-image.png",{style: "max-height:180px;"}.merge(options))
     end
   end
 

@@ -22,12 +22,12 @@
 zh:
   messages:
     new:
-      auth_error: "zh_貴方のいるユーザーグループでは、該当する権限が有りません！"
-      access_error: "zh_不正なアクセス！"
-      sended: "zh_メッセージを送信しました。"
+      auth_error: "您所在的用户组没有该权限！"
+      access_error: "拒绝访问！"
+      sended: "消息成功发送。"
   msg_accepts:
     index:
-      nothing: "zh_受信したメッセージありません！"
+      nothing: "没有收到信息！"
   msg_sends:
     index:
-      nothing: "zh_送信したメッセージありません！"
+      nothing: "没有发送消息！"

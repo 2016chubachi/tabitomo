@@ -22,7 +22,7 @@
 zh:
   guides:
     update:
-      success: "ZH_ユーザー情報が更新されました。"
-      licence_error: "ZH_ライセンスに[有]がチェックされた場合、ライセンス写真が必須です！"
-      language_error: "ZH_ガイド言語が重複しています！"
-      city_error: "ZH_ガイド都市が重複しています！"
+      success: "用户情报更新成功。"
+      licence_error: "资格选择了[有]的情况、必须上传资格证明照片！"
+      language_error: "导游语言不能重复！"
+      city_error: "导游城市不能重复！"

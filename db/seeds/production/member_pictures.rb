@@ -1,13 +1,13 @@
 #会員写真
-1.upto(6) do |idx|
-  path = Rails.root.join("db/seeds", Rails.env, "member#{idx % 3 + 1}.jpg")
-  file = Rack::Test::UploadedFile.new(path, "image/jpeg", true).read
-  MemberPicture.create(
-    image: file,
-    pictype: "image/jpeg",
-    member_id: idx
-  )
-end
+# 1.upto(6) do |idx|
+#   path = Rails.root.join("db/seeds", Rails.env, "member#{idx % 3 + 1}.jpg")
+#   file = Rack::Test::UploadedFile.new(path, "image/jpeg", true).read
+#   MemberPicture.create(
+#     image: file,
+#     pictype: "image/jpeg",
+#     member_id: idx
+#   )
+# end
 
 #uploaded_imageの実装ができていないときは下記のようにしてテストデータを作る
 #path = Rails.root.join("db/seeds/development", "sample1.jpg")

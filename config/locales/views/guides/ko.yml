@@ -23,5 +23,5 @@ ko:
   guides:
     form:
       language: "언어"
-      rank: "스킬레벨"
+      rank: "언어 레벨"
       city: "도시"

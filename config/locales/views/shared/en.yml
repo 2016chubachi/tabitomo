@@ -35,3 +35,7 @@ en:
       send_button: "Send"
       confirm: "Would you like to send message ?"
       disable_with: "Processing..."
+    error:
+      message: "%{count} error(s)"
+    info:
+      message: "%{count} information(s)"

@@ -22,16 +22,20 @@
 zh:
   shared:
     message_groups:
-      send: "送信_zh"
-      accept: "受信_zh"
-      title: "タイトル_zh"
-      send_date: "送信日時_zh"
-      accept_date: "受信日時_zh"
-      more: "もっと見る..._zh"
+      send: "发信"
+      accept: "收信"
+      title: "标题"
+      send_date: "发信日期"
+      accept_date: "收信日期"
+      more: "更多内容..."
     new_message:
-      message: "メッセージ_zh"
-      title: "タイトル_zh"
-      question: "問い合わせ内容_zh"
-      send_button: "送信_zh"
-      confirm: "メッセージを送信してもいいですか？_zh"
-      disable_with: "処理中..._zh"
+      message: "消息"
+      title: "标题"
+      question: "详细"
+      send_button: "发信"
+      confirm: "确定发送这条消息？"
+      disable_with: "发送中..."
+    error:
+      message: "有%{count}条错误"
+    info:
+      message: "有%{count}条信息"

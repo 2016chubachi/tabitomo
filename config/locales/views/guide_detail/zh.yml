@@ -22,17 +22,17 @@
 zh:
   guide_detail:
     show:
-      guide_detail: "ガイド詳細_ZH"
+      guide_detail: "导游详细"
     side_left:
-      profile_title: "プロファイル_zh"
-      service_title: "サンプル_zh"
-      transportation_title: "交通手段_zh"
-      interest_title: "趣味興味_zh"
-      review_title: "会員レビュー_zh"
-      review_list_title: "レビュー一覧_zh"
+      profile_title: "个人信息"
+      service_title: "服务内容"
+      transportation_title: "移动手段"
+      interest_title: "个人爱好"
+      review_title: "会员评论"
+      review_list_title: "评论一览"
     review_list:
-      review_date: "投稿日_zh"
-      review_empty: "レビュー有りません_zh"
+      review_date: "评论日"
+      review_empty: "没有评论！"
     calendar:
       sunday: "日"
       monday: "一"

@@ -1,7 +1,7 @@
 <div class="panel panel-success">
   <div class="panel-heading"><%= t('shared.message_groups.send')+"：" + msg.title%></div>
   <div class="panel-body">
-    <%= msg.content%>
+    <pre class="pre-style"><%= msg.content%></pre>
   </div>
   <div class="panel-footer text-right"><%= msg.updated_at.strftime("%Y/%m/%d %H:%M:%S")%></div>
 </div>

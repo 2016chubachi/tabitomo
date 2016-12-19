@@ -27,7 +27,7 @@ ko:
       sended: "메세지를 보냈습니다."
   msg_accepts:
     index:
-      nothing: "수신한 메세지가 없습니다.！"
+      nothing: "수신한 메세지가 없습니다."
   msg_sends:
     index:
-      nothing: "보내신 메세지가 없습니다.！"
+      nothing: "보내신 메세지가 없습니다."

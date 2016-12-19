@@ -21,7 +21,7 @@
 
 ko:
   hello: "안녕하세요."
-  search_button: "검색버튼"
+  search_button: "검색 버튼"
   search_place: "도시를 입력하세요."
   login_link: "로그인"
   sign_out: "로그 아웃"
@@ -29,7 +29,7 @@ ko:
   tab_booking: "예약"
   tab_in_message: "받은 메세지"
   tab_out_message: "보낸 메세지"
-  tab_profile: "프로파일"
+  tab_profile: "프로필"
   characters_minimum: "문자 이상"
   password_reset: "패스워드 리셋"
   welcome: "환영합니다."
@@ -59,18 +59,19 @@ ko:
   user_review_button: "평가하기"
   message_button: "메세지"
   booking_button: "예약"
+  reserve_button: "예약 하기"
   male: 남자
   female: 여자
   has: "있음"
   not: "없음"
   year: "년"
-  add_button: "추가"
-  update_button: "변경"
-  delete_button: "삭제"
-  detail_button: "상세정보"
-  approve_button: "승인"
-  reject_button: "취소"
-  user_review_button: "평가하기"
+  # add_button: "예약 하기"
+  # update_button: "변경"
+  # delete_button: "삭제"
+  # detail_button: "상세 정보"
+  # approve_button: "승인"
+  # reject_button: "취소"
+  # user_review_button: "평가 하기"
   views:
     pagination:
       first: "&laquo; 처음"

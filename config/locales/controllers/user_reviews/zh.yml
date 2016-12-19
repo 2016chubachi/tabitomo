@@ -22,8 +22,8 @@
 zh:
   user_reviews:
     create:
-      created: "ユーザーレビューを作成しました。_zh"
+      created: "用户评论保存成功。"
     update:
-      updated: "ユーザーレビューを更新しました。_zh"
+      updated: "用户评论修改成功。"
     destroy:
-      deleted: "ユーザーレビューを削除しました。_zh"
+      deleted: "用户评论删除成功。"

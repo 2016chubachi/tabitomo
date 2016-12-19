@@ -25,7 +25,7 @@ zh:
       message:
     attributes:
       message:
-        title: "タイトル_zh"
-        content: "問い合わせ内容_zh"
-        sender_id: "送信者_zh"
-        receiver_id: "受信者_zh"
+        title: "标题"
+        content: "详细"
+        sender_id: "发信者"
+        receiver_id: "收信者"

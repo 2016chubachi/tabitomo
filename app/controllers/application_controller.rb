@@ -21,7 +21,10 @@ class ApplicationController < ActionController::Base
 
   # リンクの多言語化に対応する
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    #セッションでの　locale を保つために変更
+    # I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
     # topページとnavバー検索フォームオブジェクト
     @top_search_guide = Search::Guide.new
   end
@@ -45,6 +48,11 @@ class ApplicationController < ActionController::Base
       render template: 'errors/error_500', formats: format, status: 500, layout: 'application', content_type: 'text/html'
     end
   end
+
+  # for session keeping
+  # def default_url_options(options = {})
+  #   { locale: I18n.locale }.merge options
+  # end
 
   protected
   def configure_permitted_parameters

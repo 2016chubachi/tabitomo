@@ -22,10 +22,10 @@
 zh:
   traveler_bookings:
     create:
-      created: "予約を作成しました。_zh"
+      created: "预约成功，等待导游处理。"
     update:
-      updated: "予約を更新しました。_zh"
+      updated: "预约修改成功，等待导游处理。"
     destroy:
-      cancelled: "予約を取消しました。_zh"
+      cancelled: "预约取消成功。"
     new:
-      rejected: "予約する権限がありません_zh"
+      rejected: "权限不足！"
