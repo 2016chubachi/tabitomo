@@ -1,7 +1,7 @@
 <% if right == true%>
-  <%= link_to t('booking_button'), new_traveler_booking_path(guide_id: @guide), class: "btn btn-primary float-right",style: "width:120px;" %>
-  <%= link_to t('message_button'), new_message_path(:guide_id => @guide,:source => 'guide_detail'), class: "btn btn-primary float-right",style: "width:120px;margin-right:10px;" %>
+  <%= link_to t('booking_button'), new_traveler_booking_path(guide_id: @guide), class: "btn btn-primary float-right",style: "width:100px;" %>
+  <%= link_to t('message_button'), new_message_path(:guide_id => @guide,:source => 'guide_detail'), class: "btn btn-primary float-right",style: "width:100px;margin-right:10px;" %>
 <% else%>
-  <%= link_to t('message_button'), new_message_path(:guide_id => @guide,:source => 'guide_detail'), class: "btn btn-primary",style: "width:120px;margin-right:10px;" %>
-  <%= link_to t('booking_button'), new_traveler_booking_path(guide_id: @guide), class: "btn btn-primary",style: "width:120px;" %>
+  <%= link_to t('message_button'), new_message_path(:guide_id => @guide,:source => 'guide_detail'), class: "btn btn-primary",style: "width:100px;margin-right:10px;" %>
+  <%= link_to t('booking_button'), new_traveler_booking_path(guide_id: @guide), class: "btn btn-primary",style: "width:100px;" %>
 <% end%>
