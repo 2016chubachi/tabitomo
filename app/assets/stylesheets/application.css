@@ -13,144 +13,11 @@
  *= require_tree .
  *= require_self
  *= require jquery-ui/datepicker
+ *= require animate
  */
 
-/* indexpage */
 
-.banner{
-    background-size: cover;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    z-index: 99;
-    left: 13%;
-}
-.navbar-default {
-    border: none !important;
-    background: none !important;
-    margin: 0 !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    background: none !important;
-}
-div#bs-example-navbar-collapse-1 {
-    padding: 0;
-}
-/*.logo{
-    float: left;
-    margin: 1em 0 0 0;
-}
-.logo h1{
-	margin:0;
-}*/
-.logo h1 a{
-	color:#fff;
-	font-size:1em;
-	text-decoration:none;
-	font-family: 'Pacifico', cursive;
-}
-/*-- top-nav --*/
-.top-nav {
-    margin: 2em 0 0 0;
-	float: right;
-}
-.top-nav ul{
-    padding: 0;
-    margin: 0;
-}
-.top-nav ul li{
-    display: inline-block;
-    margin: 0 1em;
-    float: left;
-}
-.top-nav ul li:nth-child(6){
-	margin-right:0;
-}
-ul.nav.navbar-nav {
-    float: right;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background: none !important;
-    border-right: solid 1px #EFEFEF;
-    box-shadow: 1px 0px 0px 0px rgba(72, 72, 72, 0);
-}
-.top-nav ul li a{
-    color: #fff !important;
-    font-size: 1em;
-    margin: 0;
-    text-decoration: none;
-    padding: 0;
-}
-.top-nav ul li a:hover{
-    color: #fd5c63 !important;
-}
-.top-nav ul li a.active{
-    color: #fd5c63 !important;
-}
-.caret {
-    margin-left: 14px;
-}
-/*-- slider --*/
-.slider {
-    background: url(/assets/castle-07.jpg) no-repeat 0px 0px;
-    background-size: cover;
-    min-height: 800px;
-}
-.slider1 {
-    background: url(/assets/castle-01.jpg) no-repeat 0px 0px;
-    background-size: cover;
-}
-.slider2 {
-    background: url(/assets/castle-06.jpg) no-repeat 0px 0px;
-    background-size: cover;
-}
-.slider-grid{
-	width: 290px !important;
-    top: 23%;
-    position: absolute;
-    height: 290px;
-    margin: 3em auto 0;
-    text-align: center;
-    border: solid 2px #fff;
-    padding: 5em 0 0 0;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    -moz-border-radius: 50%;
-}
-.slider-grid h3{
-    color: #fff;
-    font-size: 3em;
-    margin: 0;
-    font-family: 'Pacifico', cursive;
-}
-.slider-grid p{
-    color: #fff;
-    font-size: .875em;
-    width: 84%;
-    margin: 2em auto 0;
-}
-.copyright{
-	margin:1em 0 0 0;
-	text-align:center;
-}
-.copyright p{
-	margin: 0;
-    font-size: .875em;
-    color: #BBBBBB;
-}
-.copyright p a{
-	color: #BBBBBB;
-}
-.copyright p a:hover{
-	color: #fd5c63;
-}
-/*-- //slider --*/
-
-/* -----------  */
+/* -----slider------  */
  .slide-image{
    width:100% !important;
    height: 365px !important;
@@ -270,7 +137,7 @@ ul.nav.navbar-nav {
 }
 
 .image-upload{
-  color: white;  
+  color: white;
   background-color: red;
   padding: 6px;
   border-radius: 12px;
@@ -308,6 +175,7 @@ text-rightが勝つので、importantで強くする*/
   box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 
+
 /*status stamp*/
 div.stamp{
       -moz-transform: rotate(-20deg);
@@ -316,7 +184,7 @@ div.stamp{
       -ms-transform: rotate(-20deg);
       transform: rotate(-20deg);
       color: red;
-      font-weight:bold; 
+      font-weight:bold;
       font-size: 1.5em;
       border-style:solid;
       border-width:medium;
