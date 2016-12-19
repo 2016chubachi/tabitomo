@@ -3,7 +3,7 @@
   <div class="col-xs-12 col-sm-3">
     <!--受信ページの場合、メンバボックスに表示するのは送信者-->
     <!--送信ページの場合、メンバボックスに表示するのは受信者-->
-    <%= render partial: "shared/member_box", locals: {member: Member.find(pageType == 'accept'? msg_group[1] : msg_group[0])} %>
+    <%= render partial: "shared/member_box", locals: {member: Member.find(pageType == 'accept'? msg_group[1] : msg_group[0]),link: true} %>
   </div>
   <div class="col-xs-12 col-sm-9">
     <%= link_to (pageType == 'accept'? t('.accept') : t('.send'))+'>>', new_message_path(:target => pageType == 'accept'? msg_group[1] : msg_group[0],:pageType => pageType), class: "btn btn-info margin-bottom-10" %>
