@@ -27,3 +27,9 @@ ko:
       star3: "별 셋"
       star4: "별 넷"
       star5: "별 다섯"
+    new:
+      review_details: "리뷰 내용"
+    edit:
+      review_details: "리뷰 내용"
+    show:
+      review_details: "리뷰 내용"

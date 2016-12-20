@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ko:
-  success: "유저 등록 정보가 변경되었습니다."
+  travelers:
+    update:
+      success: "유저 등록 정보가 변경되었습니다."
+      member_picture_size_error: "멤버 사진 사이즈는 2메가바이트 이내로 해주세요."
+      member_picture_type_error: "멤버 사진 종류는 [jpg,gif,png]로 해주세요."

@@ -42,6 +42,8 @@ class GuidesController < ApplicationController
       end
     end
     if @guide.errors.present?
+      # 画像アップロードエラー処理
+      setImageError
       # エラー情報を遷移先に渡す
       session[:errors] = @guide.errors.full_messages
       # メッセージ送信ページに遷移
@@ -51,6 +53,8 @@ class GuidesController < ApplicationController
         flash[:success] = t('.success')
         redirect_to edit_guide_path @guide
       else
+        # 画像アップロードエラー処理
+        setImageError
         # エラー情報を遷移先に渡す
         session[:errors] = @guide.errors.full_messages
         # メッセージ送信ページに遷移
@@ -84,6 +88,30 @@ class GuidesController < ApplicationController
       attrs_Guide  << { guide_cities_attributes: [:id, :city_master_id,:_destroy]}
       params.require(:guide).permit(attrs_Guide)
 
+    end
+    
+    # 画像アップロードエラー処理
+    def setImageError
+      if @guide.errors[:"member.member_picture.member_image_size"].present?
+        # 会員画像のサイズエラー
+        @guide.errors.delete(:"member.member_picture.member_image_size")
+        @guide.errors[:base] << t(".member_picture_size_error")
+      end
+      if @guide.errors[:"member.member_picture.member_image_type"].present?
+        # 会員画像のタイプエラー
+        @guide.errors.delete(:"member.member_picture.member_image_type")
+        @guide.errors[:base] << t(".member_picture_type_error")
+      end
+      if @guide.errors[:"licence_picture.licence_image_size"].present?
+        # ライセンス写真のサイズエラー
+        @guide.errors.delete(:"licence_picture.licence_image_size")
+        @guide.errors[:base] << t(".licence_picture_size_error")
+      end
+      if @guide.errors[:"licence_picture.licence_image_type"].present?
+        # ライセンス写真のタイプエラー
+        @guide.errors.delete(:"licence_picture.licence_image_type")
+        @guide.errors[:base] << t(".licence_picture_type_error")
+      end
     end
 
     # def send_image

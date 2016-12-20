@@ -26,3 +26,7 @@ zh:
       licence_error: "资格选择了[有]的情况、必须上传资格证明照片！"
       language_error: "导游语言不能重复！"
       city_error: "导游城市不能重复！"
+      member_picture_size_error: "用户头像照片的大小不能超过2MB！"
+      member_picture_type_error: "用户头像照片只能是[jpg,gif,png]中的一种！"
+      licence_picture_size_error: "资格证明照片的大小不能超过2MB！"
+      licence_picture_type_error: "资格证明照片只能是[jpg,gif,png]中的一种！"

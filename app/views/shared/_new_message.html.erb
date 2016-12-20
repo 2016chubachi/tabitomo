@@ -3,7 +3,7 @@
   <div class="col-xs-12 col-sm-3">
     <!--受信ページの場合、メンバボックスに表示するのは送信者-->
     <!--送信ページの場合、メンバボックスに表示するのは受信者-->
-    <%= render partial: "shared/member_box", locals: {member: @new_msg.receiver} %>
+    <%= render partial: "shared/member_box", locals: {member: @new_msg.receiver,link: true} %>
   </div>
   <div class="col-xs-12 col-sm-9">　<!--　画面の右側　-->
     <div class="row" style="margin-top:-20px;">
