@@ -23,7 +23,12 @@ class ApplicationController < ActionController::Base
   def set_locale
     #セッションでの　locale を保つために変更
     # I18n.locale = params[:locale] || I18n.default_locale
-    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    # ブラウザの設定言語を読込
+    client_language = nil
+    if request.env["HTTP_ACCEPT_LANGUAGE"].split(',').present? && match_result = request.env["HTTP_ACCEPT_LANGUAGE"].split(',')[0].match(/#{I18n.available_locales.map(&:to_s).join('|')}/)
+      client_language = match_result[0]
+    end
+    I18n.locale = params[:locale] || session[:locale] || client_language || I18n.default_locale
     session[:locale] = I18n.locale
     # topページとnavバー検索フォームオブジェクト
     @top_search_guide = Search::Guide.new
