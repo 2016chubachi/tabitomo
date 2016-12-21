@@ -22,5 +22,16 @@ mike:
   first_name: "test01"
   email: "sakurasolar@gmail.com"
   encrypted_password: <%= Devise::Encryptor.digest(Member, 'password') %>
+  confirmed_at: <%= Time.now - 100 %>
   country_id: 1
+  
+<%1.upto(20) do |n| %>
+member_<%= n%>:
+  last_name: <%= "last_#{n}"%>
+  first_name: <%= "first_#{n}"%>
+  email: <%= "test_#{n}@gmail.com"%>
+  encrypted_password: <%= Devise::Encryptor.digest(Member, 'password') %>
+  confirmed_at: <%= Time.now - 100 %>
+  country: <%= "country_#{n}"%>
+<% end %>
   

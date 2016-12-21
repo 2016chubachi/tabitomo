@@ -1,13 +1,71 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  text_ja: MyString
-  text_en: MyString
-  text_ko: MyString
-  text_zh: MyString
+  text_ja: "東京"
+  text_en: "Tokyo"
+  text_ko: "도쿄"
+  text_zh: "东京"
+  display_order: 1
 
 two:
-  text_ja: MyString
-  text_en: MyString
-  text_ko: MyString
-  text_zh: MyString
+  text_ja: "京都"
+  text_en: "Kyoto"
+  text_ko: "교토"
+  text_zh: "京都"
+  display_order: 2
+
+three:
+  text_ja: "奈良"
+  text_en: "Nara"
+  text_ko: "나라"
+  text_zh: "奈良"
+  display_order: 3
+
+four:
+  text_ja: "広島"
+  text_en: "Hiroshima"
+  text_ko: "히로시마"
+  text_zh: "广岛"
+  display_order: 4
+  
+five:
+  text_ja: "沖縄"
+  text_en: "Okinawa"
+  text_ko: "오키나와"
+  text_zh: "冲绳"
+  display_order: 5
+  
+six:
+  text_ja: "北海道"
+  text_en: "Hokkaido"
+  text_ko: "홋카이도"
+  text_zh: "北海道"
+  display_order: 6
+
+seven:
+  text_ja: "大阪"
+  text_en: "Osaka"
+  text_ko: "오사카"
+  text_zh: "大阪"
+  display_order: 7
+
+eight:
+  text_ja: "富士山"
+  text_en: "Fujisan"
+  text_ko: "후지산"
+  text_zh: "富士山"
+  display_order: 8
+
+nine:
+  text_ja: "箱根"
+  text_en: "Hakone"
+  text_ko: "하코네"
+  text_zh: "箱根"
+  display_order: 9
+
+ten:
+  text_ja: "鎌倉"
+  text_en: "Kamakura"
+  text_ko: "가마쿠라"
+  text_zh: "镰仓"
+  display_order: 10

@@ -1,13 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  text_ja: MyString
-  text_en: MyString
-  text_ko: MyString
-  text_zh: MyString
+status_1:
+  text_ja: "承認待"
+  text_en: "Approval pending"
+  text_ko: "승인 대기"
+  text_zh: "等待承认"
 
-two:
-  text_ja: MyString
-  text_en: MyString
-  text_ko: MyString
-  text_zh: MyString
+status_2:
+  text_ja: "承認済"
+  text_en: "Approved"
+  text_ko: "승인"
+  text_zh: "承认"
+
+status_3:
+  text_ja: "却下"
+  text_en: "Rejected"
+  text_ko: "거절"
+  text_zh: "拒绝"
+  
+status_4:
+  text_ja: "取消"
+  text_en: "Cancelled"
+  text_ko: "취소"
+  text_zh: "取消"

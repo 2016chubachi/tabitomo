@@ -3,11 +3,11 @@
 one:
   booking_id: 1
   traveler_count: 1
-  traveler_location: MyString
+  city_master_id: 1
   traveler_date: 2016-10-12 07:45:40
 
 two:
   booking_id: 1
   traveler_count: 1
-  traveler_location: MyString
+  city_master_id: 1
   traveler_date: 2016-10-12 07:45:40
