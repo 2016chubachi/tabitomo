@@ -1,21 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  status: MyString
-  traveler_id: 1
-  guide_id: 1
-  traveler_first_name: MyString
-  traveler_last_name: MyString
-  traveler_email: MyString
-  traveler_telphone: MyString
-  traveler_country: MyString
-
-two:
-  status: MyString
-  traveler_id: 1
-  guide_id: 1
-  traveler_first_name: MyString
-  traveler_last_name: MyString
-  traveler_email: MyString
-  traveler_telphone: MyString
-  traveler_country: MyString
+<%1.upto(10) do |n| %>
+booking_<%= n%>:
+  status_master: <%= "status_#{n%4}"%>
+  traveler: <%= "traveler_#{n}"%>
+  guide: <%= "guide_#{n}"%>
+<% end %>

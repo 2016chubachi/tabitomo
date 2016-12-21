@@ -1,13 +1,267 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  text_ja: MyString
-  text_en: MyString
-  text_ko: MyString
-  text_zh: MyString
+country_1:
+  code: AU
+  text_ja: オーストラリア
+  text_en: Australia
+  text_ko: 오스트레일리아
+  text_zh:  澳大利亚
+  display_order: 1
 
-two:
-  text_ja: MyString
-  text_en: MyString
-  text_ko: MyString
-  text_zh: MyString
+country_2:  
+  code: BH
+  text_ja: バーレーン
+  text_en: Bahrain
+  text_ko: 바레인
+  text_zh:  巴林 
+  display_order: 2
+  
+country_3:
+  code: BR
+  text_ja: ブラジル
+  text_en: Brazil
+  text_ko: 브라질
+  text_zh:  巴西 
+  display_order: 3
+
+country_4:
+  code: CA
+  text_ja: カナダ
+  text_en: Canada
+  text_ko: 캐나다
+  text_zh:  加拿大
+  display_order: 4
+  
+country_5:
+  code: CH
+  text_ja: スイス
+  text_en: Switzerland
+  text_ko: 스위스
+  text_zh:  瑞士
+  display_order: 5
+
+country_6:
+  code: CN
+  text_ja: 中華人民共和国
+  text_en: China
+  text_ko: 중화인민공화국
+  text_zh:  中国
+  display_order: 6
+
+country_7:
+  code: DE
+  text_ja: ドイツ
+  text_en: Germany
+  text_ko: 독일
+  text_zh:  德國
+  display_order: 7
+
+country_8:
+  code: DK
+  text_ja: デンマーク
+  text_en: Denmark
+  text_ko: 덴마크
+  text_zh:  丹麥
+  display_order: 8
+
+country_9:
+  code: ES
+  text_ja: スペイン
+  text_en: Spain
+  text_ko: 스페인
+  text_zh:  西班牙
+  display_order: 9
+
+country_10:
+  code: FI
+  text_ja: フィンランド
+  text_en: Finland
+  text_ko: 핀란드
+  text_zh:  芬兰
+  display_order: 10
+
+country_11:
+  code: FR
+  text_ja: フランス
+  text_en: France
+  text_ko: 프랑스
+  text_zh:  法国
+  display_order: 11
+
+country_12:
+  code: GB
+  text_ja: イギリス
+  text_en: United Kingdom
+  text_ko: 영국
+  text_zh:  英國
+  display_order: 12
+  
+country_13:
+  code: HK
+  text_ja: 香港
+  text_en: Hong Kong
+  text_ko: 홍콩
+  text_zh:  香港
+  display_order: 13
+  
+country_14:
+  code: IL
+  text_ja: イスラエル
+  text_en: Israel
+  text_ko: 이스라엘
+  text_zh:  以色列
+  display_order: 14
+  
+country_15:
+  code: IN
+  text_ja: インド
+  text_en: India
+  text_ko: 인도
+  text_zh:  印度
+  display_order: 15
+  
+country_16:
+  code: IT
+  text_ja: イタリア
+  text_en: Italy
+  text_ko: 이탈리아
+  text_zh:  義大利
+  display_order: 16
+  
+country_17:
+  code: JP
+  text_ja: 日本
+  text_en: Japan
+  text_ko: 일본
+  text_zh:  日本
+  display_order: 17
+  
+country_18:
+  code: KR
+  text_ja: 大韓民国
+  text_en: Korea, Republic of
+  text_ko: 대한민국
+  text_zh:  韩国
+  display_order: 18
+
+country_19:
+  code: MY
+  text_ja: マレーシア
+  text_en: Malaysia
+  text_ko: 말레이시아
+  text_zh:  马来西亚
+  display_order: 19
+  
+country_20:
+  code: NL
+  text_ja: オランダ
+  text_en: Netherlands
+  text_ko: 네덜란드
+  text_zh:  荷蘭
+  display_order: 20
+  
+country_21:
+  code: NO
+  text_ja: ノルウェー
+  text_en: Norway
+  text_ko: 노르웨이
+  text_zh:  挪威
+  display_order: 21
+  
+country_22:
+  code: NZ
+  text_ja: ニュージーランド
+  text_en: New Zealand
+  text_ko: 뉴질랜드
+  text_zh:  新西蘭
+  display_order: 22
+  
+country_23:
+  code: PH
+  text_ja: フィリピン
+  text_en: Philippines
+  text_ko: 필리핀
+  text_zh:  菲律賓
+  display_order: 23
+  
+country_24:
+  code: PT
+  text_ja: ポルトガル
+  text_en: Portugal
+  text_ko: 포르투갈
+  text_zh:  葡萄牙
+  display_order: 24
+  
+country_25:
+  code: RU
+  text_ja: ロシア連邦
+  text_en: Russian Federation
+  text_ko: 러시아
+  text_zh:  俄羅斯
+  display_order: 25
+  
+country_26:
+  code: SA
+  text_ja: サウジアラビア
+  text_en: Saudi Arabia
+  text_ko: 사우디아라비아
+  text_zh:  沙烏地阿拉伯
+  display_order: 26
+  
+country_27:
+  code: SE
+  text_ja: スウェーデン
+  text_en: Sweden
+  text_ko: 스웨덴
+  text_zh:  瑞典
+  display_order: 27
+  
+country_28:
+  code: TH
+  text_ja: タイ
+  text_en: Thailand
+  text_ko: 타이
+  text_zh:  泰國
+  display_order: 28
+  
+country_29:
+  code: TR
+  text_ja: トルコ
+  text_en: Turkey
+  text_ko: 터키
+  text_zh:  土耳其
+  display_order: 29
+  
+country_30:
+  code: TW
+  text_ja: 台湾（台湾省/中国）
+  text_en: Taiwan, Province of China
+  text_ko: 중화민국
+  text_zh: 臺灣 臺灣
+  display_order: 30
+  
+country_31:
+  code: US
+  text_ja: アメリカ合衆国
+  text_en: United States
+  text_ko: 미국
+  text_zh:  美國
+  display_order: 31
+  
+country_32:
+  code: VN
+  text_ja: ベトナム
+  text_en: Viet Nam
+  text_ko: 베트남
+  text_zh:  越南
+  display_order: 32
+  
+country_999999:
+  code: OT
+  text_ja: その他
+  text_en: Other
+  text_ko: 그외
+  text_zh: 其它
+  display_order: 999999
+
+

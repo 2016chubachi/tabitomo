@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     # I18n.locale = params[:locale] || I18n.default_locale
     # ブラウザの設定言語を読込
     client_language = nil
-    if request.env["HTTP_ACCEPT_LANGUAGE"].split(',').present? && match_result = request.env["HTTP_ACCEPT_LANGUAGE"].split(',')[0].match(/#{I18n.available_locales.map(&:to_s).join('|')}/)
+    if request.env["HTTP_ACCEPT_LANGUAGE"].present? && request.env["HTTP_ACCEPT_LANGUAGE"].split(',').present? && match_result = request.env["HTTP_ACCEPT_LANGUAGE"].split(',')[0].match(/#{I18n.available_locales.map(&:to_s).join('|')}/)
       client_language = match_result[0]
     end
     I18n.locale = params[:locale] || session[:locale] || client_language || I18n.default_locale

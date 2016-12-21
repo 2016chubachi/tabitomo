@@ -1,5 +1,6 @@
 class MembersControllerTest < ActionController::TestCase
-  include Devise::TestHelpers
+  include Warden::Test::Helpers
+  
   def setup
     @member = members( :mike )
     sign_in(@member)
