@@ -23,5 +23,7 @@ ja:
   search_guides:
     index:
       search_result: "検索結果"
+      guide_language: "ガイド言語"
     search_box:
       search_condition: "検索条件"
+      guide_language: "ガイド言語"

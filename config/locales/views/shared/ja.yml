@@ -36,6 +36,6 @@ ja:
       confirm: "メッセージを送信してもいいですか？"
       disable_with: "処理中..."
     error:
-      message: "エラーは%{count}件があります"
+      message: "%{count}件があります"
     info:
-      message: "メッセージは%{count}件があります"
+      message: "%{count}件があります"

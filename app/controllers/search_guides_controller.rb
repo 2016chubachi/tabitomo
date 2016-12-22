@@ -1,6 +1,7 @@
 class SearchGuidesController < ApplicationController
   def index
     @city_masters = CityMaster.all
+    @language_masters = LanguageCode.all
     if params[:nav_search]
       # nav barからの検索
       @search_guide = Search::Guide.new(search_params)

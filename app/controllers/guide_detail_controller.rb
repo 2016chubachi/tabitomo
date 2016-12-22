@@ -17,11 +17,11 @@ class GuideDetailController < ApplicationController
       # .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date).distinct
       if params[:booking].present?
         # 該当旅人のデータを対象外にする
-        @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month)
-        .where("traveler_date <= ?",startDate.end_of_month).where("booking_id <> #{params[:booking]}").pluck(:traveler_date).uniq()
+        @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month.prev_week)
+        .where("traveler_date <= ?",startDate.end_of_month.next_week).where("booking_id <> #{params[:booking]}").pluck(:traveler_date).uniq()
       else
-        @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month)
-          .where("traveler_date <= ?",startDate.end_of_month).pluck(:traveler_date).uniq()
+        @schedules = BookingSchedule.includes(:booking).where(bookings: {guide_id: params[:guide]}).where("traveler_date >= ?",startDate.beginning_of_month.prev_week)
+          .where("traveler_date <= ?",startDate.end_of_month.next_week).pluck(:traveler_date).uniq()
       end
       render json: @schedules, status: :ok
     else

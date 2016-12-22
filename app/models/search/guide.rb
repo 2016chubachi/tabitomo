@@ -1,6 +1,7 @@
 class Search::Guide < Search::Base
   ATTRIBUTES = %i(
     city
+    language
     gender_man
     gender_woman
     license_has
@@ -20,7 +21,11 @@ class Search::Guide < Search::Base
     end
     if city.present?
       # GuideCityをjoinして検索する
-      guides = guides.includes(:guide_cities).where(guide_cities: {city_master_id: city}) 
+      guides = guides.joins(:guide_cities).where(guide_cities: {city_master_id: city}) 
+    end
+    if language.present?
+      # GuideCityをjoinして検索する
+      guides = guides.joins(:guide_languages).where(guide_languages: {language_code_id: language}) 
     end
     # 性別のチェック状況によって、条件を付く
     if gender_man == "1" && gender_woman == "0"
@@ -47,6 +52,7 @@ class Search::Guide < Search::Base
   def selectByIndex
     guides = ::Guide.all
     
-    guides = guides.includes(:guide_cities).where(guide_cities: {city_master_id: city}) 
+    # guides = guides.includes(:guide_cities).where(guide_cities: {city_master_id: city}) 
+    guides = guides.joins(:guide_cities).where(guide_cities: {city_master_id: city}) 
   end
 end

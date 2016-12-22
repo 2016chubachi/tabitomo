@@ -26,7 +26,16 @@ class TravelerBookingsController < ApplicationController
 
       @booking.booking_schedules.build
       @booking.build_traveler_booking_comment
-      # binding.pry
+      if params[:date].present? && params[:date].match(/\d{4}[-\/]\d{1,2}[-\/]\d{1,2}/)
+        begin
+          selectedDate = DateTime.parse(params[:date])
+          bookinged = BookingSchedule.includes(:booking).where(bookings: {guide_id: @guide.id}).where(traveler_date: selectedDate.beginning_of_day..selectedDate.end_of_day)
+          if selectedDate >= Date.today && bookinged.length <= 0
+            @booking.booking_schedules[0].traveler_date = selectedDate
+          end
+        rescue
+        end
+      end
     else
       redirect_to top_url, notice: t(".rejected")
     end
