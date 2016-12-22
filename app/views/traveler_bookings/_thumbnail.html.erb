@@ -5,7 +5,7 @@
       <h3>
         <%= booking.guide.member.first_name + " " + booking.guide.member.last_name %>
       </h3>
-      <% if past_booking?(booking)%>
+      <% if past_booking?(booking) && booking.status_master_id == '2' %>
         <% if booking.user_review.present? %>
           <%= link_to star_image_tag(booking.user_review.star_master),  edit_user_review_path(booking.user_review) %>
           <%#= link_to "更新", edit_user_review_path(booking.user_review),
