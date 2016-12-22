@@ -23,7 +23,7 @@ ko:
   search_guides:
     index:
       search_result: "검색 결과"
-      guide_language: "ガイド言語_ko"
+      guide_language: "가이드 언어"
     search_box:
       search_condition: "검색 조건"
-      guide_language: "ガイド言語_ko"
+      guide_language: "가이드 언어"
