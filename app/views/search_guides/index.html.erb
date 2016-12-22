@@ -22,25 +22,42 @@
         <!--ガイド詳細ページ遷移-->
         <%= link_to(member_image_tag(guide.member),guide_detail_path(guide)) %>
         <div class="caption">
-          <h3><%= guide.member.first_name + "  " + guide.member.last_name%></h3>
-          <p>
-          <%= t("activerecord.attributes.guide.experience") +"：" + guide.experience.to_s + t("year")%></p>
-          <p><%= t("activerecord.attributes.guide.license_flg")+"：" + (guide.license_flg.to_s === "1" ? t("has") : t("not")) %></p>
-          <% city_str = ''%>
-          <% guide.guide_cities.each do |city|
-              unless city_str.empty?
-                city_str += ' | '
-              end
-              city_str += city.city_master.send("text_#{I18n.locale}")
-            end
-          %>
-          <p><%= t("activerecord.attributes.guide.guide_cities")+"：" + city_str%>
-          </p>
-          <p><%= t("activerecord.attributes.member.gender")+"：" + (guide.member.gender.to_s === "1" ? t("male") : t("female")) %></p>
-          <!--ガイド詳細ページ遷移-->
-          <%= link_to(t("detail_button")+'>>',guide_detail_path(guide),class: "btn btn-sm btn-default") %>
+          <div style="width:100%">
+            <div class="row">
+              <div class="col-md-12"><h3><%= guide.member.first_name + "  " + guide.member.last_name%></h3></div>
+              <div class="col-md-12"><%= t("activerecord.attributes.guide.experience") +"：" + guide.experience.to_s + t("year")%></div>
+              <div class="col-md-12"><%= t("activerecord.attributes.guide.license_flg")+"：" + (guide.license_flg.to_s === "1" ? t("has") : t("not")) %></div>
+              <div class="col-md-12"><%= t("activerecord.attributes.member.gender")+"：" + (guide.member.gender.to_s === "1" ? t("male") : t("female")) %></div>
+              <div class="col-md-12">
+                <% city_str = ''%>
+                <!--%binding.pry%>-->
+                <% guide.guide_cities.each do |city|
+                    unless city_str.empty?
+                      city_str += ' | '
+                    end
+                    city_str += city.city_master.send("text_#{I18n.locale}")
+                  end
+                %>
+                <%= t("activerecord.attributes.guide.guide_cities")+"：" + city_str.truncate(20)%>
+              </div>
+              <div class="col-md-12">
+                <% lang_str = ''%>
+                <!--%binding.pry%>-->
+                <% guide.guide_languages.each do |lang|
+                    unless lang_str.empty?
+                      lang_str += ' | '
+                    end
+                    lang_str += lang.language_code.send("text_#{I18n.locale}")
+                  end
+                %>
+                <%= t(".guide_language")+"：" + lang_str.truncate(18)%>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+          <!--ガイド詳細ページ遷移-->
+          <!--%= link_to(t("detail_button")+'>>',guide_detail_path(guide),class: "btn btn-sm btn-default") %>-->
+        </div>
     </div>
   <% end%>
 </div>

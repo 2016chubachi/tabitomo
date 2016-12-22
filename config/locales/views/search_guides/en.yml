@@ -23,5 +23,7 @@ en:
   search_guides:
     index:
       search_result: "Search Result"
+      guide_language: "Guide Language"
     search_box:
       search_condition: "Search Condition"
+      guide_language: "Guide Language"

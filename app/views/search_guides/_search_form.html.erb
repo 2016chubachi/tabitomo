@@ -1,6 +1,6 @@
 <%= render layout: 'search_box' do %>
 
-  <div class="row">
+  <!--<div class="row">-->
     <div class="col-sm-6">
       <div class="form-group">
         <label class="col-sm-4 control-label" for=""><%=t("activerecord.attributes.guide.guide_cities")%></label>
@@ -9,13 +9,20 @@
           <%= f.select :city, @city_masters.map{|t| [t.send("text_#{I18n.locale}"), t.id]},{include_blank: true},{class: "form-control"} %>
         </div>
       </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label" for=""><%=t(".guide_language")%></label>
+        <div class="col-sm-8">
+          <!--%= f.text_field :city, class: 'form-control' %>-->
+          <%= f.select :language, @language_masters.map{|t| [t.send("text_#{I18n.locale}"), t.id]},{include_blank: true},{class: "form-control"} %>
+        </div>
+      </div>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
         <label class="col-sm-4 control-label" for=""><%=t("activerecord.attributes.guide.license_flg")%></label>
         <div class="col-sm-8">
           <!--%= f.text_field :license, class: 'form-control' %>-->
-          <label class="checkbox-inline">
+          <label class="checkbox-inline col-sm-3">
             <%= f.check_box :license_has%><%=t("has")%>
           </label>
           <label class="checkbox-inline">
@@ -23,18 +30,11 @@
           </label>
         </div>
       </div>
-    </div>
-    
-  </div>
-  
-  <div class="row">
-    <div class="col-sm-6">
-      
       <div class="form-group">
         <label class="col-sm-4 control-label" for=""><%=t("activerecord.attributes.member.gender")%></label>
         <div class="col-sm-8">
           <!--%= f.text_field :gender, class: 'form-control' %>-->
-          <label class="checkbox-inline">
+          <label class="checkbox-inline col-sm-3">
             <%= f.check_box :gender_man%><%=t("male")%>
           </label>
           <label class="checkbox-inline">
@@ -42,10 +42,7 @@
           </label>
         </div>
       </div>
-
     </div>
-  </div>
-  <div class="row">
     <div class="col-sm-12 row text-center">
       <button id="btnSearchClear" class="btn btn-default btn-left"><%=t('clear_button')%></button>
       <button class="btn btn-default btn-primary" type="submit" name="main_search">
@@ -71,6 +68,4 @@
       </script>
     </div>
   </div>
- 
-
 <% end %>
