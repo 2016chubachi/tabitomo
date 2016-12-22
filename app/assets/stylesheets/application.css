@@ -128,17 +128,25 @@
 .schdule-Calendar tbody td:nth-of-type(7){
   color: blue;
 }
-.schdule-Calendar td[data-outside="1"]{
-  background-color: #f5f5f5;
+/*過去の日付*/
+.schdule-Calendar tbody td:not([data-booking]):not([data-ngdate]){
+  background-color: rgba(96, 125, 139, 0.26);
+  cursor: default;
 }
-.schdule-Calendar tbody td:not([data-outside="1"]):hover{
-  background-color:#dff0d8;
+.schdule-Calendar td[data-outside="1"][data-booking="1"]{
+  /*background-color: #f5f5f5;*/
+  background-color: hsla(187, 100%, 42%, 0.14);
+  cursor: default;
+}
+.schdule-Calendar tbody td[data-booking="1"]:hover{
+  background-color: hsla(88, 50%, 53%, 0.53);
+  cursor: pointer;
 }
 .schdule-Calendar td[data-current="1"]{
   background-color: #ffdab9;
 }
 .schdule-Calendar td[data-ngdate="1"]{
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.46);
 }
 
 

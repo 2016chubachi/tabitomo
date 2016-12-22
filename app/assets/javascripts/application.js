@@ -46,16 +46,17 @@ function calendarDrawing(date,headTime){
 
   //今カレンダーに表示している年月の文字列を作る
   var dateString = date.getFullYear() + "-"
-      + ((date.getMonth()+1) >= 10 ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)))
+      + ('00' + (date.getMonth()+1)).slice(-2)
       + '-01';
   //今カレンダーに表示している年月を保持する
   headTime.attr("datetime",dateString);
   //今カレンダーに表示している年月を表示する
-  headTime.text(date.getFullYear() + "-" + ((date.getMonth()+1) >= 10 ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))));
+  headTime.text(date.getFullYear() + "-" + ('00' + (date.getMonth()+1)).slice(-2));
 
   //該当日付取得
   var isCurrentMonth = false;
   var current = new Date();
+  current = new Date(current.getFullYear(), current.getMonth(), current.getDate());
   var currentMonthString = current.getFullYear()+'-'+(current.getMonth()+1);
 
   if(currentMonthString === date.getFullYear()+'-'+(date.getMonth()+1))
@@ -84,8 +85,9 @@ function calendarDrawing(date,headTime){
   //配列の内容をloopで処理する
   $.each(arrDate,function(index,value){
     var temp = value;
+    var attrStr = '';
     //表示している年月の初日を計算
-    firstDate = new Date(date.getFullYear(), date.getMonth(), 1);
+    var disFirstDate = new Date(date.getFullYear(), date.getMonth(), 1);
 
     if(value === null){
       if(index != 0 && index % 7 == 0){
@@ -93,21 +95,33 @@ function calendarDrawing(date,headTime){
       }
       else{
         //先月と来月の日を計算する
-        firstDate.setDate(index + 1 - firstDayOfWeek);
-        temp = firstDate.getDate();
+        disFirstDate.setDate(index + 1 - firstDayOfWeek);
+        temp = disFirstDate.getDate();
       }
       //先月と来月のcell用htmlを作成
-      trHTML+='<td data-outside="1">'+ temp +'</td>';
+      attrStr += ' data-outside="1"';
+      // trHTML+='<td data-outside="1">'+ temp +'</td>';
     }
     else{
       //今月のcell用htmlを作成
-      if(isCurrentMonth && current.getDate() === value){
-        trHTML+='<td data-current="1">'+ value +'</td>';
+      disFirstDate.setDate(temp);
+      if(isCurrentMonth && current.getDate() === temp){
+        attrStr += ' data-current="1"';
+        // trHTML+='<td data-current="1">'+ value +'</td>';
       }
       else{
-        trHTML+='<td>'+ value +'</td>';
+        // trHTML+='<td>'+ value +'</td>';
       }
     }
+    
+    if (disFirstDate >= current) {
+      attrStr += ' data-booking="1"';
+    }
+    attrStr += ' data-date="' + disFirstDate.getFullYear() + 
+              '-' + ('00' + (disFirstDate.getMonth()+1)).slice(-2) +
+              '-' + ('00' + disFirstDate.getDate()).slice(-2) + '"';
+    
+    trHTML+='<td'+ attrStr +'>'+ temp +'</td>';
 
     if((index+1) % 7 == 0){
       // 周変わり
@@ -124,12 +138,16 @@ function calendarDrawing(date,headTime){
     callback: function (data, textStatus, jqXHR) {
       //取得出来た後、予約ごとカレンダーに反映する
       $.each(data,function(index,value){
+        var bookinged = new Date(value);
         //予約済み日の日を計算する
-        var date = (new Date(value)).getDate();
+        var date = + bookinged.getFullYear() + 
+              '-' + ('00' + (bookinged.getMonth()+1)).slice(-2) +
+              '-' + ('00' + bookinged.getDate()).slice(-2);
         //カレンダーからその日を検索する
-        var ngTD = $(".schdule-Calendar td:contains('" + date + "'):not([data-outside]):first");
+        var ngTD = $('.schdule-Calendar td[data-date=' + date + ']:first');
         //予約済みの日に対して属性を追加する
-        ngTD.attr({"data-ngdate": "1","data-outside": "1"});
+        //ngTD.removeAttr("data-booking").attr({"data-ngdate": "1","data-outside": "1"});
+        ngTD.removeAttr("data-booking").attr({"data-ngdate": "1"});
         //予約済みの日に対して赤いクロスを描画する
         var svgDiv = '<div style="position:relative;">\
                         <div style="position:absolute;width:100%;height:20px;">\
@@ -230,7 +248,8 @@ function datePickerHandler(target,guide_id,booking_id){
     ,beforeShowDay:function(date){
       var result;
       var drawDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-      if($.inArray(drawDate,bookingedDays) > -1){
+      var current = new Date();
+      if(date < new Date(current.getFullYear(),current.getMonth(),current.getDate()) || $.inArray(drawDate,bookingedDays) > -1){
         result = [false,""];
       }
       else{

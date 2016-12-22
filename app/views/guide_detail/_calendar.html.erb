@@ -47,6 +47,11 @@
         }
         calendarDrawing(displayDate,headTime);
       });
+      $('table.schdule-Calendar tbody').on('click','td[data-booking="1"]',function(event){
+        // 予約可能日がクリックされ場合、予約ページに遷移
+        var url = '/'+ I18n.locale+'/traveler_bookings/new?guide_id='+sessionStorage.guide_id+'&date='+$(this).attr('data-date');
+        window.location.assign(url);
+      });
     });
   </script>
 </div>
