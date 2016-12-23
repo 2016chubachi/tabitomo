@@ -1,21 +1,36 @@
-<b><%= t(".booking_schedule") %></b>
+<div class="margin-bottom-10">
+  <b><%= t(".booking_schedule") %></b>
+</div>
 
-<div class="text-right margin-bottom-10">
+<!-- <div class="text-right margin-bottom-10">
   <%= link_to_add_association t(".add_schedule") , f, :booking_schedules,
     class: "btn btn-default",
     data: {
       association_insertion_node: "#detail-association-insertion-point",
       association_insertion_method: "append" }
    %>
-</div>
+</div> -->
 
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th><%= t("activerecord.attributes.booking_schedule.traveler_date") %></th>
-      <th><%= t("activerecord.attributes.booking_schedule.traveler_count") %></th>
-      <th><%= t("activerecord.attributes.booking_schedule.city_master_id") %></th>
-      <th></th>
+      <th><%= t("activerecord.attributes.booking_schedule.traveler_date") %>
+          <span class="required">*</span>
+      </th>
+      <th><%= t("activerecord.attributes.booking_schedule.traveler_count") %>
+        <span class="required">*</span>
+      </th>
+      <th><%= t("activerecord.attributes.booking_schedule.city_master_id") %>
+        <span class="required">*</span>
+      </th>
+      <th>
+        <%= link_to_add_association t(".add_schedule") , f, :booking_schedules,
+          class: "btn btn-default",
+          data: {
+            association_insertion_node: "#detail-association-insertion-point",
+            association_insertion_method: "append" }
+         %>
+      </th>
     </tr>
   </thead>
   <tbody id="detail-association-insertion-point">

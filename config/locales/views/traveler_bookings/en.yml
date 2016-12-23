@@ -23,4 +23,6 @@ en:
   traveler_bookings:
     booking_schedule:
       booking_schedule: "Booking Schedule"
-      add_schedule: "Add Schedule"
+      add_schedule: "Add"
+    form:
+      traveler_booking_comment: "Please write comments for the guide."

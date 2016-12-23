@@ -23,4 +23,6 @@ ja:
   traveler_bookings:
     booking_schedule:
       booking_schedule: "予約スケジュール"
-      add_schedule: "スケジュール追加"
+      add_schedule: "追加"
+    form:
+      traveler_booking_comment: "ガイドへのコメントを書いてください"
