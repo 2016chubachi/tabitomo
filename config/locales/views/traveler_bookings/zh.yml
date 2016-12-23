@@ -23,4 +23,6 @@ zh:
   traveler_bookings:
     booking_schedule:
       booking_schedule: "预约日程表"
-      add_schedule: "添加预约"
+      add_schedule: "添加"
+    form:
+      traveler_booking_comment: "ガイドへのコメントを書いてください_zh"

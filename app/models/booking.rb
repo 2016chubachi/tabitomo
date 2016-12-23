@@ -14,4 +14,5 @@ class Booking < ActiveRecord::Base
     has_one :guide_booking_comment, dependent: :destroy
     accepts_nested_attributes_for :guide_booking_comment, allow_destroy: true
 
+    validates :traveler_telphone,  presence: true
 end
