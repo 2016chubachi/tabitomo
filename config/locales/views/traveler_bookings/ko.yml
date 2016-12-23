@@ -25,4 +25,4 @@ ko:
       booking_schedule: "예약 스케쥴"
       add_schedule: "추가"
     form:
-      traveler_booking_comment: "ガイドへのコメントを書いてください_ko"
+      traveler_booking_comment: "가이드 분께 코멘트를 적어주세요."
