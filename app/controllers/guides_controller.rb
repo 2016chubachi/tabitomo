@@ -44,10 +44,10 @@ class GuidesController < ApplicationController
     if @guide.errors.present?
       # 画像アップロードエラー処理
       setImageError
-      # エラー情報を遷移先に渡す
-      session[:errors] = @guide.errors.full_messages
-      # メッセージ送信ページに遷移
-      redirect_to edit_guide_path @guide
+      # ダミーリダイレクトのpath設定
+      @redirect_path = edit_guide_path(@guide)
+      # editをレンダーする
+      render 'edit'
     else
       if @guide.save
         flash[:success] = t('.success')
@@ -55,10 +55,10 @@ class GuidesController < ApplicationController
       else
         # 画像アップロードエラー処理
         setImageError
-        # エラー情報を遷移先に渡す
-        session[:errors] = @guide.errors.full_messages
-        # メッセージ送信ページに遷移
-        redirect_to edit_guide_path @guide
+        # ダミーリダイレクトのpath設定
+        @redirect_path = edit_guide_path(@guide)
+        # editをレンダーする
+        render 'edit'
       end
     end
   end

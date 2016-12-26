@@ -1,0 +1,6 @@
+<% if @redirect_path%>
+  <script type="text/javascript">
+    // urlを修正する、ただしページ遷移はない
+    window.history.replaceState('','','<%= @redirect_path%>');
+  </script>
+<% end%>
