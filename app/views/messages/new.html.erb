@@ -1,3 +1,6 @@
+<!--更新失敗の際、urlがshowに変わるから、showがない時f5がエラーになるので、その場合にurl修正-->
+<%= render "shared/redirect"%>
+
 <% content_for :main_header do %>
   <!-- タブページレンダリングの際、選択したいタブのidを渡す[booking,in_message,out_message,profile]-->
   <%if params[:pageType].present? && params[:pageType] == 'accept' %>

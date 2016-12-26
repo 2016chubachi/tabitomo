@@ -32,10 +32,17 @@ class MessagesController < ApplicationController
       flash.now[:notice] = t('.sended')
       redirect_to msg_sends_path
     else
-      # エラー情報を遷移先に渡す
-      session[:errors] = @new_msg.errors.full_messages
-      # メッセージ送信ページに遷移
-      redirect_to new_message_path(target: @new_msg.receiver_id)
+      # 新規メッセージの観点から自分が送信者、ターゲットが受信者になる
+      msg_rel_member = {receiver: @new_msg.receiver_id , sender: current_member.id}
+      @messages = Message.where("(receiver_id = ? and sender_id = ?) or (receiver_id = ? and sender_id = ?)",
+                                msg_rel_member[:receiver],
+                                msg_rel_member[:sender],
+                                msg_rel_member[:sender],
+                                msg_rel_member[:receiver]).order(updated_at: :DESC)
+      # ダミーリダイレクトのpath設定
+      @redirect_path = new_message_path(target: @new_msg.receiver_id)
+      # editをレンダーする
+      render 'new'
     end
   end
 

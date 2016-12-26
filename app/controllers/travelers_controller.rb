@@ -15,9 +15,12 @@ class TravelersController < ApplicationController
     else
       # 画像アップロードエラー処理
       setImageError
-      # エラー情報を遷移先に渡す
-      session[:errors] = @traveler.errors.full_messages
-      redirect_to edit_traveler_path @traveler
+      @member = @traveler
+      # ダミーリダイレクトのpath設定
+      @redirect_path = edit_traveler_path(@traveler)
+      # editをレンダーする
+      render 'edit'
+      
     end
   end
 
