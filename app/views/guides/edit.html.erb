@@ -1,3 +1,5 @@
+<!--更新失敗の際、urlがshowに変わるから、showがない時f5がエラーになるので、その場合にurl修正-->
+<%= render "shared/redirect"%>
 <!-- スライドをレイアウトの[main_header]に入れる部-->
 
 <% content_for :main_header do %>
@@ -5,7 +7,7 @@
 <% end %>
 
 <% content_for :error_messages do %>
-  <%= render partial: "shared/error", locals: {obj: @member_picture} %>
+  <%= render partial: "shared/error", locals: {obj: @guide} %>
 <% end %>
 
 
