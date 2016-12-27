@@ -1,158 +1,215 @@
-//Auto Close Responsive Navbar on Click
-    function close_toggle() {
-        if ($(window).width() <= 768) {
-            $('.navbar-collapse a').on('click', function () {
-                $('.navbar-collapse').collapse('hide');
-            });
-        }
-        else {
-            $('.navbar .navbar-default a').off('click');
-        }
-    }
-    close_toggle();
-    $(window).resize(close_toggle);
+// accordian
+$('.accordion-toggle').on('click', function(){
+  $(this).closest('.panel-group').children().each(function(){
+  $(this).find('>.panel-heading').removeClass('active');
+   });
 
-    //hero text fade flexslider
-    $(window).load(function () {
-        $('.flexslider').flexslider({
-            controlNav: false,
-            directionNav: false,
-            slideshowSpeed: 4000
-        });
-    });
-
-    //home slider
-    $(window).load(function () {
-        $('.main-slider').flexslider({
-            controlNav: false,
-            directionNav: true,
-            slideshowSpeed: 4000,
-            prevText: "<i class='ion-chevron-left'></i>",
-            nextText: "<i class='ion-chevron-right'></i>"
-        });
-    });
-	//home slider
-    (function(){
-
-        var config = {
-          viewFactor : 0.15,
-          duration   : 800,
-          distance   : "0px",
-          scale      : 0.8
-        };
-
-        window.sr = ScrollReveal( config );
-
-        if (sr.isSupported()) {
-          document.documentElement.classList.add('sr');
-        }
-      })();
-	  //home counter
-	  $('.count').each(function () {
-    $(this).prop('Counter',0).animate({
-        Counter: $(this).text()
-    }, {
-        duration: 4000,
-        easing: 'swing',
-        step: function (now) {
-            $(this).text(Math.ceil(now));
-        }
-    });
+  $(this).closest('.panel-heading').toggleClass('active');
 });
- //home scrool
-var $ = $.noConflict();
-$(document).ready(function () {
+
+//404
+
+// ------------------------------------------
+// Rellax.js - v0.1.0
+// Buttery smooth parallax library
+// Copyright (c) 2016 Moe Amaya (@moeamaya)
+// MIT license
+//
+// Thanks to Paraxify.js and Jaime Cabllero
+// for parallax concepts
+// ------------------------------------------
+
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else if (typeof module === 'object' && module.exports) {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.Rellax = factory();
+  }
+}(this, function () {
+  var Rellax = function(el, options){
     "use strict";
-    if ($('.scrollReveal').length && !$('html.ie9').length) {
-        $('.scrollReveal').parent().css('overflow', 'hidden');
-        window.sr = ScrollReveal({
-            reset: true,
-            distance: '32px',
-            mobile: true,
-            duration: 850,
-            scale: 1,
-            viewFactor: 0.3,
-            easing: 'ease-in-out'
-        });
-        sr.reveal('.sr-top', {origin: 'top'});
-        sr.reveal('.sr-bottom', {origin: 'bottom'});
-        sr.reveal('.sr-left', {origin: 'left'});
-        sr.reveal('.sr-long-left', {origin: 'left', distance: '70px', duration: 1000});
-        sr.reveal('.sr-right', {origin: 'right'});
-        sr.reveal('.sr-scaleUp', {scale: '0.8'});
-        sr.reveal('.sr-scaleDown', {scale: '1.15'});
 
-        sr.reveal('.sr-delay-1', {delay: 200});
-        sr.reveal('.sr-delay-2', {delay: 400});
-        sr.reveal('.sr-delay-3', {delay: 600});
-        sr.reveal('.sr-delay-4', {delay: 800});
-        sr.reveal('.sr-delay-5', {delay: 1000});
-        sr.reveal('.sr-delay-6', {delay: 1200});
-        sr.reveal('.sr-delay-7', {delay: 1400});
-        sr.reveal('.sr-delay-8', {delay: 1600});
+    var self = Object.create(Rellax.prototype);
 
-        sr.reveal('.sr-ease-in-out-quad', {easing: 'cubic-bezier(0.455,  0.030, 0.515, 0.955)'});
-        sr.reveal('.sr-ease-in-out-cubic', {easing: 'cubic-bezier(0.645,  0.045, 0.355, 1.000)'});
-        sr.reveal('.sr-ease-in-out-quart', {easing: 'cubic-bezier(0.770,  0.000, 0.175, 1.000)'});
-        sr.reveal('.sr-ease-in-out-quint', {easing: 'cubic-bezier(0.860,  0.000, 0.070, 1.000)'});
-        sr.reveal('.sr-ease-in-out-sine', {easing: 'cubic-bezier(0.445,  0.050, 0.550, 0.950)'});
-        sr.reveal('.sr-ease-in-out-expo', {easing: 'cubic-bezier(1.000,  0.000, 0.000, 1.000)'});
-        sr.reveal('.sr-ease-in-out-circ', {easing: 'cubic-bezier(0.785,  0.135, 0.150, 0.860)'});
-        sr.reveal('.sr-ease-in-out-back', {easing: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)'});
+    // Rellax stays lightweight by limiting usage to desktops/laptops
+    if (typeof window.orientation !== 'undefined') { return; }
+
+    var posY = 0; // set it to -1 so the animate function gets called at least once
+    var screenY = 0;
+    var blocks = [];
+
+    // check what requestAnimationFrame to use, and if
+    // it's not supported, use the onscroll event
+    var loop = window.requestAnimationFrame ||
+    	window.webkitRequestAnimationFrame ||
+    	window.mozRequestAnimationFrame ||
+    	window.msRequestAnimationFrame ||
+    	window.oRequestAnimationFrame ||
+    	function(callback){ setTimeout(callback, 1000 / 60); };
+
+    // Default Settings
+    self.options = {
+      speed: -2
+    };
+
+    // User defined options (might have more in the future)
+    if (options){
+      Object.keys(options).forEach(function(key){
+        self.options[key] = options[key];
+      });
     }
-});
-// Wait for window load
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-	});
-// js loader
-/* -------------------------------------------------------- */
-//Sliders owlCarousel - start
-/* -------------------------------------------------------- */
-   $(document).ready(function () {
-	    $("#owl-clients").owlCarousel({
-        navigation: true,
-        items: 6,
-        itemsDesktop: [1200, 6],
-        itemsTablet: [800, 3],
-        itemsMobile: [700, 2],
-		autoPlay : true,
-		pagination : false,
-    paginationNumbers: false,
-    });
-	
-   
-  }); 
-/* -------------------------------------------------------- */
-//  Owl Carousels - end
-/* -------------------------------------------------------- */
 
-/* -------------------------------------------------------- */
-// Scroll To Top - start
-/* -------------------------------------------------------- */
-    $(window).scroll(function () {
-        if ($(this)
-                .scrollTop() > 100) {
-            $('.scrollTop')
-                    .fadeIn();
-        } else {
-            $('.scrollTop')
-                    .fadeOut();
-        }
-    });
-    $('.scrollTop').on('click', function () {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 1000);
-        return false;
-    });
-/* -------------------------------------------------------- */
-// Scroll To Top - end
-/* -------------------------------------------------------- */
+    // If some clown tries to crank speed, limit them to +-10
+    if (self.options.speed < -10) {
+      self.options.speed = -10;
+    } else if (self.options.speed > 10) {
+      self.options.speed = 10;
+    }
+
+    // By default, rellax class
+    if (!el) {
+      el = '.rellax';
+    }
+
+    // Classes
+    if (document.getElementsByClassName(el.replace('.',''))){
+      self.elems = document.getElementsByClassName(el.replace('.',''));
+    }
+
+    // Now query selector
+    else if (document.querySelector(el) !== false) {
+      self.elems = querySelector(el);
+    }
+
+    // The elements don't exist
+    else {
+      throw new Error("The elements you're trying to select don't exist.");
+    }
 
 
+    // Let's kick this script off
+    // Build array for cached element values
+    // Bind scroll and resize to animate method
+    var init = function() {
+      screenY = window.innerHeight;
+      setPosition();
+
+      // Get and cache initial position of all elements
+      for (var i = 0; i < self.elems.length; i++){
+        var block = createBlock(self.elems[i]);
+        blocks.push(block);
+      }
+
+			window.addEventListener('resize', function(){
+			  animate();
+			});
+
+			// Start the loop
+      update();
+
+      // The loop does nothing if the scrollPosition did not change
+      // so call animate to make sure every element has their transforms
+      animate();
+    };
 
 
+    // We want to cache the parallax blocks'
+    // values: base, top, height, speed
+    // el: is dom object, return: el cache values
+    var createBlock = function(el) {
+
+      // initializing at scrollY = 0 (top of browser)
+      // ensures elements are positioned based on HTML layout
+      var posY = 0;
+
+      var blockTop = posY + el.getBoundingClientRect().top;
+      var blockHeight = el.clientHeight || el.offsetHeight || el.scrollHeight;
+
+      // apparently parallax equation everyone uses
+      var percentage = (posY - blockTop + screenY) / (blockHeight + screenY);
+
+      // Optional individual block speed as data attr, otherwise global speed
+      var speed = el.getAttribute('data-rellax-speed') ? el.getAttribute('data-rellax-speed') : self.options.speed;
+      var base = updatePosition(percentage, speed);
+
+      // Store non-translate3d transforms
+      var cssTransform = el.style.cssText.slice(11);
+
+      return {
+        base: base,
+        top: blockTop,
+        height: blockHeight,
+        speed: speed,
+        style: cssTransform
+      };
+    };
 
 
+    // set scroll position (posY)
+    // side effect method is not ideal, but okay for now
+    // returns true if the scroll changed, false if nothing happened
+    var setPosition = function() {
+    	var oldY = posY;
+
+      if (window.pageYOffset !== undefined) {
+        posY = window.pageYOffset;
+      } else {
+        posY = (document.documentElement || document.body.parentNode || document.body).scrollTop;
+      }
+
+      if (oldY != posY) {
+      	// scroll changed, return true
+      	return true;
+      }
+
+      // scroll did not change
+      return false;
+    };
+
+
+    // Ahh a pure function, gets new transform value
+    // based on scrollPostion and speed
+    var updatePosition = function(percentage, speed) {
+      var value = (speed * (100 * (1 - percentage)));
+      return Math.round(value);
+    };
+
+
+    //
+		var update = function() {
+			if (setPosition()) {
+				animate();
+	    }
+
+	    // loop again
+	    loop(update);
+		};
+
+    // Transform3d on parallax element
+    var animate = function() {
+    	for (var i = 0; i < self.elems.length; i++){
+        var percentage = ((posY - blocks[i].top + screenY) / (blocks[i].height + screenY));
+
+        // Subtracting initialize value, so element stays in same spot as HTML
+        var position = updatePosition(percentage, blocks[i].speed) - blocks[i].base;
+
+        // Move that element
+        var translate = 'translate3d(0,' + position + 'px' + ',0)' + blocks[i].style;
+        self.elems[i].style.cssText = '-webkit-transform:'+translate+';-moz-transform:'+translate+';transform:'+translate+';';
+      }
+    };
+
+
+    init();
+    Object.freeze();
+    return self;
+  };
+  return Rellax;
+}));
