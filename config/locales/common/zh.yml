@@ -46,6 +46,7 @@ zh:
   new_password: "新密码"
   confirm_password: "新确认密码"
   contacting: "密码修改成功。"
+  access_error: "拒绝访问！"
   select_picture: "选择照片"
   select_l_picture: "选择资格证明照片"
   button:

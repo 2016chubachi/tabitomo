@@ -46,6 +46,7 @@ en:
   new_password: "New Password"
   confirm_password: "Confirm new password"
   contacting: "We're contacting you to notify you that your password has been changed."
+  access_error: "Unauthorized access！"
   button:
   add_button: "Add"
   update_button: "Update"

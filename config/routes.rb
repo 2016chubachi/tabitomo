@@ -20,18 +20,18 @@ Rails.application.routes.draw do
    get '/' => 'top#index', as: 'top'
    get 'guide_detail/schedule' => 'guide_detail#schedule'
    resources :user_reviews
-   resources :guides
+   resources :guides, :only => [:edit,:update]
    resources :traveler_bookings
-   resources :guide_bookings
+   resources :guide_bookings, :only => [:index,:show,:edit,:update]
    resources :search_guides, :only => [:index]
    resources :star_masters, :only => [:show]
    resources :member_pictures, :only => [:show]
    resources :guide_detail, :only => [:show]
-   resources :messages, :only => [:new,:create,:destroy]
+   resources :messages, :only => [:new,:create]
    resources :msg_sends, :only => [:index]
    resources :msg_accepts, :only => [:index]
    resources :licence_pictures, :only => [:show]
-   resources :travelers
+   resources :travelers, :only => [:edit,:update]
 
     # devise_for :members, :path => "top#index"
 

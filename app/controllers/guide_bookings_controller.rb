@@ -1,6 +1,6 @@
 class GuideBookingsController < ApplicationController
   before_action :authenticate_member!
-  before_action :check_guide_booking_edit, only: [:show, :edit, :update]
+  before_action :access_check!,except: [:index]
 
   def index
     # 更新が新しい順で表示する
@@ -44,10 +44,11 @@ class GuideBookingsController < ApplicationController
     params.require(:booking).permit(attrs)
   end
 
-  # ガイドは自分への予約しか変更できない
-  def check_guide_booking_edit
-    # binding.pry
-    redirect_to(top_url) unless Booking.find(params[:id]).guide == current_member.guide
+  def access_check!
+    # 自分のデータしかアクセスできない
+    if !params[:id].present? || current_member.guide != Booking.find(params[:id]).guide
+      raise t('access_error')
+    end
   end
 
 end

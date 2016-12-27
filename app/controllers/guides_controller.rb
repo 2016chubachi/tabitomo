@@ -1,33 +1,21 @@
 class GuidesController < ApplicationController
   before_action :authenticate_member!
-  # def show
-  #   @guide = Guide.find(params[:id])
-  #   if params[:format].in?(["jpg", "png", "gif"])
-  #     send_image
-  #     send_l_image
-  #   else
-  #     render "show"
-  #   end
-  # end
-
-  def new
-    @guide = Guide.new
-    @guide.member.build_member_picture
-  end
+  before_action :access_check!,except: [:new]
 
   def update
     @guide = Guide.find(params[:id])
     @guide.assign_attributes(guide_params)
+    arr_errors = []
     # ライセンスのが[yes]の場合、画像のアップロードが必須
     if @guide.license_flg == 1 && !@guide.licence_picture.present?
-      @guide.errors[:base] << t('.licence_error')
+      arr_errors << t('.licence_error')
     end
     # ガイド言語の重複チェック
     langs = []
     # for index in 0..1 do
     @guide.guide_languages.each do |lan|
       if lan._destroy == false && langs.include?(lan.language_code_id)
-        @guide.errors[:base] << t('.language_error')
+        arr_errors << t('.language_error')
       else
         langs << (lan.language_code_id)
       end
@@ -36,30 +24,26 @@ class GuidesController < ApplicationController
     cities = []
     @guide.guide_cities.each do |c|
       if c._destroy == false && cities.include?(c.city_master_id)
-        @guide.errors[:base] << t('.city_error')
+        arr_errors << t('.city_error')
       else
         cities << (c.city_master_id)
       end
     end
-    if @guide.errors.present?
+    if @guide.valid? && !arr_errors.present?
+      @guide.save
+      flash[:success] = t('.success')
+      redirect_to edit_guide_path @guide
+    else
       # 画像アップロードエラー処理
       setImageError
+      
+      arr_errors.each do |value|
+        @guide.errors[:base] << value  
+      end
       # ダミーリダイレクトのpath設定
       @redirect_path = edit_guide_path(@guide)
       # editをレンダーする
       render 'edit'
-    else
-      if @guide.save
-        flash[:success] = t('.success')
-        redirect_to edit_guide_path @guide
-      else
-        # 画像アップロードエラー処理
-        setImageError
-        # ダミーリダイレクトのpath設定
-        @redirect_path = edit_guide_path(@guide)
-        # editをレンダーする
-        render 'edit'
-      end
     end
   end
 
@@ -67,14 +51,6 @@ class GuidesController < ApplicationController
     @guide = Guide.find(params[:id])
     @guide.member.build_member_picture unless @guide.member.member_picture
     @guide.build_licence_picture unless @guide.licence_picture
-  end
-
-  def create
-    @guide = Guide.new(guide_params)
-
-    @guide.save
-    redirect_to @guide
-
   end
 
   private
@@ -113,23 +89,11 @@ class GuidesController < ApplicationController
         @guide.errors[:base] << t(".licence_picture_type_error")
       end
     end
-
-    # def send_image
-    #   if @member.member_picture.present?
-    #     send_data @member.member_picture.image,
-    #       type: @member.member_picture.pictype, disposition: "inline"
-    #   else
-    #     raise NotFound
-    #   end
-    # end
-    #
-    # def send_l_image
-    #   if @guide.licence_picture.present?
-    #     send_data @guide.licence_picture.image,
-    #       type: @guide.licence_picture.pictype, disposition: "inline"
-    #   else
-    #     raise NotFound
-    #   end
-    # end
-
+    
+    def access_check!
+      # 自分のデータしかアクセスできない
+      if !params[:id].present? || current_member.guide.id.to_s != params[:id]
+        raise t('access_error')
+      end
+    end
 end

@@ -1,7 +1,6 @@
 class TravelerBookingsController < ApplicationController
   before_action :authenticate_member!
-  before_action :check_traveler_booking_edit, only: [:show, :edit, :update]
-  # before_action :check_traveler_booking_edit
+  before_action :access_check!,except: [:index,:new,:create]
 
   def index
     # 更新が新しい順で表示する
@@ -94,10 +93,11 @@ class TravelerBookingsController < ApplicationController
     params.require(:booking).permit(attrs)
   end
 
-  # 旅人の予約を変更可能か確認（自分の予約しか変更できない）
-  def check_traveler_booking_edit
-    # binding.pry
-    redirect_to(top_url) unless Booking.find(params[:id]).traveler == current_member.traveler
+  def access_check!
+    # 自分のデータしかアクセスできない
+    if !params[:id].present? || Booking.find(params[:id]).traveler != current_member.traveler
+      raise t('access_error')
+    end
   end
 
 
