@@ -61,6 +61,8 @@ class TravelerBookingsController < ApplicationController
       redirect_to traveler_booking_path(@booking), notice: t(".created")
     else
       # binding.pry
+      # ダミーリダイレクトのpath設定
+      @redirect_path = new_traveler_booking_path(guide_id: @booking.guide_id)
       render "new"
     end
     # redirect_to traveler_bookings_path
@@ -74,6 +76,8 @@ class TravelerBookingsController < ApplicationController
       TravelerBookingMailer.send_update_booking(@booking).deliver_now
       redirect_to traveler_booking_path, notice: t(".updated")
     else
+      # ダミーリダイレクトのpath設定
+      @redirect_path = edit_traveler_booking_path(@booking)
       render "edit"
       # binding.pry
     end
