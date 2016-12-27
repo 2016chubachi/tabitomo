@@ -41,7 +41,7 @@
 </table>
 <script type="text/javascript">
   jQuery(document).ready(function($){
-    $('#detail-association-insertion-point').on('click','tr > td:first-child > input[type=text]:not(.hasDatepicker)',function(){
+    $('#detail-association-insertion-point').on('click','td:first-of-type input[readonly][type=text]:not(.hasDatepicker)',function(){
       <%if @booking.id%>
         datePickerHandler($(this),<%= @booking.guide.id%>,<%= @booking.id%>);
       <%else%>
