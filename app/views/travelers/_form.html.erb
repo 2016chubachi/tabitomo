@@ -5,7 +5,7 @@
           <%= mp.fields_for :member_picture do |imgf| %>
                   <%= member_image_tag @member %>
                   <div>
-                    <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
+                    <% if imgf.object.present? && !imgf.object.new_record? %>
                       <%= imgf.check_box :_destroy %>
                       <%= imgf.label :_destroy %>
                       <%= imgf.hidden_field :id %>
