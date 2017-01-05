@@ -20,12 +20,16 @@
 //= require turbolinks
 //= require cocoon
 //= require jquery-ui/datepicker
-//= require jquery-ui/datepicker-en-GB  
+//= require jquery-ui/datepicker-en-GB
 //= require jquery-ui/datepicker-ko
 //= require jquery-ui/datepicker-zh-CN
 //= require jquery-ui/datepicker-ja
+//= require wow
 
 //= require_tree .
+
+//animation-effect
+new WOW().init();
 
 // ガイド詳細画面のカレンダーを描画する
 function calendarDrawing(date,headTime){
@@ -193,7 +197,7 @@ function setSchdules(json, textStatus, jqXHR) {
   //取得出来た後、予約ごとカレンダーに反映する
   bookingedDays = $.map(json,function(value,index){
     var tempDate = new Date(value);
-    
+
     return tempDate.getFullYear() + '-' + (tempDate.getMonth() + 1) + '-' + tempDate.getDate();
   });
   //画面上に設定済みの日付も入れる
@@ -255,7 +259,7 @@ function datePickerHandler(target,guide_id,booking_id){
       else{
         result = [true,""];
       }
-      
+
       //戻り値[true/false(その日が操作できるかどうか),"class name","tooltip"]
       return result;
     }
@@ -267,7 +271,7 @@ function initGuideLicense(){
   if(licence.children('select').val() === '1'){
     //ライセンス有の際、写真アップロードエリア表示
     licence.next('div.form-group').show().find('input[type=checkbox]').prop('checked',false);
-    
+
   }
   else{
     //ライセンス無の際、写真アップロードエリア非表示

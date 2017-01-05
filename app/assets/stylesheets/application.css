@@ -13,8 +13,11 @@
  *= require_tree .
  *= require_self
  *= require jquery-ui/datepicker
+ *= require animate
  */
 
+
+/* -----slider------
  .slide-image{
    width:100% !important;
    height: 365px !important;
@@ -94,8 +97,6 @@
   border-radius: 4px;
 }
 
-
-
 /*カレンダー用css*/
 .input-width-100{
   width: 100px;
@@ -163,7 +164,7 @@
 }
 
 .image-upload{
-  color: white;  
+  color: white;
   background-color: red;
   padding: 6px;
   border-radius: 12px;
@@ -201,6 +202,7 @@ text-rightが勝つので、importantで強くする*/
   box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
 }
 
+
 /*status stamp*/
 div.stamp{
       -moz-transform: rotate(-20deg);
@@ -209,7 +211,7 @@ div.stamp{
       -ms-transform: rotate(-20deg);
       transform: rotate(-20deg);
       color: red;
-      font-weight:bold; 
+      font-weight:bold;
       font-size: 1.5em;
       border-style:solid;
       border-width:medium;
