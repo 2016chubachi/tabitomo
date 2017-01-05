@@ -18,16 +18,17 @@ class GuidesController < ApplicationController
   def update
     @guide = Guide.find(params[:id])
     @guide.assign_attributes(guide_params)
+    arr_errors = []
     # ライセンスのが[yes]の場合、画像のアップロードが必須
     if @guide.license_flg == 1 && !@guide.licence_picture.present?
-      @guide.errors[:base] << t('.licence_error')
+      arr_errors << t('.licence_error')
     end
     # ガイド言語の重複チェック
     langs = []
     # for index in 0..1 do
     @guide.guide_languages.each do |lan|
       if lan._destroy == false && langs.include?(lan.language_code_id)
-        @guide.errors[:base] << t('.language_error')
+        arr_errors << t('.language_error')
       else
         langs << (lan.language_code_id)
       end
@@ -36,30 +37,26 @@ class GuidesController < ApplicationController
     cities = []
     @guide.guide_cities.each do |c|
       if c._destroy == false && cities.include?(c.city_master_id)
-        @guide.errors[:base] << t('.city_error')
+        arr_errors << t('.city_error')
       else
         cities << (c.city_master_id)
       end
     end
-    if @guide.errors.present?
+    if @guide.valid? && !arr_errors.present?
+      @guide.save
+      flash[:success] = t('.success')
+      redirect_to edit_guide_path @guide
+    else
       # 画像アップロードエラー処理
       setImageError
+      
+      arr_errors.each do |value|
+        @guide.errors[:base] << value  
+      end
       # ダミーリダイレクトのpath設定
       @redirect_path = edit_guide_path(@guide)
       # editをレンダーする
       render 'edit'
-    else
-      if @guide.save
-        flash[:success] = t('.success')
-        redirect_to edit_guide_path @guide
-      else
-        # 画像アップロードエラー処理
-        setImageError
-        # ダミーリダイレクトのpath設定
-        @redirect_path = edit_guide_path(@guide)
-        # editをレンダーする
-        render 'edit'
-      end
     end
   end
 

@@ -26,7 +26,7 @@
               <div class="thumbnail text-center-custom">
                 <%= member_image_tag @guide.member %>
                 <div>
-                  <% if imgf.object.present? && !imgf.object.new_record? && imgf.object.errors.empty? %>
+                  <% if imgf.object.present? && !imgf.object.new_record?%>
                     <%= imgf.check_box :_destroy %>
                     <%= imgf.label :_destroy %>
                     <%= imgf.hidden_field :id %>
@@ -84,7 +84,7 @@
       <div class="form-group">
         <div class="thumbnail text-center-custom">
           <%= f.fields_for :licence_picture do |lp| %>
-            <% if lp.object.present? && !lp.object.new_record? && lp.object.errors.empty? %>
+            <% if lp.object.present? && !lp.object.new_record?%>
               <%= licence_image_tag @guide %>
               <%= lp.check_box :_destroy %>
               <%= lp.label :_destroy %>
