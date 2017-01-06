@@ -4,15 +4,15 @@
 		<div class="main-slider">
 			<ul class="slides">
 				<li>
-					<img src="assets/castle-07.jpg" alt="" class="">
+					<img src="/assets/castle-07.jpg" alt="" class="">
 
 				</li>
 				<li>
-					<img src="assets/castle-01.jpg" alt="" class="">
+					<img src="/assets/castle-01.jpg" alt="" class="">
 
 				</li>
 				<li>
-					<img src="assets/castle-05.jpg" alt="" class="">
+					<img src="/assets/castle-05.jpg" alt="" class="">
 
 				</li>
 			</ul><!--slides end-->
@@ -144,3 +144,48 @@
 		</div>
 	</section>
 <!--end services-->
+<script>
+//home slider
+jQuery(document).ready(function($){
+    $('.main-slider').flexslider({
+        controlNav: false,
+        directionNav: true,
+        slideshowSpeed: 4000,
+        prevText: "<i class='ion-chevron-left'></i>",
+        nextText: "<i class='ion-chevron-right'></i>"
+    });
+});
+//home slider
+(function(){
+var config = {
+    viewFactor : 0.15,
+    duration   : 800,
+    distance   : "0px",
+    scale      : 0.8
+};
+
+window.sr = ScrollReveal( config );
+
+if (sr.isSupported()) {
+    document.documentElement.classList.add('sr');
+}
+})();
+
+//Sliders owlCarousel - start
+/* -------------------------------------------------------- */
+jQuery(document).ready(function($){
+		$("#owl-clients").owlCarousel({
+			navigation: true,
+			items: 6,
+			itemsDesktop: [1200, 6],
+			itemsTablet: [800, 3],
+			itemsMobile: [700, 2],
+	autoPlay : true,
+	pagination : false,
+	paginationNumbers: false,
+	});
+});
+/* -------------------------------------------------------- */
+//  Owl Carousels - end
+/* -------------------------------------------------------- */
+</script>
