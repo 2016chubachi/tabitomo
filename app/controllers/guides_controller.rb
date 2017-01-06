@@ -1,19 +1,6 @@
 class GuidesController < ApplicationController
   before_action :authenticate_member!
-  # def show
-  #   @guide = Guide.find(params[:id])
-  #   if params[:format].in?(["jpg", "png", "gif"])
-  #     send_image
-  #     send_l_image
-  #   else
-  #     render "show"
-  #   end
-  # end
-
-  def new
-    @guide = Guide.new
-    @guide.member.build_member_picture
-  end
+  before_action :access_check!,except: [:new]
 
   def update
     @guide = Guide.find(params[:id])
@@ -66,14 +53,6 @@ class GuidesController < ApplicationController
     @guide.build_licence_picture unless @guide.licence_picture
   end
 
-  def create
-    @guide = Guide.new(guide_params)
-
-    @guide.save
-    redirect_to @guide
-
-  end
-
   private
     def guide_params
       attrs_Guide = [:profile, :guide_service, :guide_transportation, :guide_interest, :experience, :license_flg,:birth_year]
@@ -110,23 +89,11 @@ class GuidesController < ApplicationController
         @guide.errors[:base] << t(".licence_picture_type_error")
       end
     end
-
-    # def send_image
-    #   if @member.member_picture.present?
-    #     send_data @member.member_picture.image,
-    #       type: @member.member_picture.pictype, disposition: "inline"
-    #   else
-    #     raise NotFound
-    #   end
-    # end
-    #
-    # def send_l_image
-    #   if @guide.licence_picture.present?
-    #     send_data @guide.licence_picture.image,
-    #       type: @guide.licence_picture.pictype, disposition: "inline"
-    #   else
-    #     raise NotFound
-    #   end
-    # end
-
+    
+    def access_check!
+      # 自分のデータしかアクセスできない
+      if !params[:id].present? || current_member.guide.id.to_s != params[:id]
+        raise t('access_error')
+      end
+    end
 end

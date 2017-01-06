@@ -46,6 +46,7 @@ ko:
   new_password: "새로운 패스워드"
   confirm_password: "새로운 패스워드 재입력"
   contacting: "새롭게 설정하신 패스워드가 정상적으로 변경 되었습니다."
+  access_error: "접근 불가한 사이트 입니다."
   select_picture: "사진 선택"
   select_l_picture: "라이센스 사진 선택"
   button:

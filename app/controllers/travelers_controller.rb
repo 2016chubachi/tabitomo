@@ -1,10 +1,6 @@
 class TravelersController < ApplicationController
   before_action :authenticate_member!
-
-  def new
-    @traveler = Traveler.new
-    @traveler.member.build_member_picture
-  end
+  before_action :access_check!,except: [:new]
 
   def update
     @traveler = Member.find(params[:id])
@@ -49,6 +45,13 @@ class TravelersController < ApplicationController
         # 会員画像のタイプエラー
         @traveler.errors.delete(:"member_picture.member_image_type")
         @traveler.errors[:base] << t(".member_picture_type_error")
+      end
+    end
+    
+    def access_check!
+      # 自分のデータしかアクセスできない
+      if !params[:id].present? || current_member.id.to_s != params[:id]
+        raise t('access_error')
       end
     end
 

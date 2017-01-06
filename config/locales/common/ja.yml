@@ -46,6 +46,7 @@ ja:
   new_password: "新しいパスワード"
   confirm_password: "新しいパスワードの再入力"
   contacting: "新しく設定したパスワードが正しく変更されました。"
+  access_error: "不正なアクセス！"
   button:
   add_button: "追加"
   update_button: "更新"
