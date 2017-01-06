@@ -25,6 +25,7 @@
 //= require jquery-ui/datepicker-zh-CN
 //= require jquery-ui/datepicker-ja
 //= require wow
+//= require owl.carousel
 
 //= require_tree .
 
