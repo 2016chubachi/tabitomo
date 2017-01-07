@@ -18,17 +18,17 @@
   <!--<% end%>-->
   <% @guides.each do |guide|  %>
     <div class="col-sm-4 col-md-3">
-      <div class="thumbnail">
+      <div class="thumbnail" style="max-height:370px;overflow:hidden;">
         <!--ガイド詳細ページ遷移-->
         <%= link_to(member_image_tag(guide.member),guide_detail_path(guide)) %>
         <div class="caption">
           <div style="width:100%">
             <div class="row">
-              <div class="col-md-12"><h3><%= guide.member.first_name + "  " + guide.member.last_name%></h3></div>
-              <div class="col-md-12"><%= t("activerecord.attributes.guide.experience") +"：" + guide.experience.to_s + t("year")%></div>
-              <div class="col-md-12"><%= t("activerecord.attributes.guide.license_flg")+"：" + (guide.license_flg.to_s === "1" ? t("has") : t("not")) %></div>
-              <div class="col-md-12"><%= t("activerecord.attributes.member.gender")+"：" + (guide.member.gender.to_s === "1" ? t("male") : t("female")) %></div>
-              <div class="col-md-12">
+              <div class="col-md-12 textoverflow"><h3><%= guide.member.first_name + "  " + guide.member.last_name%></h3></div>
+              <div class="col-md-12 textoverflow"><%= t("activerecord.attributes.guide.experience") +"：" + guide.experience.to_s + t("year")%></div>
+              <div class="col-md-12 textoverflow"><%= t("activerecord.attributes.guide.license_flg")+"：" + (guide.license_flg.to_s === "1" ? t("has") : t("not")) %></div>
+              <div class="col-md-12 textoverflow"><%= t("activerecord.attributes.member.gender")+"：" + (guide.member.gender.to_s === "1" ? t("male") : t("female")) %></div>
+              <div class="col-md-12 textoverflow">
                 <% city_str = ''%>
                 <!--%binding.pry%>-->
                 <% guide.guide_cities.each do |city|
@@ -38,9 +38,9 @@
                     city_str += city.city_master.send("text_#{I18n.locale}")
                   end
                 %>
-                <%= t("activerecord.attributes.guide.guide_cities")+"：" + city_str.truncate(20)%>
+                <%= t("activerecord.attributes.guide.guide_cities")+"：" + city_str%>
               </div>
-              <div class="col-md-12">
+              <div class="col-md-12 textoverflow">
                 <% lang_str = ''%>
                 <!--%binding.pry%>-->
                 <% guide.guide_languages.each do |lang|
@@ -50,7 +50,7 @@
                     lang_str += lang.language_code.send("text_#{I18n.locale}")
                   end
                 %>
-                <%= t(".guide_language")+"：" + lang_str.truncate(18)%>
+                <%= t(".guide_language")+"：" + lang_str%>
               </div>
             </div>
           </div>
