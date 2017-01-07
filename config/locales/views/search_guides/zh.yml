@@ -23,7 +23,7 @@ zh:
   search_guides:
     index:
       search_result: "搜索结果"
-      guide_language: "ガイド言語_zh"
+      guide_language: "通晓语言"
     search_box:
       search_condition: "搜索条件"
-      guide_language: "ガイド言語_zh"
+      guide_language: "使用语言"
