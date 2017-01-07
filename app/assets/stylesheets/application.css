@@ -18,6 +18,13 @@
  *= require owl.theme
  */
 
+.textoverflow{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis; /* Safari */
+  -o-text-overflow: ellipsis; /* Opera */
+}
 
 /* -----slider------  */
  /*.slide-image{
