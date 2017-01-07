@@ -2,7 +2,6 @@
   <div id="div-error-message" class="panel panel-danger hidden-div">
     <div class="panel-heading">
       <img style="max-height:18px;" src="/assets/error-icon.png">
-      <%= t(".message",:count => obj.errors.count) %>
       <button type="button" class="close"><span>&times;</span></button>
       </div>
     <div class="panel-body">
@@ -26,7 +25,6 @@
   <div id="div-error-message" class="panel panel-danger hidden-div">
     <div class="panel-heading">
       <img style="max-height:18px;" src="/assets/error-icon.png">
-      <%= t(".message",:count => session[:errors].count) %>
       <button type="button" class="close"><span>&times;</span></button>
     </div>
     <div class="panel-body">
