@@ -48,6 +48,9 @@
   text-shadow: 5px 5px 4px rgba(0, 0, 0, 1);
   font-style: italic;
 }
+.margin-top-20{
+  margin-top:20px;
+}
 .margin-bottom-10{
   margin-bottom:10px;
 }
