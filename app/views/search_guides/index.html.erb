@@ -18,7 +18,7 @@
   <!--<% end%>-->
   <% @guides.each do |guide|  %>
     <div class="col-sm-4 col-md-3">
-      <div class="thumbnail" style="max-height:370px;overflow:hidden;">
+      <div class="thumbnail" style="height:370px;overflow:hidden;">
         <!--ガイド詳細ページ遷移-->
         <%= link_to(member_image_tag(guide.member),guide_detail_path(guide)) %>
         <div class="caption">
