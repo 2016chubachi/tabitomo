@@ -104,7 +104,7 @@
   background-color: #fff;
   border: 0px solid #ccc;
   border-radius: 4px;
-  white-space: normal;
+  white-space: pre-wrap;
 }
 
 /*カレンダー用css*/
