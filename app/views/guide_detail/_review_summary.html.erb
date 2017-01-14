@@ -4,7 +4,7 @@
   </div>  
   <div class="col-xs-6 col-sm-6 padding-left-0">
     <div class="progress">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @fiveCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@fiveCount/@revCount)*100}%" %>">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @fiveCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@fiveCount.to_f/@revCount)*100}%" %>">
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
   </div>  
   <div class="col-xs-6 col-sm-6 padding-left-0">
     <div class="progress">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @fourCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@fourCount/@revCount)*100}%" %>">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @fourCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@fourCount.to_f/@revCount)*100}%" %>">
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
   </div>  
   <div class="col-xs-6 col-sm-6 padding-left-0">
     <div class="progress">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @threeCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@threeCount/@revCount)*100}%" %>">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @threeCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@threeCount.to_f/@revCount)*100}%" %>">
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
   </div>  
   <div class="col-xs-6 col-sm-6 padding-left-0">
     <div class="progress">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @twoCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@twoCount/@revCount)*100}%" %>">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @twoCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@twoCount.to_f/@revCount)*100}%" %>">
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@
   </div>  
   <div class="col-xs-6 col-sm-6 padding-left-0">
     <div class="progress">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @oneCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@oneCount/@revCount)*100}%" %>">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="<%= @oneCount%>" aria-valuemin="0" aria-valuemax="<%= @revCount%>" style="<%= "width: #{@revCount==0?0:(@oneCount.to_f/@revCount)*100}%" %>">
       </div>
     </div>
   </div>
